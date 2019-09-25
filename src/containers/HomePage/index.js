@@ -5,25 +5,19 @@ import Header from '../../components/Header';
 
 import CreateItem from '../../components/CreateItem';
 import TodoItem from '../../components/TodoItem';
-import { addTodo, getTodos, deleteTodo } from '../../actions/todoListActions';
+import { addTodo, getTodos, deleteTodo } from './actions';
 
 import './HomePage.css';
 
 
 const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
-    // const [todos, setTodos] = useState([])
+
     const [value, setValue] = useState('')
-
-    useEffect(() => {
-        console.log('test', todoList)
-    }, []);
-
-
 
     const addTodoItem = () => {
         const newTodo = value;
-        addTodo(newTodo)
-        getTodoList()
+        addTodo(newTodo);
+        setValue('')
     }
 
     const deleteTodoItem = (name) => {
@@ -47,7 +41,7 @@ const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
                             <CreateItem addElement={addTodoItem} onHandleChange={(e) => setValue(e.target.value)} value={value} />
                             {todoList ? todoList.map((element, index) => (
                                 <TodoItem text={element} key={index} deleteElement={() => deleteTodoItem(element)} />
-                            )) : ['pen']}
+                            )) : ['no']}
                         </div>
                     </div>
                 </div>

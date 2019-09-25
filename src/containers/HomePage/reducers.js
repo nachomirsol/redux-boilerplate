@@ -1,4 +1,4 @@
-import { ADD_TODO, GET_TODOS, DELETE_TODO } from '../constants/constants'
+import { ADD_TODO, GET_TODOS, DELETE_TODO } from './constants'
 
 const initialState = {
     todoList: []
