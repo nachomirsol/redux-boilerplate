@@ -1,11 +1,13 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header';
 
 import CreateItem from '../../components/CreateItem';
 import TodoItem from '../../components/TodoItem';
 import { addTodo, getTodos, deleteTodo } from './actions';
+import { createStructuredSelector } from "reselect";
+import { makeSelectTodoList } from './selectors'
 
 import './HomePage.css';
 
@@ -50,9 +52,29 @@ const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
     )
 }
 
+// This works
+/*const mapStateToProps = (state) => ({
+    todoList:state.todoList.todoList
+})*/
+
+
+// This works better in case of state tree is modified
+
+/*const selectTodoList = (state) => {
+    return state.todoList.todoList
+}
+
 const mapStateToProps = (state) => ({
-    todoList: state.todoList.todoList
-});
+    todoList:selectTodoList(state)
+})
+*/
+
+// This works better in terms of performance using createStructuredSelector and selectors
+const mapStateToProps = createStructuredSelector(
+    {
+        todoList: makeSelectTodoList()
+    }
+);
 
 
 
