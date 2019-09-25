@@ -1,0 +1,12 @@
+form{
+    
+
+    display:flex;
+    flex-direction:column;
+    margin-bottom:24px;
+}
+
+form button{
+    border:1px solid #af7eeb !important;
+    background-color:#af7eeb !important;
+}
