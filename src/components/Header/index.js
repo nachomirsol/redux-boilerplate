@@ -1,12 +1,18 @@
 import React from 'react';
-import './Header.css';
+import { Link } from 'react-router-dom';
+import { URL } from '../../utils/const';
 
-const Header = ({ title }) => {
+import WithToggle from '../../containers/WithToggle';
+import './Header.scss';
+
+const Header = ({ title, toggle, toggleStatus }) => {
     return (
         <div className="header">
-            {title}
+            <div className="link"><Link to='/'>{title}</Link></div>
+            {toggleStatus ? <div className="link"><Link to={URL.posts}>POSTS</Link></div> : 'No put se'}
+            <div className="link" onClick={toggle}>Toggle</div>
         </div>
     )
 }
 
-export default Header
+export default WithToggle(Header)

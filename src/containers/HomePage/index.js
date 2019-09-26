@@ -9,10 +9,10 @@ import { addTodo, getTodos, deleteTodo } from './actions';
 import { createStructuredSelector } from "reselect";
 import { makeSelectTodoList } from './selectors'
 
-import './HomePage.css';
+import './HomePage.scss';
 
 
-const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
+const HomePage = React.memo(({ addTodo, getTodos, deleteTodo, todoList }) => {
 
     const [value, setValue] = useState('')
 
@@ -50,7 +50,7 @@ const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
             </div>
         </div>
     )
-}
+})
 
 // This works
 /*const mapStateToProps = (state) => ({

@@ -4,5 +4,5 @@ const getTodoList = (state) => state.todoList.todoList
 
 export const makeSelectTodoList = () => createSelector(
     getTodoList,
-    (substate) => substate
+    (todos) => todos
 )
