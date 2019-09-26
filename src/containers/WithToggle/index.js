@@ -1,26 +1,28 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux';
+import { toggle } from './actions'
+import { compose } from "redux";
 
 const withToggle = (WrappedComponent) =>
-
-    class WithToggle extends React.PureComponent {
-        constructor() {
-            super()
-            this.state = {
-                toggleStatus: false,
-            }
-        }
-
-        toggle = () => {
-            this.setState({
-                toggleStatus: !this.state.toggleStatus
-            })
-        }
+    class WithToggleComponent extends React.Component {
 
         render() {
-            const { toggleStatus } = this.state
-            return <WrappedComponent {...this.props} toggle={this.toggle} toggleStatus={toggleStatus} />;
+            return (
+                <WrappedComponent
+                    toggle={this.props.toggle}
+                    toggleStatus={this.props.toggleStatus}
+                />
+            )
         }
     }
 
+const mapStateToProps = (state) => ({
+    toggleStatus: state.toggleStatus.toggleStatus
+})
 
-export default withToggle
+const composedHoc = compose(
+    connect(mapStateToProps, { toggle }),
+    withToggle
+);
+
+export default composedHoc;
