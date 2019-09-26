@@ -1,27 +1,22 @@
 
-import React, { Fragment } from 'react';
-import HomePage from './containers/HomePage'
+import React from 'react';
+
+import { Routes } from "./routes/routes";
+import { BrowserRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 import store from './store';
 
+import './App.scss';
 
-import './App.css';
-
+const routes = Routes();
 
 const App = () => {
-
-
   return (
     <Provider store={store}>
-      <Fragment>
-        <HomePage />
-      </Fragment>
+      <BrowserRouter children={routes} basename={"/"} />
     </Provider>
   )
 }
-
-
-
 
 export default App

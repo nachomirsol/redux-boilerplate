@@ -1,29 +1,25 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header';
 
 import CreateItem from '../../components/CreateItem';
 import TodoItem from '../../components/TodoItem';
-import { addTodo, getTodos, deleteTodo } from '../../actions/todoListActions';
+import { addTodo, getTodos, deleteTodo } from './actions';
+import { createStructuredSelector } from "reselect";
+import { makeSelectTodoList } from './selectors'
 
-import './HomePage.css';
+import './HomePage.scss';
 
 
-const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
-    // const [todos, setTodos] = useState([])
+const HomePage = React.memo(({ addTodo, getTodos, deleteTodo, todoList }) => {
+
     const [value, setValue] = useState('')
-
-    useEffect(() => {
-        console.log('test', todoList)
-    }, []);
-
-
 
     const addTodoItem = () => {
         const newTodo = value;
-        addTodo(newTodo)
-        getTodoList()
+        addTodo(newTodo);
+        setValue('')
     }
 
     const deleteTodoItem = (name) => {
@@ -47,18 +43,38 @@ const HomePage = ({ addTodo, getTodos, deleteTodo, todoList }) => {
                             <CreateItem addElement={addTodoItem} onHandleChange={(e) => setValue(e.target.value)} value={value} />
                             {todoList ? todoList.map((element, index) => (
                                 <TodoItem text={element} key={index} deleteElement={() => deleteTodoItem(element)} />
-                            )) : ['pen']}
+                            )) : ['no']}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     )
+})
+
+// This works
+/*const mapStateToProps = (state) => ({
+    todoList:state.todoList.todoList
+})*/
+
+
+// This works better in case of state tree is modified
+
+/*const selectTodoList = (state) => {
+    return state.todoList.todoList
 }
 
 const mapStateToProps = (state) => ({
-    todoList: state.todoList.todoList
-});
+    todoList:selectTodoList(state)
+})
+*/
+
+// This works better in terms of performance using createStructuredSelector and selectors
+const mapStateToProps = createStructuredSelector(
+    {
+        todoList: makeSelectTodoList()
+    }
+);
 
 
 
