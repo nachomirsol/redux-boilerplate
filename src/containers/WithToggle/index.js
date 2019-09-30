@@ -9,6 +9,7 @@ const withToggle = (WrappedComponent) =>
         render() {
             return (
                 <WrappedComponent
+                    title={"Boilerplate"}
                     toggle={this.props.toggle}
                     toggleStatus={this.props.toggleStatus}
                 />

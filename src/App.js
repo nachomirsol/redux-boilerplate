@@ -1,22 +1,42 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { connect } from 'react-redux'
 
 import { Routes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
 
-import { Provider } from 'react-redux';
-import store from './store';
+import { IntlProvider } from 'react-intl';
+
+import es_translations from './translations/es.json';
+import en_translations from './translations/en.json';
 
 import './App.scss';
 
 const routes = Routes();
 
-const App = () => {
+const App = ({ locale }) => {
+
+  useEffect(() => {
+    console.log('language App', locale)
+  })
+
+  const translations = {
+    es: es_translations,
+    en: en_translations
+  }
+
   return (
-    <Provider store={store}>
+
+    <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
       <BrowserRouter children={routes} basename={"/"} />
-    </Provider>
+    </IntlProvider>
+
   )
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  locale: state.locale.locale
+})
+
+export default connect(mapStateToProps)(App)

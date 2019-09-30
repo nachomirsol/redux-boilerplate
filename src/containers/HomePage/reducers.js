@@ -17,7 +17,7 @@ const todoListReducer = (state = initialState, action) => {
                 todoList: state.todoList
             }
         case DELETE_TODO:
-            debugger
+
             return {
                 ...state,
                 todoList: state.todoList.filter(todo => todo !== action.payload)

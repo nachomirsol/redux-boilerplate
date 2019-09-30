@@ -1,0 +1,6 @@
+{
+    "TITLE": "Título",
+    "POST": "Artículos",
+    "TEXT": "Esto es un ejemplo texto para ser traducido por la librería React Intl",
+    "TODO": "TODO_ES"
+}
