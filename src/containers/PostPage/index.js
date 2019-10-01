@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
 
 import CreateItem from '../../components/CreateItem';
-import Layout from '../../components/Layout';
+
 import TodoItem from '../../components/TodoItem';
 
 import { listPosts, deletePost, filterPost } from './actions';
@@ -16,6 +16,7 @@ import { makeSelectPostList } from './selectors'
 
 import './PostPage.scss';
 
+// This case we use the layout in the route instead of the component directly
 const PostPage = ({ listPosts, deletePost, postList, filterPost, intl }) => {
 
     const [value, setValue] = useState()
@@ -37,16 +38,14 @@ const PostPage = ({ listPosts, deletePost, postList, filterPost, intl }) => {
     }
 
     return (
-        <Layout>
-            <div className="row">
-                <div className="col-md-6">
-                    <h4>{intl.formatMessage({ id: 'POST' })}</h4>
-                    <CreateItem onHandleChange={(e) => setValue(e.target.value)} value={value} onSearchElement={() => searchPostElement(value)} />
-                    {postList.map(element => <TodoItem text={element.title} key={element.id} id={element.id} deleteElement={() => onDelete(element.id)} />)}
+        <div className="row">
+            <div className="col-md-6">
+                <h4>{intl.formatMessage({ id: 'POST' })}</h4>
+                <CreateItem onHandleChange={(e) => setValue(e.target.value)} value={value} onSearchElement={() => searchPostElement(value)} />
+                {postList.map(element => <TodoItem text={element.title} key={element.id} id={element.id} deleteElement={() => onDelete(element.id)} />)}
 
-                </div>
             </div>
-        </Layout>
+        </div>
     )
 }
 

@@ -9,9 +9,9 @@ import TextPage from '../containers/TextPage';
 
 export const Routes = () => (
     <Switch>
-        <Route exact={true} path="/" component={HomePage} />
-        <Route exact={true} path={URL.posts} component={PostPage} />
         <Layout>
+            <Route exact={true} path="/" component={HomePage} />
+            <Route exact={true} path={URL.posts} component={PostPage} />
             <Route exact={true} path={URL.texts} component={TextPage} />
         </Layout>
     </Switch>
