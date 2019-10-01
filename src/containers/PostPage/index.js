@@ -3,19 +3,21 @@ import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
+import { injectIntl } from 'react-intl';
+
 import CreateItem from '../../components/CreateItem';
-import Header from '../../components/Header';
+
 import TodoItem from '../../components/TodoItem';
 
-import { listPosts, deletePost, addPost } from './actions';
+import { listPosts, deletePost, filterPost } from './actions';
 
 import { createStructuredSelector } from "reselect";
 import { makeSelectPostList } from './selectors'
 
 import './PostPage.scss';
 
-
-const PostPage = ({ listPosts, deletePost, addPost, postList }) => {
+// This case we use the layout in the route instead of the component directly
+const PostPage = ({ listPosts, deletePost, postList, filterPost, intl }) => {
 
     const [value, setValue] = useState()
 
@@ -23,13 +25,12 @@ const PostPage = ({ listPosts, deletePost, addPost, postList }) => {
         listPosts()
     }, [])
 
-    const addPostItem = () => {
-        alert(value)
-        const postData = { title: value };
-        addPost(postData)
-        setValue('')
-        listPosts()
-
+    const searchPostElement = (query) => {
+        if (query !== "") {
+            filterPost(query)
+        } else {
+            listPosts()
+        }
     }
 
     const onDelete = (id) => {
@@ -37,19 +38,12 @@ const PostPage = ({ listPosts, deletePost, addPost, postList }) => {
     }
 
     return (
-        <div>
-            <Header title="TODO APP" />
-            <div className="postpage">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-6">
-                            <h4>Posts</h4>
-                            <CreateItem addElement={addPostItem} onHandleChange={(e) => setValue(e.target.value)} value={value} />
-                            {postList.map(element => <TodoItem text={element.title} key={element.id} id={element.id} deleteElement={() => onDelete(element.id)} />)}
+        <div className="row">
+            <div className="col-md-6">
+                <h4>{intl.formatMessage({ id: 'POST' })}</h4>
+                <CreateItem onHandleChange={(e) => setValue(e.target.value)} value={value} onSearchElement={() => searchPostElement(value)} />
+                {postList.map(element => <TodoItem text={element.title} key={element.id} id={element.id} deleteElement={() => onDelete(element.id)} />)}
 
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     )
@@ -66,4 +60,4 @@ const mapStateToProps = createStructuredSelector(
 );
 
 
-export default connect(mapStateToProps, { listPosts, deletePost, addPost })(PostPage)
+export default connect(mapStateToProps, { listPosts, deletePost, filterPost })(injectIntl(PostPage))

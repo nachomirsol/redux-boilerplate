@@ -1,4 +1,4 @@
-import { LIST_POSTS, DELETE_POST, ADD_POST } from './constants';
+import { LIST_POSTS, DELETE_POST, ADD_POST, FILTER_POST } from './constants';
 
 const initialState = {
     postList: []
@@ -20,6 +20,12 @@ const postListReducer = (state = initialState, action) => {
             return {
                 ...state,
                 postList: [...state.postList, action.payload]
+            }
+        case FILTER_POST:
+
+            return {
+                ...state,
+                postList: state.postList.filter(post => post.title.includes(action.payload))
             }
         default:
             return state

@@ -1,0 +1,11 @@
+.textPage{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color:#e3e9ff;
+    .container{
+        flex: 1;
+    }
+  }
+    
+  

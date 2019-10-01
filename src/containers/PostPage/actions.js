@@ -1,4 +1,4 @@
-import { LIST_POSTS, DELETE_POST, ADD_POST } from './constants';
+import { LIST_POSTS, DELETE_POST, ADD_POST, FILTER_POST } from './constants';
 import PostService from '../../services/postService';
 
 export const listPosts = () => dispatch => {
@@ -36,4 +36,12 @@ export const addPost = (data) => dispatch => {
             type: ADD_POST,
             payload: response.data
         }))
+}
+
+export const filterPost = (query) => {
+    if (query !== "")
+        return {
+            type: FILTER_POST,
+            payload: query
+        }
 }
