@@ -10,7 +10,7 @@ import TextPage from '../containers/TextPage';
 export const Routes = () => (
     <Switch>
         <Layout>
-            <Route exact={true} path="/" component={HomePage} />
+            <Route exact={true} path={URL.home} component={HomePage} />
             <Route exact={true} path={URL.posts} component={PostPage} />
             <Route exact={true} path={URL.texts} component={TextPage} />
         </Layout>
