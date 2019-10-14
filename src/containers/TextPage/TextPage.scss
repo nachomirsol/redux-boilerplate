@@ -3,8 +3,16 @@
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     grid-template-rows:1fr 1fr;
+    
+    justify-items:center;
     grid-gap:10px;
     .element{
         border:1px solid gray;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        
+
     }
 }
