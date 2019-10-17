@@ -5,6 +5,7 @@ import { URL } from '../utils/const';
 import HomePage from '../containers/HomePage';
 import Layout from '../components/Layout';
 import { MapPage } from '../containers/MapPage';
+import MenuPage from '../containers/MenuPage';
 import PostPage from '../containers/PostPage';
 import TextPage from '../containers/TextPage';
 
@@ -15,6 +16,7 @@ export const Routes = () => (
             <Route exact={true} path={URL.posts} component={PostPage} />
             <Route exact={true} path={URL.texts} component={TextPage} />
             <Route exact={true} path={URL.map} component={MapPage} />
+            <Route exact={true} path={URL.menu} component={MenuPage} />
         </Layout>
     </Switch>
 );
