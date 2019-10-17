@@ -1,0 +1,16 @@
+.grid-container{
+    margin-top:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    
+    justify-items:center;
+    grid-gap:10px;
+    #deckgl-wrapper{
+        justify-items:center;
+        align-items:center;
+        #view-child-default-view-0{
+            position:relative !important;
+        }
+    }
+}
