@@ -7,9 +7,11 @@ import { Routes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
 
 import { IntlProvider } from 'react-intl';
+import { ThemeProvider } from "styled-components";
 
 import es_translations from './translations/es.json';
 import en_translations from './translations/en.json';
+import theme from './theme/theme';
 
 import './App.scss';
 
@@ -27,11 +29,11 @@ const App = ({ locale }) => {
   }
 
   return (
-
-    <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
-      <BrowserRouter children={routes} basename={"/"} />
-    </IntlProvider>
-
+    <ThemeProvider theme={theme}>
+      <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
+        <BrowserRouter children={routes} basename={"/"} />
+      </IntlProvider>
+    </ThemeProvider>
   )
 }
 
