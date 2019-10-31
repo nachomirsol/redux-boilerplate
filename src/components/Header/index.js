@@ -1,15 +1,18 @@
-import React from 'react';
-import WithToggle from '../../containers/WithToggle';
-import { HeaderWrapper } from './Header';
+import React from "react";
+import { HeaderWrapper, LogoWrapper } from "./Header";
+import { ReactComponent as LogoGoAigua } from 'assets/svg/goaigua-logo.svg';
+import Icon from "components/Icon";
 
-const Header = ({ toggle, toggleStatus, title }) => {
-    return (
-        <HeaderWrapper bg="bgGray1">
-            <div> Menú hambuerguesa</div>
-            <div>GO-AIGUA</div>
-            <div>Alarmas y tal</div>
-        </HeaderWrapper>
-    )
-}
+const Header = ({ handleSideBar }) => {
+  return (
+    <HeaderWrapper>
+      <div style={{ cursor: "pointer" }} onClick={() => handleSideBar()}>
+        <Icon name={"bars"}></Icon>
+      </div>
+      <LogoWrapper><LogoGoAigua/></LogoWrapper>
+      <div>Alarmas y tal</div>
+    </HeaderWrapper>
+  );
+};
 
-export default WithToggle(Header)
+export default Header;

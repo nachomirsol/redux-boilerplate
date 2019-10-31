@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { ContainerWrapper, Container, Page } from "./Layout";
 
 const Layout = ({ children }) => {
+  const [expandedSideBar, handleExpandedSideBar] = useState(true);
   return (
     <Page>
-      <Header title="TITLE" />
+      <Header
+        handleSideBar={() => handleExpandedSideBar(!expandedSideBar)}
+      />
       <ContainerWrapper>
-        <Sidebar></Sidebar>
+        <Sidebar expanded={expandedSideBar}></Sidebar>
         <Container>{children}</Container>
       </ContainerWrapper>
       {/* <Footer /> */}

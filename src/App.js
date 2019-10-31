@@ -9,13 +9,20 @@ import { BrowserRouter } from "react-router-dom";
 import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from "styled-components";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+
 import es_translations from './translations/es.json';
 import en_translations from './translations/en.json';
-import theme from './theme/theme';
+import theme from './themes/dark-theme';
 
 import './App.scss';
 
+// add font awesome icons to the library in order to import just used icons
+library.add(faBars, faCheckSquare);
+
 const routes = Routes();
+
 
 const App = ({ locale }) => {
 
@@ -31,7 +38,9 @@ const App = ({ locale }) => {
   return (
     <ThemeProvider theme={theme}>
       <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
-        <BrowserRouter children={routes} basename={"/"} />
+        <BrowserRouter basename={"/"}>
+          {routes}
+        </BrowserRouter>
       </IntlProvider>
     </ThemeProvider>
   )

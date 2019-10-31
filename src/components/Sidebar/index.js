@@ -1,13 +1,15 @@
 import React from "react";
-import { SidebarDiv } from "./Sidebar";
+import { SidebarWrapper } from "./Sidebar";
+import model from './utils/sidebarModel';
+import SidebarItem from "./components/SidebarItem";
 
-const Sidebar = () => {
+const Sidebar = ({ expanded }) => {
   return (
-    <SidebarDiv>
-      <div> Infraestructuras</div>
-      <div>Eficiencia energética</div>
-      <div>etc</div>
-    </SidebarDiv>
+    <SidebarWrapper expanded={expanded}>
+      {Object.keys(model).map((item, index) => {
+        return (<SidebarItem key={`sidebar-item-text-${index}`} expanded={expanded} item={model[item]}></SidebarItem>)
+      })}
+    </SidebarWrapper>
   );
 };
 
