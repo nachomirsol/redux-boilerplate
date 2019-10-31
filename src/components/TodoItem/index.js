@@ -1,11 +1,11 @@
 import React from 'react';
-import './TodoItem.css';
+import './TodoItem.scss';
 
 const TodoItem = ({ id, text, deleteElement }) => {
     return (
         <div className="todoItem">
             <div className="checkbox">
-                {id ? id : <input type="checkbox" />}
+                {id ? id : <input type="checkbox" value="true" />}
             </div>
             <div className="text">
                 {text}

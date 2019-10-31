@@ -18,7 +18,7 @@ const data = [{
     [-73.99256, 40.713863]]
 }
 ]
-export const MapPage = () => {
+export default () => {
     // below, add whatever layers you need to overlay on your map
     const layer = [
         new PathLayer({

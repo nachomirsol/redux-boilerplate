@@ -23,7 +23,7 @@ const PostPage = ({ listPosts, deletePost, postList, filterPost, intl }) => {
 
     useEffect(() => {
         listPosts()
-    }, [])
+    }, [listPosts])
 
     const searchPostElement = (query) => {
         if (query !== "") {

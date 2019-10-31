@@ -1,18 +1,18 @@
-import React from 'react';
-import Footer from '../Footer'
-import Header from '../Header';
-import './Layout.scss'
+import React from "react";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import { ContainerWrapper, Container, Page } from "./Layout";
 
 const Layout = ({ children }) => {
-    return (
-        <div className="page">
-            <Header title="TITLE" />
-            <div className="container">
-                {children}
-            </div>
-            <Footer />
-        </div>
-    )
-
-}
-export default Layout
+  return (
+    <Page>
+      <Header title="TITLE" />
+      <ContainerWrapper>
+        <Sidebar></Sidebar>
+        <Container>{children}</Container>
+      </ContainerWrapper>
+      {/* <Footer /> */}
+    </Page>
+  );
+};
+export default Layout;
