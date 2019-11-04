@@ -9,7 +9,7 @@ const Header = ({ handleSideBar }) => {
       <div style={{ cursor: "pointer" }} onClick={() => handleSideBar()}>
         <Icon name={"bars"}></Icon>
       </div>
-      <LogoWrapper><LogoGoAigua/></LogoWrapper>
+      <LogoWrapper><LogoGoAigua /></LogoWrapper>
       <div>Alarmas y tal</div>
     </HeaderWrapper>
   );

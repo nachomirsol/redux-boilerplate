@@ -16,6 +16,7 @@ export const Routes = () => (
             <Route exact={true} path={URL.posts} component={PostPage} />
             <Route exact={true} path={URL.texts} component={TextPage} />
             <Route exact={true} path={URL.map} component={MapPage} />
+            <Route exact={true} path={URL.infraestructures} component={HomePage} />
             {/* <Route exact={true} path={URL.menu} component={MenuPage} /> */}
         </Layout>
     </Switch>

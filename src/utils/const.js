@@ -3,7 +3,8 @@ export const URL = {
     map: '/map',
     menu: '/menu',
     posts: '/posts',
-    texts: '/texts'
+    texts: '/texts',
+    infraestructures: '/infraestructures'
 }
 
 export const Languages = [{ code: 'es', display: 'Español' }, { code: 'en', display: 'English' }];

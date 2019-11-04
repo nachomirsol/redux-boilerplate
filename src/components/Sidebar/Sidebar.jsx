@@ -7,6 +7,7 @@ const SidebarWrapper = styled.div`
   width: ${props => (props.expanded ? "320px" : "64px")};
   padding: 24px;
   transition: width 0.5s;
+  font-family: 'Rubik', sans-serif;
 `;
 
 const SidebarItemWrapper = styled.div`
