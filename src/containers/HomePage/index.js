@@ -12,13 +12,13 @@ const HomePage = ({ intl }) => {
   return (
     <ParentDiv>
       <WidgetContainer>
-        <Widget title={intl.formatMessage({ id: "INFRAESTRUCTURES" })}>
+        <Widget title={intl.formatMessage({ id: "app.components.Sidebar.Infraestructures" })}>
           text
         </Widget>
-        <Widget title={intl.formatMessage({ id: "INFRAESTRUCTURES" })}>
+        <Widget title={intl.formatMessage({ id: "app.components.Sidebar.Infraestructures" })}>
           asdsadsad
         </Widget>
-        <Widget title={intl.formatMessage({ id: "INFRAESTRUCTURES" })}>
+        <Widget title={intl.formatMessage({ id: "app.components.Sidebar.Infraestructures" })}>
           rrrr
         </Widget>
       </WidgetContainer>

@@ -1,6 +1,6 @@
 {
-    "TITLE": "Title",
-    "POST": "Post",
-    "TEXT": "This is a sample text to be translated by React Intl library",
-    "TODO": "TODO_EN"
+    "app.components.Sidebar.Infraestructures": "Infraestructures",
+    "app.components.Sidebar.Services": "Services",
+    "app.components.Sidebar.EnergeticEfficiency": "Energetic efficiency", 
+    "app.components.Sidebar.LeakSearch": "Leak search"
 }
