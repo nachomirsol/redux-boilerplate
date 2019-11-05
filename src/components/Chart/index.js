@@ -5,20 +5,19 @@ import HighchartsReact from 'highcharts-react-official';
 import './chart.scss';
 
 const options = {
-    colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
-        '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
     chart: {
         type: 'pie',
-        backgroundColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-            stops: [
-                [0, '#2a2a2b'],
-                [1, '#3e3e40']
-            ]
-        },
-        plotBorderColor: '#606063'
+        backgroundColor: 'transparent',
+        borderColor: '#335cad',
+        borderWidth: 0,
+        plotBorderColor: '#606063',
+        height: '50%',
+        width: null
     },
 
+    rangeSelector: {
+        enabled: false
+    },
     title: {
         text: ''
     },
@@ -26,31 +25,50 @@ const options = {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
     plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            showInLegend: true
+        },
         series: {
             dataLabels: {
                 color: '#F0F0F3',
                 style: {
-                    fontSize: '13px'
-                }
+                    fontSize: '14px',
+                    fontWeight: '300',
+                    textOutline: '0px'
+                },
+                enabled: true
             },
             marker: {
                 lineColor: '#333'
+
             }
         },
         boxplot: {
-            fillColor: '#505053'
+            fillColor: '#000'
         },
         candlestick: {
-            lineColor: 'white'
+            lineColor: 'transparent'
         },
         errorbar: {
             color: 'white'
         }
     },
     legend: {
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+
+        backgroundColor: 'transparent',
+        align: 'left',
+        layout: 'vertical',
+        verticalAlign: 'middle',
+        textAlign: 'center',
+        itemMarginBottom: 24,
+        x: 0,
+        y: 0,
         itemStyle: {
-            color: '#E0E0E3'
+            color: '#E0E0E3',
+            fontWeight: 300,
+            fontSize: 14
         },
         itemHoverStyle: {
             color: '#FFF'
@@ -62,23 +80,33 @@ const options = {
             style: {
                 color: '#C0C0C0'
             }
-        }
+        },
     },
     series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Firefox',
-            y: 10.85
-        }, {
-            name: 'Safari',
-            y: 4.18
-        }]
+        name: 'Gases',
+        type: 'pie',
+        borderColor: 'transparent',
+        data: [
+            {
+                name: 'Oxygen',
+                y: 15,
+                color: '#E9C417',
+                legendIndex: 1
+            },
+            {
+                name: 'Argon',
+                y: 15,
+                color: '#18B549',
+                legendIndex: 2
+            },
+            {
+                name: 'Nitrogen',
+                y: 70,
+                color: '#E37272',
+                legendIndex: 0
+            }
+        ],
+
     }]
 };
 
@@ -86,7 +114,6 @@ const Chart = () => (
     <div className="charty">
         <HighchartsReact
             highcharts={Highcharts}
-            constructorType={'stockChart'}
             options={options}
         />
     </div>

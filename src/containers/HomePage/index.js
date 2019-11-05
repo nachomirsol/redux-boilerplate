@@ -17,10 +17,10 @@ const HomePage = ({ intl }) => {
           <Chart />
         </Widget>
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Operation" })}>
-          asdsadsad
+          NO DATA
         </Widget>
         <Widget title={intl.formatMessage({ id: "app.components.Widget.WaterQuality" })}>
-          rrrr
+          NO DATA
         </Widget>
       </WidgetContainer>
       <MapContainer>
