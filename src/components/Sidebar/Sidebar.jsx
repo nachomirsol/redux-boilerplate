@@ -3,11 +3,13 @@ import styled from "styled-components/macro";
 const SidebarWrapper = styled.div`
   background-color: ${props => props.theme.colors.bgGray1};
   color: ${props => props.theme.colors.textWhite};
-  height: calc(100vh - 103px);
-  width: ${props => (props.expanded ? "320px" : "64px")};
+  width: ${props => (props.expanded ? "320px" : "88px")};
   padding: 24px;
   transition: width 0.5s;
   font-family: 'Rubik', sans-serif;
+  @media (max-width: 768px) {
+    width:88px;
+  }
 `;
 
 const SidebarItemWrapper = styled.div`
@@ -17,9 +19,9 @@ const SidebarItemWrapper = styled.div`
 
   .custom-icon {
     float: ${props => (props.expanded ? "left" : "none")};
-    padding-right: ${props => (props.expanded ? "12px" : "0")};
-    height: ${props => (props.expanded ? "22px" : "32px")};
-    width: ${props => (props.expanded ? "22px" : "32px")};
+    padding-right: ${props => (props.expanded ? "8px" : "0")};
+    height: ${props => (props.expanded ? "24px" : "32px")};
+    width: ${props => (props.expanded ? "24px" : "32px")};
   }
   cursor: pointer;
   text-align: left;

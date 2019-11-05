@@ -8,7 +8,7 @@ const Icon = ({ name, size, color, custom }) => {
     const CustomIcon = customIcons[name];
     return (
       <IconWrapper>
-        <CustomIcon className="custom-icon"/>
+        <CustomIcon className="custom-icon" />
       </IconWrapper>
     );
   }

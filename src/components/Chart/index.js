@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import './chart.scss';
 
+
 const options = {
+
     chart: {
         type: 'pie',
         backgroundColor: 'transparent',
@@ -34,7 +36,7 @@ const options = {
             dataLabels: {
                 color: '#F0F0F3',
                 style: {
-                    fontSize: '14px',
+                    fontSize: '1em',
                     fontWeight: '300',
                     textOutline: '0px'
                 },
@@ -56,7 +58,6 @@ const options = {
         }
     },
     legend: {
-
         backgroundColor: 'transparent',
         align: 'left',
         layout: 'vertical',
@@ -68,7 +69,7 @@ const options = {
         itemStyle: {
             color: '#E0E0E3',
             fontWeight: 300,
-            fontSize: 14
+            fontSize: '1em'
         },
         itemHoverStyle: {
             color: '#FFF'
@@ -107,10 +108,42 @@ const options = {
             }
         ],
 
-    }]
+    }],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 300
+            },
+
+            chartOptions: {
+                chart: {
+                    height: '100%'
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false,
+                            format: '<b>{point.name}</b>:         {point.percentage:.1f} %',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                }
+
+            },
+
+        }]
+    }
 };
 
 const Chart = () => (
+
     <div className="charty">
         <HighchartsReact
             highcharts={Highcharts}

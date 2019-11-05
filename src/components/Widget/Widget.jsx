@@ -16,7 +16,7 @@ const WidgetHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
+  padding: 16px;
 `;
 
 const WidgetContent = styled.div`
