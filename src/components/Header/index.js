@@ -7,9 +7,11 @@ import {
 } from "./Header";
 
 import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
+import { UserAvatar } from "components/UserAvatar";
 import HeaderIcon from "./components/HeaderIcon";
 import Icon from "components/Icon";
-import { UserAvatar } from "components/UserAvatar";
+import PropTypes from 'prop-types';
+
 
 const loginPage = { userName: "Mateo" };
 
@@ -17,7 +19,7 @@ const Header = ({ handleSideBar }) => {
   return (
     <HeaderWrapper>
       <IconWrapper
-        style={{ cursor: "pointer" }}
+        className="menu-bars"
         onClick={() => handleSideBar()}
       >
         <Icon name="bars" size="lg"></Icon>
@@ -90,5 +92,9 @@ const Header = ({ handleSideBar }) => {
     </HeaderWrapper>
   );
 };
+
+Header.propTypes = {
+  handleSideBar: PropTypes.func.isRequired,
+}
 
 export default Header;

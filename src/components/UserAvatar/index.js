@@ -3,8 +3,16 @@ import { compose } from "redux";
 import { injectIntl } from "react-intl";
 import { withRouter } from "react-router-dom";
 import { PopoverController, PopoverSelect } from "components/PopoverDropdown";
+import PropTypes from "prop-types";
 import Icon from "components/Icon";
-import "./avatar.scss";
+import {
+  UserAvatarWrapper,
+  UserAvatarPhotoContainer,
+  UserAvatarPhoto,
+  UserAvatarName,
+  UserAvatarDropdown
+} from './UserAvatar';
+import avatarUnknown from 'assets/images/avatar-unknow.jpg';
 
 export const UserAvatar = props => {
 
@@ -14,32 +22,31 @@ export const UserAvatar = props => {
     // window.location.href = `/login`;
   };
   return (
-    <div className={"c-user-avatar c-user-avatar--fix"}>
       <PopoverController>
         <PopoverSelect>
-          <div className="c-user-avatar__cont">
-            <div className="c-user-avatar__cont-photo">
-              <img
-                className="c-user-avatar__photo"
-                src={require(`./avatar-unknow.jpg`)}
+          <UserAvatarWrapper>
+            <UserAvatarPhotoContainer>
+              <UserAvatarPhoto
+                src={avatarUnknown}
                 alt=""
               />
-            </div>
-            <div className="user-name">
+            </UserAvatarPhotoContainer>
+            <UserAvatarName>
               {props.loginPage && props.loginPage.userName}
-            </div>
-          </div>
+            </UserAvatarName>
+          </UserAvatarWrapper>
         </PopoverSelect>
-        <div className="user-menu" onClick={() => handleClickLogout()}>
+        <UserAvatarDropdown onClick={() => handleClickLogout()}>
           <Icon name="sign-out-alt"></Icon>
-          <span>Logout</span>
-        </div>
+          <label>Logout</label>
+        </UserAvatarDropdown>
       </PopoverController>
-    </div>
   );
 };
 
-UserAvatar.propTypes = {};
+UserAvatar.propTypes = {
+  loginPage: PropTypes.object.isRequired,
+};
 
 UserAvatar.defaultProps = {};
 

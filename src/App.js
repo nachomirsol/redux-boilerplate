@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux'
 
@@ -44,6 +45,10 @@ const App = ({ locale }) => {
       </IntlProvider>
     </ThemeProvider>
   )
+}
+
+App.propTypes = {
+  locale: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = (state) => ({

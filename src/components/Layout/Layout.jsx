@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 const ContainerWrapper = styled.div`
   display: flex;
-  min-height: calc(100vh - 55px);
+  min-height: calc(100vh - 64px);
 `;
 
 const Container = styled.div`

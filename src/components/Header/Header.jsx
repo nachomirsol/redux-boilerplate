@@ -12,22 +12,23 @@ const HeaderWrapper = styled.div`
       color: ${props => props.theme.colors.textWhite};
     }
   }
-  height: 55px;
+  height: 64px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
     0 1px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 0 24px;
-  @media (max-width: 768px) {
-    .fa-bars{
+  position: relative;
+  .menu-bars {
+    cursor: "pointer";
+    @media (max-width: 768px) {
       display:none;
     }
   }
-  position: relative;
 `;
 
 const LogoWrapper = styled.div`
   position: absolute;
-  left: 50%;
+  left: 45%;
   @media (max-width: 992px) {
     position: static;
   }

@@ -1,14 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
 
-const PopoverSelect = props => {
+
+const PopoverSelect = ({ setPos, children, open }) => {
   const reference = useRef(null);
-  const { setPos, children, open } = props;
 
-  const updatePostion = () => setPos(reference.current.getBoundingClientRect());
+  const updatePostion = useCallback(() => {
+      setPos(reference.current.getBoundingClientRect());
+    }, [setPos]);
 
   useEffect(() => {
     updatePostion();
-  }, []);
+  }, [updatePostion]);
 
   useEffect(() => {
     window.addEventListener("resize", updatePostion);
@@ -21,5 +24,13 @@ const PopoverSelect = props => {
 };
 
 PopoverSelect.displayName = "Select";
+PopoverSelect.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
+  setPos: PropTypes.func,
+  open: PropTypes.func,
+};
 
 export default PopoverSelect;

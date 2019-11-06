@@ -4,11 +4,11 @@ const SidebarWrapper = styled.div`
   background-color: ${props => props.theme.colors.bgGray1};
   color: ${props => props.theme.colors.textWhite};
   width: ${props => (props.expanded ? "320px" : "72px")};
-  padding: 24px;
+  padding: 24px 16px;
   transition: width 0.5s;
   font-family: 'Rubik', sans-serif;
   @media (max-width: 768px) {
-    width:88px;
+    width:72px;
   }
 `;
 

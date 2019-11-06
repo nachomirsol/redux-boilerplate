@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
-import { makeSelectTodoList } from "./selectors";
 import { ParentDiv, WidgetContainer, MapContainer } from "./HomePage";
 import Widget from "components/Widget";
 import Map from "components/Map";
 import Chart from "components/Chart";
+import PropTypes from "prop-types";
+
 
 // This case we use the layout in the route instead of the component directly
 const HomePage = ({ intl }) => {
@@ -30,6 +31,10 @@ const HomePage = ({ intl }) => {
   );
 };
 
+HomePage.propTypes = {
+  intl: PropTypes.object.isRequired,
+}
+
 // This works
 /*const mapStateToProps = (state) => ({
     todoList:state.todoList.todoList
@@ -48,7 +53,7 @@ const mapStateToProps = (state) => ({
 
 // This works better in terms of performance using createStructuredSelector and selectors
 const mapStateToProps = createStructuredSelector({
-  todoList: makeSelectTodoList()
+  // todoList: makeSelectTodoList()
 });
 
 export default connect(mapStateToProps)(injectIntl(HomePage));

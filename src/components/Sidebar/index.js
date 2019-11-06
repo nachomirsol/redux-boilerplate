@@ -1,7 +1,9 @@
 import React from "react";
-import { SidebarWrapper } from "./Sidebar";
 import sidebarModel from './utils/sidebarModel';
 import SidebarItem from "./components/SidebarItem";
+import PropTypes from "prop-types";
+import { SidebarWrapper } from "./Sidebar";
+
 
 const Sidebar = ({ expanded }) => {
   return (
@@ -12,5 +14,9 @@ const Sidebar = ({ expanded }) => {
     </SidebarWrapper>
   );
 };
+
+Sidebar.propTypes = {
+  expanded: PropTypes.bool.isRequired,
+}
 
 export default Sidebar;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DeckGL from "deck.gl";
 import { MapWrapper } from "./Map";
 import { StaticMap } from "react-map-gl";
