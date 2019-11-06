@@ -10,7 +10,7 @@ import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from "styled-components";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faCheckSquare, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 import es_translations from './translations/es.json';
 import en_translations from './translations/en.json';
@@ -19,7 +19,7 @@ import theme from './themes/dark-theme';
 import './App.scss';
 
 // add font awesome icons to the library in order to import just used icons
-library.add(faBars, faCheckSquare, faEllipsisV);
+library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV);
 
 const routes = Routes();
 
