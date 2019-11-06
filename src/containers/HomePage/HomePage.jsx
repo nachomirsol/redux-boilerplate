@@ -15,6 +15,7 @@ const WidgetContainer = styled.div`
   }
   @media (max-width: 768px) {
     flex-direction: column;
+    height:auto;
   }
   height: 33%;
 `;
