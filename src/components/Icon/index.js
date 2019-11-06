@@ -6,11 +6,11 @@ const Icon = ({ name, size, color, custom }) => {
   if (custom) {
     const CustomIcon = customIcons[name];
     return (
-        <CustomIcon className="custom-icon"/>
+      <CustomIcon className="custom-icon" />
     );
   }
   return (
-      <FontAwesomeIcon className="icon" icon={name} size={size} color={color}></FontAwesomeIcon>
+    <FontAwesomeIcon className="icon" icon={name} size={size} color={color}></FontAwesomeIcon>
   );
 };
 

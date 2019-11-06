@@ -10,7 +10,7 @@ const SidebarItem = ({ expanded, item, intl, history }) => {
   const { alarms, icon, text, url } = item;
   return (
     <SidebarItemWrapper expanded={expanded} className={`${url === pathname ? 'selected' : ''}`} onClick={() => history.push(url)}>
-        <Icon name={icon} custom={true} />
+      <Icon name={icon} custom={true} />
       {expanded && (
         <span>
           {intl.formatMessage({ id: `app.components.Sidebar.${text}` })}
@@ -21,4 +21,4 @@ const SidebarItem = ({ expanded, item, intl, history }) => {
   );
 };
 
-export default compose (injectIntl, withRouter)(SidebarItem);
+export default compose(injectIntl, withRouter)(SidebarItem);

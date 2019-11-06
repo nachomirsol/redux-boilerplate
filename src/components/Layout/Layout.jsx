@@ -8,6 +8,9 @@ const ContainerWrapper = styled.div`
 const Container = styled.div`
   padding: 24px;
   width: 100%;
+  @media (max-width: 768px) {
+    overflow-y:scroll;
+  }
 `;
 
 const Page = styled.div`

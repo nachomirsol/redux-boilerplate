@@ -1,6 +1,9 @@
 {
     "app.components.Sidebar.Infraestructures": "Infraestructuras",
     "app.components.Sidebar.Services": "Servicios",
-    "app.components.Sidebar.EnergeticEfficiency": "Eficiencia energética", 
-    "app.components.Sidebar.LeakSearch": "Fugas"
+    "app.components.Sidebar.EnergeticEfficiency": "Eficiencia energética",
+    "app.components.Sidebar.LeakSearch": "Fugas",
+    "app.components.Widget.Infraestructures": "Infraestructuras",
+    "app.components.Widget.Operation": "Operación",
+    "app.components.Widget.WaterQuality": "Calidad Agua"
 }

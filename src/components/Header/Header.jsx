@@ -17,6 +17,11 @@ const HeaderWrapper = styled.div`
     0 1px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 0 24px;
+  @media (max-width: 768px) {
+    .fa-bars{
+      display:none;
+    }
+  }
   position: relative;
 `;
 
@@ -39,9 +44,9 @@ const IconWrapper = styled.span`
   }
   path {
     fill: ${props =>
-      props.gradient
-        ? "url(#my-cool-gradient) !important"
-        : props.theme.colors.logoColor};
+    props.gradient
+      ? "url(#my-cool-gradient) !important"
+      : props.theme.colors.logoColor};
     stroke-width: ${props => (props.gradient ? "0 !important" : "35px")};
   }
 `;
