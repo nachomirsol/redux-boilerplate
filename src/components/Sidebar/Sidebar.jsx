@@ -3,30 +3,39 @@ import styled from "styled-components/macro";
 const SidebarWrapper = styled.div`
   background-color: ${props => props.theme.colors.bgGray1};
   color: ${props => props.theme.colors.textWhite};
-  height: calc(100vh - 103px);
-  width: ${props => (props.expanded ? "320px" : "64px")};
-  padding: 24px;
-  transition: width 0.5s;
+  width: ${props => (props.expanded ? "320px" : "72px")};
+  padding: 24px 16px 16px;
+  transition: width 0.5s ease-in;
 `;
 
 const SidebarItemWrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: ${props => (props.expanded ? "normal" : "center")};
   padding: ${props => (props.expanded ? "8px 16px;" : "0")};
+  font-family: Rubik Regular;
+  font-size: 16px;
 
   .custom-icon {
     float: ${props => (props.expanded ? "left" : "none")};
     padding-right: ${props => (props.expanded ? "12px" : "0")};
-    height: ${props => (props.expanded ? "22px" : "32px")};
-    width: ${props => (props.expanded ? "22px" : "32px")};
+    height: 22px;
+    width: auto;
+    max-width: 32px;
+    max-height: 32px;
+    margin: 0;
+    position: static;
+    top: 0;
   }
+
+  height: ${props => (props.expanded ? "auto" : "42px")};
+  width: ${props => (props.expanded ? "auto" : "42px")};
   cursor: pointer;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   border-radius: 20px;
-  /* min-width: 40px;
-  min-height: 40px; */
+
   &.selected {
     background-color: ${props => props.theme.colors.primaryColor};
   }
@@ -39,8 +48,10 @@ const Alarm = styled.span`
   background-color: ${props => props.theme.colors.primaryColor};
   color: ${props => props.theme.colors.textWhite};
   margin-left: 10px;
-  padding: 2px 10px;
+  padding: 2px 8px;
   border-radius: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export { SidebarWrapper, SidebarItemWrapper, Alarm };
