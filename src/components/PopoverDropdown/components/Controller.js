@@ -17,8 +17,6 @@ const PopoverController = props => {
   useEffect(() => {
     if (isOpen) {
       window.addEventListener("click", close);
-    } else {
-      window.removeEventListener("click", close);
     }
 
     return () => window.removeEventListener("click", close);
@@ -33,9 +31,7 @@ const PopoverController = props => {
   };
 
   const open = () => {
-    setTimeout(() => {
-      setIsOpen(!isOpen);
-    }, 0);
+    setIsOpen(!isOpen);
   };
 
   const inputChildren = React.Children.map(children, child => {

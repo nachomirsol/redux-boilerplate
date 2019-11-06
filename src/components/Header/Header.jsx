@@ -23,6 +23,9 @@ const HeaderWrapper = styled.div`
 const LogoWrapper = styled.div`
   position: absolute;
   left: 50%;
+  @media (max-width: 992px) {
+    position: static;
+  }
   path {
     fill: ${props => props.theme.colors.logoColor};
   }
