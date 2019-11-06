@@ -9,8 +9,7 @@ const SidebarItem = ({ expanded, item, intl, history }) => {
   const { location: { pathname } } = history;
   const { alarms, icon, text, url } = item;
   return (
-    // onClick={() => history.push(url)}
-    <SidebarItemWrapper expanded={expanded} className={`${url === pathname ? 'selected' : ''}`}>
+    <SidebarItemWrapper expanded={expanded} className={`${url === pathname ? 'selected' : ''}`} onClick={() => history.push(url)}>
         <Icon name={icon} custom={true} />
       {expanded && (
         <span>
