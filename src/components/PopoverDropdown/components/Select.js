@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
-const PopoverSelect = props => {
+const PopoverSelect = ({ setPos, children, open }) => {
   const reference = useRef(null);
-  const { setPos, children, open } = props;
-
   const updatePostion = () => setPos(reference.current.getBoundingClientRect());
 
   useEffect(() => {

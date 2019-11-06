@@ -4,7 +4,6 @@ import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import './chart.scss';
 
-
 const options = {
 
     chart: {
@@ -128,10 +127,6 @@ const options = {
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: false,
-                            format: '<b>{point.name}</b>:         {point.percentage:.1f} %',
-                            style: {
-                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                            }
                         }
                     }
                 }

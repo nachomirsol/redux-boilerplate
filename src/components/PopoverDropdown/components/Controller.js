@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { PopoverWrapper, PopoverBody, PopoverArrow } from "../PopoverDropdown";
 
 const portalContainer = document.getElementById("another-root");
 
-const PopoverController = props => {
-  const { children } = props;
-  const ref = useRef(null);
+const PopoverController = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({
     position: "absolute",
@@ -15,6 +13,7 @@ const PopoverController = props => {
   });
 
   useEffect(() => {
+
     if (isOpen) {
       window.addEventListener("click", close);
     }
@@ -34,7 +33,7 @@ const PopoverController = props => {
     setIsOpen(!isOpen);
   };
 
-  const inputChildren = React.Children.map(children, child => {
+  const childFn = (child) => {
     if (child.type.displayName === "Select") {
       return React.cloneElement(child, { open, setPos });
     } else {
@@ -49,13 +48,15 @@ const PopoverController = props => {
             <PopoverArrow width="14" height="7">
               <polygon points="0,7 7,0, 14,7"></polygon>
             </PopoverArrow>
-            <PopoverBody> {React.cloneElement(child, { ref })}</PopoverBody>
+            <PopoverBody> {React.cloneElement(child)}</PopoverBody>
           </PopoverWrapper>,
           portalContainer
         )
       );
     }
-  });
+  }
+
+  const inputChildren = React.Children.map(children, childFn);
   return inputChildren;
 };
 
