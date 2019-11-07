@@ -17,6 +17,13 @@ const WidgetHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  .icons{
+    display:flex;
+    svg{
+      color: ${props => props.theme.colors.textWhite};
+      margin:8px;
+    }
+  }
 `;
 
 const WidgetContent = styled.div`

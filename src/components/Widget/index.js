@@ -8,7 +8,10 @@ const Widget = ({ title, children }) => {
     <WidgetWrapper className="widget" bg="bgGray1">
       <WidgetHeader>
         <div>{title}</div>
-        <div className="icons"><Icon name={"ellipsis-v"}></Icon></div>
+        <div className="icons">
+          <Icon name={"expand-arrows-alt"}></Icon>
+          <Icon name={"ellipsis-v"}></Icon>
+        </div>
       </WidgetHeader>
       <WidgetContent>{children}</WidgetContent>
     </WidgetWrapper>
