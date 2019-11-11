@@ -5,32 +5,32 @@ const routes = [
   {
     path: "/",
     component: HomePage,
-    breadcrumbs: [{ url:'/', label: 'Home'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }],
   },
   {
     path: "/map",
     component: MapPage,
-    breadcrumbs: [{ url:'/', label: 'Home'}, { url:'/', label: 'Map'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '/', label: 'Map' }],
   },
   {
     path: "/infraestructures",
     component: HomePage,
-    breadcrumbs: [{ url:'/', label: 'Home'}, { url:'', label: 'Infraestructures'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Infraestructures' }],
   },
   {
     path: "/energetic-efficiency",
     component: HomePage,
-    breadcrumbs: [{ url:'/', label: 'Home'}, { url:'', label: 'Energetic Efficiency'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Energetic Efficiency' }],
   },
   {
     path: "/leakSearch",
     component: HomePage,
-    breadcrumbs: [{ url:'/', label: 'Home'}, { url:'', label: 'Leak Search'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Leak Search' }],
   },
   {
     path: "/portal-users",
     component: HomePage,
-    breadcrumbs: [{ url:'/', label: 'Home'}, { url:'', label: 'Administration Panel'}, { url:'', label: 'Users'}],
+    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Administration Panel' }, { url: '', label: 'Users' }],
   }
 ];
 

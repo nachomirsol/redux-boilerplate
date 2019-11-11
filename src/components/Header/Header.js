@@ -13,16 +13,16 @@ const loginPage = { userName: "Mateo" };
 const Header = ({ handleSideBar, breadcrumbs }) => {
   return (
     <div className="header">
-     <div className="header__leftMenu">
-      <span
-        className="icon-wrapper menu-bars"
-        onClick={() => handleSideBar()}
-      >
-        <Icon name="bars" size="lg"></Icon>
-      </span>
+      <div className="header__leftMenu">
+        <span
+          className="icon-wrapper menu-bars"
+          onClick={() => handleSideBar()}
+        >
+          <Icon name="bars" size="lg"></Icon>
+        </span>
 
-      <Breadcrumb breadcrumbs={breadcrumbs} />
-     </div>
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+      </div>
 
       <div className="logo">
         <LogoGoAigua />
