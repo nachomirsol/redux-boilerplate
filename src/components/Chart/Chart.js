@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Highcharts from 'highcharts/highstock';
 import PropTypes from 'prop-types';

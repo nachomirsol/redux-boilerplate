@@ -1,6 +1,5 @@
 import React from "react";
 import Proptype from "prop-types";
-import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./breadcrumb.scss";
 
@@ -39,6 +38,5 @@ Breadcrumb.propTypes = {
   breadcrumbs: Proptype.arrayOf(Proptype.object).isRequired
 };
 
-const mapStateToProps = ({ poblation }) => ({ poblation });
 
-export default connect(mapStateToProps)(Breadcrumb);
+export default Breadcrumb;

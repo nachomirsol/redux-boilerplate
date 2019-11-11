@@ -2,19 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
-import { ParentDiv, WidgetContainer, MapContainer } from "./homePageStyled";
 import Widget from "components/Widget";
 import Map from "components/Map";
 import { Chart } from "components/Chart";
 import { chartData } from 'mockData/chartData';
 import PropTypes from "prop-types";
 
+import "./homePage.scss";
+
 
 // This case we use the layout in the route instead of the component directly
 const HomePage = ({ intl }) => {
   return (
-    <ParentDiv>
-      <WidgetContainer>
+    <div className="homePage homePage__wrapper">
+      <div className="widget__container">
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Infraestructures" })}>
           <Chart type={'pie'} title={''} subtitle={''} data={chartData} />
         </Widget>
@@ -24,11 +25,11 @@ const HomePage = ({ intl }) => {
         <Widget title={intl.formatMessage({ id: "app.components.Widget.WaterQuality" })}>
           NO DATA
         </Widget>
-      </WidgetContainer>
-      <MapContainer>
+      </div>
+      <div className="map__container">
         <Map></Map>
-      </MapContainer>
-    </ParentDiv>
+      </div>
+    </div>
   );
 };
 

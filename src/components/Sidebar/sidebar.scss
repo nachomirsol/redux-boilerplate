@@ -6,7 +6,7 @@
     background-color: themed("panelBackgroundColor");
   }
   padding: $spacing-s $spacing-xs;
-  transition: width 0.5s;
+  transition: width 0s;
   font-family: "Rubik", sans-serif;
   width: 40px;
   @media (max-width: 768px) {
