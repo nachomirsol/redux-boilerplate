@@ -9,7 +9,6 @@ const modalRoot = document.getElementById("another-root");
 const Modal = ({ children }) => {
     const elRef = useRef(null);
     if (!elRef.current) {
-
         elRef.current = document.createElement("div");
     }
 

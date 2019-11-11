@@ -1,0 +1,82 @@
+@import "../../styles/styles-utils.scss";
+
+.header {
+  @include themify($themes) {
+    color: themed("textColorBase");
+    background-color: themed("panelBackgroundColor");
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  & .link {
+    a {
+      @include themify($themes) {
+        color: themed("textColorBase");
+      }
+    }
+  }
+  height: 64px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
+    0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 0 $spacing-s;
+  position: relative;
+  .menu-bars {
+    cursor: "pointer";
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 45%;
+  @media (max-width: 992px) {
+    position: static;
+  }
+  path {
+    @include themify($themes) {
+      fill: themed("logoColor");
+    }
+  }
+}
+
+.icon-wrapper {
+  cursor: pointer;
+  svg {
+    max-width: 32px;
+    max-height: 32px;
+    path {
+      @include themify($themes) {
+        fill: themed("textColorBase");
+      }
+    }
+  }
+  &.gradient {
+    path {
+      fill: url(#my-cool-gradient) !important;
+      stroke-width: 0 !important;
+    }
+  }
+}
+.header__leftMenu {
+  display: flex;
+  align-items: center;
+}
+
+.header__rightMenu {
+  display: flex;
+  align-items: center;
+  svg {
+    path {
+      fill: transparent !important;
+      @include themify($themes) {
+        stroke: themed("textColorBase");
+      }
+      stroke-width: 35px;
+    }
+    margin-right: $spacing-xs;
+  }
+}

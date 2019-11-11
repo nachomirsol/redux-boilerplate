@@ -1,8 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 
-
-const PopoverSelect = ({ setPos, children, open }) => {
+const PopoverTrigger = ({ setPos, children, open }) => {
   const reference = useRef(null);
 
   const updatePostion = useCallback(() => {
@@ -23,8 +22,8 @@ const PopoverSelect = ({ setPos, children, open }) => {
   return React.cloneElement(children, { onClick: open, ref: reference });
 };
 
-PopoverSelect.displayName = "Select";
-PopoverSelect.propTypes = {
+PopoverTrigger.displayName = "Trigger";
+PopoverTrigger.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -33,4 +32,4 @@ PopoverSelect.propTypes = {
   open: PropTypes.func,
 };
 
-export default PopoverSelect;
+export default PopoverTrigger;

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import { PopoverWrapper, PopoverBody, PopoverArrow } from "../PopoverDropdown";
-
+import "../popover.scss";
 
 const portalContainer = document.getElementById("another-root");
 
@@ -36,22 +35,21 @@ const PopoverController = ({ children }) => {
   };
 
   const inputChildren = React.Children.map(children, child => {
-    if (child.type.displayName === "Select") {
+    if (child.type.displayName === "Trigger") {
       return React.cloneElement(child, { open, setPos });
     } else {
       return (
         isOpen &&
         ReactDOM.createPortal(
-          <PopoverWrapper
+          <div className="popover__wrapper"
             style={style}
-            className="popover"
             onClick={e => e.stopPropagation()}
           >
-            <PopoverArrow width="14" height="7">
+            <svg className="popover__arrow" width="14" height="7">
               <polygon points="0,7 7,0, 14,7"></polygon>
-            </PopoverArrow>
-            <PopoverBody> {child}</PopoverBody>
-          </PopoverWrapper>,
+            </svg>
+            <div className="popover__body"> {child}</div>
+          </div>,
           portalContainer
         )
       );

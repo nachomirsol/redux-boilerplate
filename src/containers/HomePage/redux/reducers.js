@@ -29,4 +29,4 @@ const todoListReducer = (state = initialState, action) => {
 
 }
 
-export default todoListReducer
+export default todoListReducer;

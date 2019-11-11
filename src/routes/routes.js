@@ -1,19 +1,26 @@
 import * as React from "react";
 
 import { Route, Switch } from "react-router-dom";
-import { URL } from '../utils/const';
-import HomePage from '../containers/HomePage';
-import Layout from '../components/Layout';
-import MapPage from '../containers/MapPage';
-// import MenuPage from '../containers/MenuPage';
+import Layout from "components/Layout";
+import routes from "./config";
 
 export const Routes = () => (
-    <Switch>
-        <Layout>
-            <Route exact={true} path={URL.home} component={HomePage} />
-            <Route exact={true} path={URL.map} component={MapPage} />
-            <Route exact={true} path={URL.infraestructures} component={HomePage} />
-            {/* <Route exact={true} path={URL.menu} component={MenuPage} /> */}
-        </Layout>
-    </Switch>
+  <Switch>
+    {routes &&
+      Array.isArray(routes) &&
+      routes.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            exact={true}
+            path={route.path}
+            render={props => (
+              <Layout breadcrumbs={route.breadcrumbs}>
+                <route.component {...props} />
+              </Layout>
+            )}
+          />
+        );
+      })}
+  </Switch>
 );
