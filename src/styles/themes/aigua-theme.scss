@@ -1,0 +1,29 @@
+/*
+ * Theme definitions
+ */
+
+ $themes: (
+    light: (
+      bodyBackgroundColor: $color-background-light-3,
+      panelBackgroundColor: $color-background-light-2,
+      panelHeaderBackgroundColor:$color-background-light-4,
+      sidenavItemBackgroundColor: $color-background-light-3,
+      textColorBase: $color-text-black-base,
+      textColorWeaker: $color-text-black-brighter-1,
+      textColorWeakest: $color-text-black-brighter-2,
+      tabsGradient: linear-gradient(to bottom, rgba($color-background-light-4, .0) 50%, rgba($color-background-light-4, 1) 100%),
+      logoColor: $color-text-black-base,
+    ),
+    dark: (
+      bodyBackgroundColor: $color-background-dark-4,
+      panelBackgroundColor: $color-background-dark-2,
+      panelHeaderBackgroundColor:$color-background-dark-5,
+      widgetHeaderColor:$color-background-dark-3,
+      sidenavItemBackgroundColor: $color-background-dark-4,
+      textColorBase: $color-text-white-base,
+      textColorWeaker: $color-text-white-darker-1,
+      textColorWeakest: $color-text-white-darker-2,
+      tabsGradient: linear-gradient(to bottom, rgba($color-background-dark-5, .0) 50%, rgba($color-background-dark-5, 1) 100%),
+      logoColor: $color-text-white-base,
+    ),
+  );

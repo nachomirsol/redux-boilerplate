@@ -1,24 +1,43 @@
 import React from "react";
 import { injectIntl } from "react-intl";
-import { SidebarItemWrapper, Alarm } from "../Sidebar";
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Icon from "components/Icon";
+import PropTypes from "prop-types";
 
 const SidebarItem = ({ expanded, item, intl, history }) => {
-  const { location: { pathname } } = history;
+  const {
+    location: { pathname }
+  } = history;
   const { alarms, icon, text, url } = item;
   return (
-    <SidebarItemWrapper expanded={expanded} className={`${url === pathname ? 'selected' : ''}`} onClick={() => history.push(url)}>
-      <Icon name={icon} custom={true} />
-      {expanded && (
-        <span>
-          {intl.formatMessage({ id: `app.components.Sidebar.${text}` })}
-        </span>
-      )}
-      {expanded && alarms > 0 && <Alarm>{alarms}</Alarm>}
-    </SidebarItemWrapper>
+    <Link to={url}>
+      <div
+        className={`sidebar__items 
+          ${expanded ? "sidebar__items--expanded" : ""}
+          ${url === pathname ? "selected" : ""}`}
+      >
+        <Icon name={icon} custom={true} />
+        {expanded && (
+          <span>
+            {intl.formatMessage({ id: `app.components.Sidebar.${text}` })}
+          </span>
+        )}
+        {expanded && alarms > 0 && <span className="sidebar__alarms">{alarms}</span>}
+      </div>
+    </Link>
   );
 };
 
-export default compose(injectIntl, withRouter)(SidebarItem);
+SidebarItem.propTypes = {
+  expanded: PropTypes.bool.isRequired,
+  item: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
+};
+
+export default compose(
+  injectIntl,
+  withRouter
+)(SidebarItem);
