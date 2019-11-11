@@ -1,4 +1,4 @@
-export const pieChartLegend = {
+export const pieChartLegendStyle = {
     backgroundColor: 'transparent',
     align: 'left',
     layout: 'vertical',
@@ -19,7 +19,7 @@ export const pieChartLegend = {
     }
 }
 
-export const barChartLegend = {
+export const barChartLegendStyle = {
     backgroundColor: 'transparent',
     align: 'left',
     layout: 'vertical',
@@ -40,7 +40,7 @@ export const barChartLegend = {
     }
 }
 
-export const areaChartLegend = {
+export const areaChartLegendStyle = {
     backgroundColor: 'transparent',
     align: 'left',
     layout: 'vertical',
@@ -59,4 +59,29 @@ export const areaChartLegend = {
             color: '#C0C0C0'
         }
     }
+}
+
+export const responsiveChartStyle = {
+    rules: [{
+        condition: {
+            maxWidth: 300
+        },
+        chartOptions: {
+            chart: {
+                height: '100%'
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false,
+                    }
+                }
+            }
+        },
+    }]
 }

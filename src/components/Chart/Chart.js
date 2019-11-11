@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Highcharts from 'highcharts/highstock';
 import PropTypes from 'prop-types';
 import HighchartsReact from 'highcharts-react-official';
-import { pieChartLegend, barChartLegend, areaChartLegend } from './chartLegend';
+import { pieChartLegendStyle, barChartLegendStyle, areaChartLegendStyle, responsiveChartStyle } from './config';
 import './chart.scss';
 
 const Chart = ({ type, title, subtitle, xAxis, yAxis, data }) => {
@@ -44,33 +44,10 @@ const Chart = ({ type, title, subtitle, xAxis, yAxis, data }) => {
                 }
             }
         },
-        legend: type === 'pie' ? pieChartLegend : (type === 'bar' ? barChartLegend : areaChartLegend),
+        legend: type === 'pie' ? pieChartLegendStyle : (type === 'bar' ? barChartLegendStyle : areaChartLegendStyle),
         series: data,
 
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 300
-                },
-                chartOptions: {
-                    chart: {
-                        height: '100%'
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: false,
-                            }
-                        }
-                    }
-                },
-            }]
-        }
+        responsive: responsiveChartStyle
     };
 
     return (
