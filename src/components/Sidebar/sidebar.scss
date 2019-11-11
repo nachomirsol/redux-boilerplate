@@ -21,6 +21,7 @@
 .sidebar__items {
   font-family: Rubik Regular;
   font-size: $spacing-xs;
+  user-select: none; 
   display: flex;
   align-items: center;
   justify-content: center;

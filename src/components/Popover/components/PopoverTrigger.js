@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 
-const PopoverTrigger = ({ setPos, children, open }) => {
+const PopoverTrigger = ({ setPosition, children, open }) => {
   const reference = useRef(null);
 
   const updatePostion = useCallback(() => {
-      setPos(reference.current.getBoundingClientRect());
-    }, [setPos]);
+      setPosition(reference.current.getBoundingClientRect());
+    }, [setPosition]);
 
   useEffect(() => {
     updatePostion();
@@ -28,7 +28,7 @@ PopoverTrigger.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired,
-  setPos: PropTypes.func,
+  setPosition: PropTypes.func,
   open: PropTypes.func,
 };
 

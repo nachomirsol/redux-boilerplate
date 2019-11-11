@@ -4,9 +4,9 @@ import Icon from "components/Icon";
 import PropTypes from 'prop-types';
 
 
-const HeaderIcon = ({ gradient, iconName, children }) => {
+const HeaderIcon = ({ gradient, iconName, children, place }) => {
   return (
-    <PopoverController>
+    <PopoverController place={place}>
       <PopoverTrigger>
         <span className={`icon-wrapper ${gradient ? 'gradient' : ''}`}>
           <Icon  name={iconName} size="lg"></Icon>
@@ -19,6 +19,7 @@ const HeaderIcon = ({ gradient, iconName, children }) => {
 
 HeaderIcon.propTypes = {
   gradient: PropTypes.bool,
+  place: PropTypes.string,
   iconName: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
