@@ -1,5 +1,10 @@
+
+@import '../../styles/style-utils.scss';
 .header{
-    background-color:#af7eeb;
+    @include themify($themes) {
+        background-color: themed('test');  
+    }
+    
     color:#fff;
     padding:24px;
     display:flex;
