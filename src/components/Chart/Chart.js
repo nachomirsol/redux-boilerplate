@@ -51,7 +51,7 @@ const Chart = ({ type, title, subtitle, xAxis, yAxis, data }) => {
     };
 
     return (
-        <div className="charty">
+        <div className="chart chart__content">
             <HighchartsReact
                 highcharts={Highcharts}
                 options={options}

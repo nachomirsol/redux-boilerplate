@@ -10,7 +10,7 @@ export const pieChartLegendStyle = {
     itemStyle: {
         color: '#E0E0E3',
         fontWeight: 300,
-        fontSize: '1em'
+        fontSize: '1.25em'
     },
     title: {
         style: {
