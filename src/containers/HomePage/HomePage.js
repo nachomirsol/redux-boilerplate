@@ -1,15 +1,17 @@
 import React from "react";
+/*Librarys*/
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
+/* Components */
 import Widget from "components/Widget";
 import Map from "components/Map";
 import { Chart } from "components/Chart";
+/* Mock data*/
 import { chartData } from 'mockData/chartData';
-import PropTypes from "prop-types";
-
+/* Styles */
 import "./homePage.scss";
-
 
 // This case we use the layout in the route instead of the component directly
 const HomePage = ({ intl }) => {
