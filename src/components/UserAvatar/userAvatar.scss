@@ -1,6 +1,7 @@
 @import "../../styles/styles-utils.scss";
 
 .user-avatar__wrapper {
+  user-select: none;   
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;

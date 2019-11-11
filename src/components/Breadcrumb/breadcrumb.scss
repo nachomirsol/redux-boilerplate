@@ -17,10 +17,11 @@
   @include themify($themes) {
     color: themed("textColorWeaker");
   }
-  &:active {
-    font-weight: $font-weight-semi-bold;
-    @include themify($themes) {
-      color: themed("textColorBase");
-    }
+}
+
+.breadcrumb__item--actived {
+  font-weight: $font-weight-regular;
+  @include themify($themes) {
+    color: themed("textColorBase");
   }
 }
