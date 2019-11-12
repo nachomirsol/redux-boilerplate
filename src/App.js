@@ -16,7 +16,9 @@ import {
   faBell,
   faSignOutAlt,
   faTh,
-  faEllipsisV
+  faEllipsisV,
+  faBolt,
+  faBroadcastTower
 } from "@fortawesome/free-solid-svg-icons";
 
 import es_translations from "./translations/es.json";
@@ -24,7 +26,7 @@ import en_translations from "./translations/en.json";
 import "styles/main.scss";
 
 // add font awesome icons to the library in order to import just used icons
-library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV);
+library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower);
 
 const routes = Routes();
 

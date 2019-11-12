@@ -1,0 +1,77 @@
+@import "../../../styles/styles-utils.scss";
+     
+    .overallInfoWidgetContent__alarms-container{
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        .total-alarms{
+            display:flex;
+            justify-content:center;
+            padding:8px;
+            span{
+                font-family: $font-primary;
+                font-size:48px;
+                font-weight:bold;
+                padding:4px;
+                &.high-severity-alarm{
+                    @include themify($themes) {
+                        border-bottom: 3px solid themed("alertColor");
+                    }
+                }
+                &.mid-severity-alarm{
+                    @include themify($themes) {
+                        border-bottom: 3px solid themed("warningColor");
+                    }
+                }
+                
+                @include themify($themes) {
+                    color: themed("textColorBase");
+                }
+            }
+        }
+        .alarm-range{
+            span{
+                font-size:24px;
+                @include themify($themes) {
+                    color: themed("rangeColor");
+                }
+            }
+            
+        }
+        .warning-icons{
+            display:flex;
+            justify-content:center;
+            padding:8px;
+            .icon-wrapper{
+                padding: 0 24px 0 24px
+            }
+            .icon-item{
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+                align-items:center;
+                @include themify($themes) {
+                    color: themed("textColorWeaker");
+                }
+                span{
+                    padding-top:4px;
+                    padding-bottom:4px;
+                    &.icon-text{
+                        font-size:12px;
+                    }
+                }
+                svg {
+                    path {
+                      fill: transparent !important;
+                      @include themify($themes) {
+                        stroke: themed("textColorWeaker");
+                      }
+                      stroke-width: 35px;
+                    }
+                  }
+            }
+
+        }
+    }
