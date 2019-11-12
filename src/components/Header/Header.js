@@ -61,7 +61,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
 
         <UserAvatar loginPage={loginPage}></UserAvatar>
 
-        <HeaderIcon iconName="th" gradient={true}>
+        <HeaderIcon iconName="th" gradient={true} place="left">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
