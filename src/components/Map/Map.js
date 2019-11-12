@@ -1,46 +1,47 @@
 import React from "react";
 import DeckGL from "deck.gl";
 import { StaticMap } from "react-map-gl";
-import { PolygonLayer } from "@deck.gl/layers";
-import { data } from './data';
+import { GeoJsonLayer } from "@deck.gl/layers";
+import data from '../../mockData/geojsonMunicipios.json';
 import "./map.scss";
 
 const Map = () => {
-    const layer = [
-        new PolygonLayer({
-            id: "polygon-layer",
+    const layers = [
+        new GeoJsonLayer({
+            id: `geojson-layer`,
             data,
             pickable: true,
-            stroked: true,
+            stroked: false,
             filled: true,
-            wireframe: true,
-            lineWidthMinPixels: 1,
-            getPolygon: d => d.contour,
-            getElevation: d => d.population / d.area / 10,
-            getFillColor: d => [d.population / d.area / 60, 140, 0, 100],
-            getLineColor: [80, 80, 80],
+            extruded: true,
+            lineWidthScale: 20,
+            lineWidthMinPixels: 2,
+            getFillColor: [220, 60, 80, 50],
+            getLineColor: [160, 160, 180],
+            getRadius: 100,
             getLineWidth: 1,
-            onHover: () => {
-                //   const tooltip = `${object.zipcode}\nPopulation: ${object.population}`;
-                /* Update tooltip
-                   http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
+            getElevation: 30,
+            onHover: ({ object, x, y }) => {
+                /* const tooltip = object.properties.name || object.properties.station;
+                Update tooltip
+                    http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
                 */
             }
         })
-    ];
+    ]
     return (
-        <div className="map-wrapper">
+        <div className="map map__map-wrapper">
             <DeckGL
                 initialViewState={{
-                    longitude: -122.4011597,
-                    latitude: 37.7820243,
-                    zoom: 10
+                    longitude: -0.2,
+                    latitude: 38.98,
+                    zoom: 12
                 }}
                 controller={true}
-                layers={layer} // layer here
+                layers={[layers]} // layer here
             >
                 <StaticMap
-                    mapStyle="mapbox://styles/mapbox/streets-v9"
+                    mapStyle="mapbox://styles/mapbox/light-v10"
                     mapboxApiAccessToken="pk.eyJ1IjoiY2FyY2FyYmUiLCJhIjoiY2psbnB6NGRyMWdxOTNrbmpkeGhyZXlwbiJ9.dNyXXZ3bvAkE9S9Zm5Z8wA"
                 />
             </DeckGL>

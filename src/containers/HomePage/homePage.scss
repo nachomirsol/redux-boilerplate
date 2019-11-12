@@ -15,7 +15,7 @@
         }
 
         @media (min-width:992px) and (max-width:1366px){
-            height:40%;
+            height:auto;
         }
         
         @media (max-width: 768px) {
@@ -27,7 +27,7 @@
     .map__container{
         height:66%;
         @media (min-width:992px) and (max-width:1366px){
-            height:60%;
+            height:48%;
         }
     }
 }
