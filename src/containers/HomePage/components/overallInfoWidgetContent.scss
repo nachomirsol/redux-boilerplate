@@ -45,13 +45,14 @@
             justify-content:center;
             padding:8px;
             .icon-wrapper{
-                padding: 0 24px 0 24px
+                padding: 0 32px 0 32px
             }
             .icon-item{
                 display:flex;
                 flex-direction:column;
                 justify-content:space-between;
                 align-items:center;
+                width:80px;
                 @include themify($themes) {
                     color: themed("textColorWeaker");
                 }

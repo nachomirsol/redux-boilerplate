@@ -20,7 +20,12 @@ const HomePage = ({ intl }) => {
     <div className="homePage homePage__wrapper">
       <div className="widget__container">
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Infraestructures" })}>
-          <Chart type={'pie'} title={''} subtitle={''} data={chartData} />
+          {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
+          <OverallInfoWidgetContent
+            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
+            minRange={""}
+            maxRange={""}
+          />
         </Widget>
 
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Operation" })}>
