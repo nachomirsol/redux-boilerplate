@@ -18,6 +18,15 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
           className="icon-wrapper menu-bars"
           onClick={() => handleSideBar()}
         >
+           {/* <HeaderIcon iconName="bars" place="right">
+          <div>
+            {" "}
+            <p>fgsfdsfdsfds</p>
+            <p>fgsfdsfdsfds</p>
+            <p>fgsfdsfdsfds</p>
+            <p>fgsfdsfdsfds</p>
+          </div>
+        </HeaderIcon> */}
           <Icon name="bars" size="lg"></Icon>
         </span>
 

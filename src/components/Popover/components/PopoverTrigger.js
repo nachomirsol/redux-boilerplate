@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 
-const PopoverTrigger = ({ setPosition, children, open }) => {
+const PopoverTrigger = ({ children, open, setPosition }) => {
   const reference = useRef(null);
 
   const updatePostion = useCallback(() => {
@@ -17,7 +17,7 @@ const PopoverTrigger = ({ setPosition, children, open }) => {
     return () => {
       window.removeEventListener("resize", updatePostion);
     };
-  });
+  }, [updatePostion]);
 
   return React.cloneElement(children, { onClick: open, ref: reference });
 };

@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useCallback,
-  useRef
-} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import "../popover.scss";
@@ -12,49 +6,24 @@ import "../popover.scss";
 const portalContainer = document.getElementById("another-root");
 
 const PopoverController = ({ children, place }) => {
-  const targetRef = useRef(null);
-
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({
     position: "absolute",
     top: 0,
     left: 0
   });
+  const [offsetStyle, setOffsetStyle] = useState(null);
 
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener("click", close);
-    }
+  const close = () => {
+    setIsOpen(false);
+  };
 
-    return () => window.removeEventListener("click", close);
-  }, [isOpen]);
+  const open = () => {
+    setTimeout(() => {
+      setIsOpen(!isOpen);
+    }, 0);
+  };
 
-  useLayoutEffect(() => {
-    if (targetRef.current) {
-      // setTargetWidth(targetRef.current.offsetWidth);
-      setPlace(targetRef.current.offsetWidth);
-    }
-  });
-
-  const setPlace = useCallback(
-    targetWidth => {
-      switch (place) {
-        case "right":
-          {
-            setStyle(s => ({ ...s, left: s.left + targetWidth / 2 }));
-          }
-          break;
-        case "left":
-          {
-            setStyle(s => ({ ...s, left: s.left - targetWidth / 2 }));
-          }
-          break;
-        default:
-          break;
-      }
-    },
-    [place, setStyle]
-  );
   const setPosition = useCallback(
     ({ left, top, height }) => {
       setStyle(s => ({ ...s, left, top: top + height }));
@@ -62,12 +31,41 @@ const PopoverController = ({ children, place }) => {
     [setStyle]
   );
 
-  const close = () => {
-    setIsOpen(false);
-  };
+  const measuredRef = useCallback(
+    node => {
+      if (node !== null) {
+        const targetWidth = node.getBoundingClientRect().width;
+        switch (place) {
+          case "left":
+            setOffsetStyle({ ...style, left: style.left - targetWidth / 2 });
+            break;
+          case "right":
+            setOffsetStyle({ ...style, left: style.left + targetWidth / 2 });
+            break;
+          default:
+            break;
+        }
+      }
+    },
+    [style, place]
+  );
 
-  const open = () => {
-    setIsOpen(!isOpen);
+  useEffect(() => {
+    if (isOpen) {
+      window.addEventListener("click", close);
+    }
+    return () => window.removeEventListener("click", close);
+  }, [isOpen]);
+
+  const getArrowPosition = () => {
+    switch (place) {
+      case "left":
+        return { left: "90%" };
+      case "right":
+        return { left: "0%" };
+      default:
+        break;
+    }
   };
 
   const inputChildren = React.Children.map(children, child => {
@@ -79,14 +77,19 @@ const PopoverController = ({ children, place }) => {
         ReactDOM.createPortal(
           <div
             className="popover__wrapper"
-            style={style}
+            style={offsetStyle ? offsetStyle : style}
             onClick={e => e.stopPropagation()}
           >
-            <svg className="popover__arrow" width="14" height="7">
+            <svg
+              className="popover__arrow"
+              width="14"
+              height="7"
+              style={getArrowPosition()}
+            >
               <polygon points="0,7 7,0, 14,7"></polygon>
             </svg>
             <div className="popover__body">
-              {React.cloneElement(child, { ref: targetRef })}
+              {React.cloneElement(child, { ref: measuredRef })}
             </div>
           </div>,
           portalContainer
