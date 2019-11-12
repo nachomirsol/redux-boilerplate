@@ -6,6 +6,7 @@ import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
 /* Components */
 import Widget from "components/Widget";
+import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent";
 import Map from "components/Map";
 import { Chart } from "components/Chart";
 /* Mock data*/
@@ -18,14 +19,31 @@ const HomePage = ({ intl }) => {
   return (
     <div className="homePage homePage__wrapper">
       <div className="widget__container">
-        <Widget title={intl.formatMessage({ id: "app.components.Widget.Infraestructures" })}>
-          <Chart type={'pie'} title={''} subtitle={''} data={chartData} />
+        <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Infraestructures" })}>
+          {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
+          <OverallInfoWidgetContent
+            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
+            minRange={""}
+            maxRange={""}
+          />
         </Widget>
-        <Widget title={intl.formatMessage({ id: "app.components.Widget.Operation" })}>
-          NO DATA
+
+        <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Operation" })}>
+          <OverallInfoWidgetContent
+            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
+            minRange={""}
+            maxRange={""}
+          />
+          {/** Consider this icosn data inside a config file */}
         </Widget>
-        <Widget title={intl.formatMessage({ id: "app.components.Widget.WaterQuality" })}>
-          NO DATA
+
+        <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.WaterQuality" })}>
+          <OverallInfoWidgetContent
+            icons={[{ name: "broadcastTower", text: "Comunicación" }, { name: "bell", text: "Alarmas" }]}
+            minRange={"0.45"}
+            maxRange={"0.96"}
+          />
+          {/** Consider this icosn data inside a config file */}
         </Widget>
       </div>
       <div className="map__container">

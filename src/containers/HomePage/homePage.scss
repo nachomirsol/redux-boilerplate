@@ -1,3 +1,5 @@
+@import "../../styles/styles-utils.scss";
+
 .homePage__wrapper{
     height: 100%;
     .widget__container{
@@ -11,6 +13,11 @@
         .widget:not(:last-child) {
             margin-right: 16px;
         }
+
+        @media (min-width:992px) and (max-width:1366px){
+            height:40%;
+        }
+        
         @media (max-width: 768px) {
             flex-direction: column;
             height:auto;
@@ -19,5 +26,8 @@
     }
     .map__container{
         height:66%;
+        @media (min-width:992px) and (max-width:1366px){
+            height:60%;
+        }
     }
 }
