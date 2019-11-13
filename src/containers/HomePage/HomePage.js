@@ -30,7 +30,7 @@ const HomePage = ({ intl }) => {
 
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Operation" })}>
           <OverallInfoWidgetContent
-            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
+            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "fugas" }]}
             minRange={""}
             maxRange={""}
           />

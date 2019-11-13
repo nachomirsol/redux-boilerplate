@@ -69,14 +69,18 @@
 .header__rightMenu {
   display: flex;
   align-items: center;
-  svg {
-    path {
-      fill: transparent !important;
-      @include themify($themes) {
-        stroke: themed("textColorBase");
+  .icon-wrapper{
+    svg {
+      padding: 0px 4px 0px 4px;
+      path {
+        fill: transparent !important;
+        @include themify($themes) {
+          stroke: themed("textColorBase");
+        }
+        stroke-width: 35px;
       }
-      stroke-width: 35px;
+      margin-right: $spacing-xs;
     }
-    margin-right: $spacing-xs;
   }
+  
 }
