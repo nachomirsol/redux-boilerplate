@@ -1,6 +1,6 @@
 @import "../../styles/styles-utils.scss";
 
-.map-wrapper {
+.map__map-wrapper {
     height: 100%;
     width: 100%;
     @include themify($themes) {
