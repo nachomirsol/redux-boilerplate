@@ -2,7 +2,8 @@ import React from 'react';
 /*Librarys*/
 import PropTypes from "prop-types";
 /* Components */
-import Icons from "./Icons";
+import Icon from "components/Icon";
+/* Styles */
 import './overallInfoWidgetContent.scss';
 
 const OverallInfoWidgetContent = ({ data, icons, minRange, maxRange, highlighted }) => (
@@ -24,7 +25,7 @@ const OverallInfoWidgetContent = ({ data, icons, minRange, maxRange, highlighted
             {
                 icons.map((icon, index) => (
                     <div className="icon-item" key={index}>
-                        <Icons iconName={icon.name} />
+                        <Icon name={icon.name} size="lg"></Icon>
                         <span className="icon-text">{icon.text}</span>
                     </div>
                 ))

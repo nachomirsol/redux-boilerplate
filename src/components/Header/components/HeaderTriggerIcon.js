@@ -4,7 +4,7 @@ import Icon from "components/Icon";
 import PropTypes from 'prop-types';
 
 
-const HeaderIcon = ({ gradient, iconName, children, place }) => {
+const HeaderTriggerIcon = ({ gradient, iconName, children, place }) => {
   return (
     <PopoverController place={place}>
       <PopoverTrigger>
@@ -17,7 +17,7 @@ const HeaderIcon = ({ gradient, iconName, children, place }) => {
   );
 };
 
-HeaderIcon.propTypes = {
+HeaderTriggerIcon.propTypes = {
   gradient: PropTypes.bool,
   place: PropTypes.string,
   iconName: PropTypes.string.isRequired,
@@ -27,4 +27,4 @@ HeaderIcon.propTypes = {
   ]).isRequired,
 }
 
-export default HeaderIcon;
+export default HeaderTriggerIcon;
