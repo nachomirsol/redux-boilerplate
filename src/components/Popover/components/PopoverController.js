@@ -5,7 +5,11 @@ import "../popover.scss";
 
 const portalContainer = document.getElementById("another-root");
 
-const PopoverController = ({ children, place }) => {
+const PopoverController = ({
+  children,
+  place,
+  centeredInRelationWithTrigger
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({
     position: "absolute",
@@ -19,16 +23,18 @@ const PopoverController = ({ children, place }) => {
   };
 
   const open = () => {
-    setTimeout(() => {
-      setIsOpen(!isOpen);
-    }, 0);
+    setIsOpen(!isOpen);
   };
 
   const setPosition = useCallback(
-    ({ left, top, height }) => {
-      setStyle(s => ({ ...s, left, top: top + height }));
+    ({ left, top, height, width }) => {
+      if (centeredInRelationWithTrigger) {
+        setStyle(s => ({ ...s, left: left + width / 2, top: top + height }));
+      } else {
+        setStyle(s => ({ ...s, left, top: top + height }));
+      }
     },
-    [setStyle]
+    [setStyle, centeredInRelationWithTrigger]
   );
 
   const measuredRef = useCallback(
@@ -52,9 +58,9 @@ const PopoverController = ({ children, place }) => {
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener("click", close);
+      window.addEventListener("mouseup", close);
     }
-    return () => window.removeEventListener("click", close);
+    return () => window.removeEventListener("mouseup", close);
   }, [isOpen]);
 
   const getArrowPosition = () => {
@@ -104,7 +110,9 @@ PopoverController.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired
+  ]).isRequired,
+  place: PropTypes.string,
+  centeredInRelationWithTrigger: PropTypes.bool
 };
 
 export default PopoverController;

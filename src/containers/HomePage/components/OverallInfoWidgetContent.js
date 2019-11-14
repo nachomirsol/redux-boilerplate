@@ -34,8 +34,10 @@ const OverallInfoWidgetContent = ({ data, icons, minRange, maxRange, highlighted
 )
 
 OverallInfoWidgetContent.propTypes = {
-    data: PropTypes.array.isRequired,
-    highlighted: PropTypes.bool.isRequired,
+    minRange: PropTypes.string,
+    maxRange: PropTypes.string,
+    data: PropTypes.array,
+    highlighted: PropTypes.bool,
     icons: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string,
         text: PropTypes.string

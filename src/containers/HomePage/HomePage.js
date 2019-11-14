@@ -22,7 +22,7 @@ const HomePage = ({ intl }) => {
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Infraestructures" })}>
           {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
           <OverallInfoWidgetContent
-            icons={[{ name: "GlassWhiskey", text: "depósito" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
+            icons={[{ name: "glass-whiskey", text: "depósito" }, { name: "cog", text: "Config" }, { name: "bolt", text: "Alarmas" }]}
             minRange={""}
             maxRange={""}
           />
@@ -30,7 +30,7 @@ const HomePage = ({ intl }) => {
 
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.Operation" })}>
           <OverallInfoWidgetContent
-            icons={[{ name: "question", text: "Comunicación" }, { name: "cog", text: "fugas" }]}
+            icons={[{ name: "broadcast-tower", text: "Comunicación" }, { name: "cog", text: "fugas" }]}
             minRange={""}
             maxRange={""}
           />
