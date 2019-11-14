@@ -39,7 +39,7 @@ const HomePage = ({ intl }) => {
 
         <Widget title={intl.formatMessage({ id: "app.components.Widget.Header.Title.WaterQuality" })}>
           <OverallInfoWidgetContent
-            icons={[{ name: "broadcastTower", text: "Comunicación" }, { name: "bell", text: "Alarmas" }]}
+            icons={[{ name: "broadcast-tower", text: "Comunicación" }, { name: "bell", text: "Alarmas" }]}
             minRange={"0.45"}
             maxRange={"0.96"}
           />
