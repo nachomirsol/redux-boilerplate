@@ -1,0 +1,52 @@
+@import "../../styles/styles-utils.scss";
+
+.switcher__wrapper{
+    .switch {
+        display: inline-block;
+        height: 24px;
+        position: relative;
+        width: 48px;
+
+        :before {
+          background-color: #fff;
+          bottom: 0px;
+          content: "";
+          height: 24px;
+          left: 0px;
+          position: absolute;
+          transition: .4s;
+          width: 24px;
+        }
+        
+        input {
+          display:none;
+          &:checked{
+            +.slider{
+              @include themify($themes) {
+                background-color: themed("switcher");
+              }
+              &:before{
+                transform: translateX(24px);
+              }
+            }       
+          }
+        }
+        
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            &.round{
+              border-radius: 32px;
+              &:before {
+                border-radius: 50%;
+              }
+            }
+        }
+    } 
+}

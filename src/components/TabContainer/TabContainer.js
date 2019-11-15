@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 /**Components */
 import Selector from 'components/Selector';
+import Switcher from 'components/Switcher';
 /**Utils */
 import { languages } from '../../utils/const';
 /**Styles */
@@ -20,6 +21,7 @@ const TabContainer = ({ routes, title, url }) => {
         selectName={"languageSelect"}
         defaultValue={""}
       />
+      <Switcher />
       <div className="tabContainer__wrapper">
         <div className="tabContainer__leftGroup">
           <div className="tabContainer__title">{title}</div>
