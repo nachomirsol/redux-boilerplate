@@ -1,10 +1,13 @@
 import React from "react";
+/**Libraries */
 import { injectIntl } from "react-intl";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Icon from "components/Icon";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+/**Components */
+import Icon from "components/Icon";
+
 
 const SidebarItem = ({ expanded, item, intl, history }) => {
   const {

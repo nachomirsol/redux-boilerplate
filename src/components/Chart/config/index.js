@@ -1,3 +1,4 @@
+/** Configuration data for different charts */
 export const pieChartLegendStyle = {
     backgroundColor: 'transparent',
     align: 'left',

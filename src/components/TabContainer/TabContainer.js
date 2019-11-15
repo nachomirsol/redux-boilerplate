@@ -1,7 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+/**Libraries */
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+/**Styles */
 import "./tabContainer.scss";
 
 const TabContainer = ({ routes, title, url }) => {
@@ -18,7 +20,7 @@ const TabContainer = ({ routes, title, url }) => {
                   <Link
                     className={`tabContainer__tab ${
                       route.path === location.pathname ? "selected" : ""
-                    }`}
+                      }`}
                     key={index}
                     to={route.path}
                   >

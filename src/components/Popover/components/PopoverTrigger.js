@@ -1,12 +1,14 @@
 import React, { useRef, useEffect, useCallback } from "react";
+/**Libraries */
 import PropTypes from "prop-types";
+
 
 const PopoverTrigger = ({ children, open, setPosition }) => {
   const reference = useRef(null);
 
   const updatePostion = useCallback(() => {
-      setPosition(reference.current.getBoundingClientRect());
-    }, [setPosition]);
+    setPosition(reference.current.getBoundingClientRect());
+  }, [setPosition]);
 
   useEffect(() => {
     updatePostion();

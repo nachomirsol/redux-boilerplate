@@ -1,6 +1,7 @@
 import * as React from "react";
-
+/**Libraries */
 import { Route, Switch, Redirect } from "react-router-dom";
+/**Config */
 import { routes } from "./config";
 
 export const Routes = () => (
@@ -14,7 +15,7 @@ export const Routes = () => (
             path={route.path}
             exact={route.exact}
             render={props => (
-                <route.component {...props} />
+              <route.component {...props} />
             )}
           />
         );

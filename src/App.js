@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
+/**Libraries */
 import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
-
-import { Routes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
-
 import { IntlProvider } from "react-intl";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,
@@ -21,9 +17,12 @@ import {
   faBroadcastTower,
   faGlassWhiskey
 } from "@fortawesome/free-solid-svg-icons";
-
+/**Components */
+import { Routes } from "./routes/routes";
+/**Translations data */
 import es_translations from "./translations/es.json";
 import en_translations from "./translations/en.json";
+/**Styles */
 import "styles/main.scss";
 
 // add font awesome icons to the library in order to import just used icons

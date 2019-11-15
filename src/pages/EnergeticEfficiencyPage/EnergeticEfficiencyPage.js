@@ -10,6 +10,7 @@ import Layout from "../Layout";
 /* Config */
 import { nestedRoutes } from "routes/config";
 /* Mock data */
+
 /* Styles */
 import "./energeticEfficiencyPage.scss";
 
@@ -18,7 +19,7 @@ const EnergeticEfficiencyPage = ({ intl }) => {
   let { path } = useRouteMatch();
   return (
     <div className="energeticEfficiencyPage energeticEfficiencyPage__wrapper">
-              <Switch>
+      <Switch>
         {nestedRoutes &&
           nestedRoutes[path] &&
           Array.isArray(nestedRoutes[path]) &&

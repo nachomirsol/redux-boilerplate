@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
+/**Libraries */
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+/**Styles */
 import "../popover.scss";
 
 const portalContainer = document.getElementById("another-root");

@@ -1,7 +1,9 @@
 import React from "react";
+/**Libraries */
+import PropTypes from 'prop-types';
+/**Components */
 import { PopoverController, PopoverTrigger } from "components/Popover";
 import Icon from "components/Icon";
-import PropTypes from 'prop-types';
 
 
 const HeaderTriggerIcon = ({ gradient, iconName, children, place }) => {
@@ -9,7 +11,7 @@ const HeaderTriggerIcon = ({ gradient, iconName, children, place }) => {
     <PopoverController place={place}>
       <PopoverTrigger>
         <span className={`icon-wrapper ${gradient ? 'gradient' : ''}`}>
-          <Icon  name={iconName} size="lg"></Icon>
+          <Icon name={iconName} size="lg"></Icon>
         </span>
       </PopoverTrigger>
       {children}

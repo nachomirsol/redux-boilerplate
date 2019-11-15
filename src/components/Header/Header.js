@@ -1,10 +1,14 @@
 import React from "react";
-import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
+/**Libraries */
+import PropTypes from 'prop-types';
+/**Components */
 import { Breadcrumb } from 'components/Breadcrumb';
 import UserAvatar from "components/UserAvatar";
 import HeaderTriggerIcon from "./components/HeaderTriggerIcon";
 import Icon from "components/Icon";
-import PropTypes from 'prop-types';
+/**Assets */
+import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
+/**Styles */
 import './header.scss';
 
 

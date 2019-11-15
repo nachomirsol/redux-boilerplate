@@ -1,16 +1,15 @@
 import React from "react";
 /*Librarys*/
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
+import PropTypes from "prop-types";
 /* Components */
 import Layout from "../Layout";
 import TabContainer from "components/TabContainer";
 /* Config */
 import { nestedRoutes } from "routes/config";
-/* Mock data */
 /* Styles */
 import "./infrastructuresPage.scss";
 
@@ -19,7 +18,7 @@ const InfrastructuresPage = ({ intl }) => {
   let { url, path } = useRouteMatch();
   return (
     <div className="infrastructuresPage infrastructuresPage__wrapper">
-              <Switch>
+      <Switch>
         {nestedRoutes &&
           nestedRoutes[path] &&
           Array.isArray(nestedRoutes[path]) &&
@@ -31,11 +30,11 @@ const InfrastructuresPage = ({ intl }) => {
                 path={route.path}
                 render={props => (
                   <Layout breadcrumbs={route.breadcrumbs}>
-                                   <TabContainer
-                    title="Infraestructuras"
-                    routes={nestedRoutes[path]}
-                    url={url}
-                  ></TabContainer>
+                    <TabContainer
+                      title="Infraestructuras"
+                      routes={nestedRoutes[path]}
+                      url={url}
+                    ></TabContainer>
                     <route.component intl={intl} {...props} />
                   </Layout>
                 )}

@@ -1,4 +1,6 @@
-import { HomePage,  InfrastructuresPage, LeakSearchPage, EnergeticEfficiencyPage} from "pages";
+/**Pages */
+import { HomePage, InfrastructuresPage, LeakSearchPage, EnergeticEfficiencyPage } from "pages";
+/**Containers */
 import OperationState from "containers/OperationState/OperationState";
 import DetailedOverview from "containers/DetailedOverview/DetailedOverview";
 import WildcardContainer from "containers/WildcardContainer/WildcardContainer";

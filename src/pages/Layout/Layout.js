@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "components/Sidebar";
-import PropTypes from "prop-types";
-import { Header } from "components/Header";
+/**Libraries */
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+/**Components */
+import { Header } from "components/Header";
+import Sidebar from "components/Sidebar";
+/**Styles*/
 import "./layout.scss";
 
 const Layout = ({ children, history, breadcrumbs }) => {
