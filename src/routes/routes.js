@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import { Route, Switch } from "react-router-dom";
-import Layout from "components/Layout";
-import routes from "./config";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { routes } from "./config";
 
 export const Routes = () => (
   <Switch>
@@ -12,12 +11,10 @@ export const Routes = () => (
         return (
           <Route
             key={index}
-            exact={true}
             path={route.path}
+            exact={route.exact}
             render={props => (
-              <Layout breadcrumbs={route.breadcrumbs}>
                 <route.component {...props} />
-              </Layout>
             )}
           />
         );

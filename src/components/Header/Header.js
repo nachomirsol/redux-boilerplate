@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
 import { Breadcrumb } from 'components/Breadcrumb';
 import UserAvatar from "components/UserAvatar";
-import HeaderIcon from "./components/HeaderIcon";
+import HeaderTriggerIcon from "./components/HeaderTriggerIcon";
 import Icon from "components/Icon";
 import PropTypes from 'prop-types';
 import './header.scss';
@@ -18,7 +18,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
           className="icon-wrapper menu-bars"
           onClick={() => handleSideBar()}
         >
-           {/* <HeaderIcon iconName="bars" place="right">
+           {/* <HeaderTriggerIcon iconName="bars" place="right">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -26,7 +26,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
             <p>fgsfdsfdsfds</p>
             <p>fgsfdsfdsfds</p>
           </div>
-        </HeaderIcon> */}
+        </HeaderTriggerIcon> */}
           <Icon name="bars" size="lg"></Icon>
         </span>
 
@@ -38,7 +38,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
       </div>
 
       <div className="header__rightMenu">
-        <HeaderIcon iconName="question">
+        <HeaderTriggerIcon iconName="question">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -46,9 +46,9 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
             <p>fgsfdsfdsfds</p>
             <p>fgsfdsfdsfds</p>
           </div>
-        </HeaderIcon>
+        </HeaderTriggerIcon>
 
-        <HeaderIcon iconName="cog">
+        <HeaderTriggerIcon iconName="cog">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -56,9 +56,9 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
             <p>fgsfdsfdsfds</p>
             <p>fgsfdsfdsfds</p>
           </div>
-        </HeaderIcon>
+        </HeaderTriggerIcon>
 
-        <HeaderIcon iconName="bell">
+        <HeaderTriggerIcon iconName="bell">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -66,11 +66,11 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
             <p>fgsfdsfdsfds</p>
             <p>fgsfdsfdsfds</p>
           </div>
-        </HeaderIcon>
+        </HeaderTriggerIcon>
 
         <UserAvatar loginPage={loginPage}></UserAvatar>
 
-        <HeaderIcon iconName="th" gradient={true} place="left">
+        <HeaderTriggerIcon iconName="th" gradient={true} place="left">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -78,7 +78,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
             <p>fgsfdsfdsfds</p>
             <p>fgsfdsfdsfds</p>
           </div>
-        </HeaderIcon>
+        </HeaderTriggerIcon>
 
         <svg
           style={{ width: 0, height: 0, position: "absolute" }}

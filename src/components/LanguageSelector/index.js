@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
-import { changeLocale } from '../../containers/LanguageProvider/actions';
+import { changeLocale } from '../hocs/LanguageProvider/actions';
 import { Languages } from '../../utils/const'
 import PropTypes from 'prop-types';
 

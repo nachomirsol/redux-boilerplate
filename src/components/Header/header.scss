@@ -73,7 +73,7 @@
     svg {
       padding: 0px 4px 0px 4px;
       path {
-        fill: transparent !important;
+        fill: transparent;
         @include themify($themes) {
           stroke: themed("textColorBase");
         }

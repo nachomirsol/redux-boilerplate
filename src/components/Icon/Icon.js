@@ -7,7 +7,7 @@ const Icon = ({ name, size, color, custom }) => {
   if (name) {
     if (custom) {
       const CustomIcon = customIcons[name];
-      return <CustomIcon className="custom-icon" />;
+      return CustomIcon && <CustomIcon className="custom-icon" />;
     }
     return (
       <FontAwesomeIcon

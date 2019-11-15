@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import toggleReducer from './containers/WithToggle/reducers';
-import languageReducer from './containers/LanguageProvider/reducers';
+import toggleReducer from './components/hocs/WithToggle/reducers';
+import languageReducer from './components/hocs/LanguageProvider/reducers';
 
 
 export default combineReducers({

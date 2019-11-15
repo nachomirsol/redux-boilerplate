@@ -38,6 +38,7 @@ const Map = () => {
                     zoom: 12
                 }}
                 controller={true}
+                // onViewStateChange={(e) => console.log(e)}
                 layers={[layers]} // layer here
             >
                 <StaticMap
