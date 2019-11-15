@@ -18,7 +18,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
           className="icon-wrapper menu-bars"
           onClick={() => handleSideBar()}
         >
-           {/* <HeaderTriggerIcon iconName="bars" place="right">
+          {/* <HeaderTriggerIcon iconName="bars" place="right">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
