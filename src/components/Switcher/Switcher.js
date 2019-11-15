@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 /**Libraries */
 import { injectIntl } from "react-intl";
 /**Components */
