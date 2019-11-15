@@ -6,71 +6,68 @@ import WildcardContainer from "containers/WildcardContainer/WildcardContainer";
 
 const routes = [
   {
+    path: "/home",
+    component: HomePage,
+    breadcrumbs: [{ url: '', label: 'Home' }],
+    exact: false,
+  },
+  {
     path: "/infraestructures",
     component: InfrastructuresPage,
-    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Infraestructures' }],
+    breadcrumbs: [{ url: '', label: 'Infraestructures' }],
     exact: false,
   },
   {
     path: "/energetic-efficiency",
     component: EnergeticEfficiencyPage,
-    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Energetic Efficiency' }],
+    breadcrumbs: [{ url: '', label: 'Energetic_Efficiency' }],
     exact: false,
   },
   {
     path: "/leakSearch",
     component: LeakSearchPage,
-    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Leak Search' }],
+    breadcrumbs: [{ url: '', label: 'Leak_Search' }],
     exact: false,
   },
   {
     path: "/portal-users",
     component: HomePage,
-    breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Administration Panel' }, { url: '', label: 'Users' }],
+    breadcrumbs: [{ url: '/home/operation-state', label: 'Home' }, { url: '', label: 'Administration Panel' }, { url: '', label: 'Users' }],
   },
   {
     path: "/",
-    component: HomePage,
-    breadcrumbs: [{ url: '/', label: 'Home' }],
-    exact: false,
+    redirect: true,
+    redirectTo: '/home',
   },
 ];
 
 const nestedRoutes = {
-  "/": [
+  "/home": [
     {
-      path: "/operation-state",
+      path: "/home/operation-state",
       component: OperationState,
-      label: 'Operation State',
-      breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Operation State' }],
-      exact: false,
+      label: 'Operation_State',
+      breadcrumbs: [{ url: '/', label: 'Home' }, { url: '', label: 'Operation_State' }],
+      exact: true,
     },
     {
-      path: "/detailed-overview",
+      path: "/home/detailed-overview",
       component: DetailedOverview,
-      label: 'Detailed Overview',
-      breadcrumbs: [{ url: '/', label: 'Home' }, { url: '/', label: 'Detailed Overview' }],
-      exact: false,
+      label: 'Detailed_Overview',
+      breadcrumbs: [{ url: '/', label: 'Home' }, { url: '/', label: 'Detailed_Overview' }],
+      exact: true,
     },
     {
       path: "/",
-      component: OperationState,
-      breadcrumbs: [{ url: '/', label: 'Home' }],
-      exact: true,
+      redirect: true,
+      redirectTo: '/home/operation-state',
     },
   ],
   "/infraestructures": [
     {
-      path: "/infraestructures/detailed-overview",
-      component: DetailedOverview,
-      label: 'Detailed Overview',
-      breadcrumbs: [{ url: '/infraestructures', label: 'Infraestructures' }, { url: '/', label: 'Detailed Overview' }],
-      exact: false,
-    },
-    {
       path: "/infraestructures",
       component: WildcardContainer,
-      breadcrumbs: [{ url: '/', label: 'Infrastructures' }],
+      breadcrumbs: [{ url: '', label: 'Infraestructures' }],
       exact: true,
     },
   ],
@@ -78,7 +75,7 @@ const nestedRoutes = {
     {
       path: "/energetic-efficiency",
       component: WildcardContainer,
-      breadcrumbs: [{ url: '/', label: 'Energetic Efficiency' }],
+      breadcrumbs: [{ url: '', label: 'Energetic_Efficiency' }],
       exact: true,
     },
   ],
@@ -86,11 +83,10 @@ const nestedRoutes = {
     {
       path: "/leakSearch",
       component: WildcardContainer,
-      breadcrumbs: [{ url: '/', label: 'Leak Search' }],
+      breadcrumbs: [{ url: '', label: 'Leak_Search' }],
       exact: true,
     },
   ],
-
 }
 
 export { routes, nestedRoutes };

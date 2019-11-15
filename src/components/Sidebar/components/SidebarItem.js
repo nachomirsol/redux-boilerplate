@@ -10,13 +10,13 @@ const SidebarItem = ({ expanded, item, intl, history }) => {
   const {
     location: { pathname }
   } = history;
-  const { alarms, icon, text, url } = item;
+  const { alarms, icon, text, url, path } = item;
   return (
     <Link to={url}>
       <div
         className={`sidebar__items 
           ${expanded ? "sidebar__items--expanded" : ""}
-          ${url === pathname ? "selected" : ""}`}
+          ${ pathname.includes(path) ? "selected" : ""}`}
       >
         <Icon name={icon} custom={true} />
         {expanded && (

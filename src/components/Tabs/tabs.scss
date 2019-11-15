@@ -1,0 +1,14 @@
+@import "../../styles/styles-utils.scss";
+.tabs__wrapper {
+  padding: 0 $spacing-s $spacing-xxs $spacing-s;
+  @include themify($themes) {
+    background-color: themed("panelHeaderBackgroundColor");
+    color: themed("textColorBase");
+  }
+  .tabs__tab {
+    margin-right: $spacing-xs;
+    &.selected {
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+}

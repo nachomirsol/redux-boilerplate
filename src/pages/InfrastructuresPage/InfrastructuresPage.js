@@ -7,7 +7,7 @@ import { createStructuredSelector } from "reselect";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 /* Components */
 import Layout from "../Layout";
-import TabContainer from "components/TabContainer";
+
 /* Config */
 import { nestedRoutes } from "routes/config";
 /* Mock data */
@@ -16,10 +16,10 @@ import "./infrastructuresPage.scss";
 
 // This case we use the layout in the route instead of the component directly
 const InfrastructuresPage = ({ intl }) => {
-  let { url, path } = useRouteMatch();
+  let { path } = useRouteMatch();
   return (
     <div className="infrastructuresPage infrastructuresPage__wrapper">
-              <Switch>
+      <Switch>
         {nestedRoutes &&
           nestedRoutes[path] &&
           Array.isArray(nestedRoutes[path]) &&
@@ -31,11 +31,6 @@ const InfrastructuresPage = ({ intl }) => {
                 path={route.path}
                 render={props => (
                   <Layout breadcrumbs={route.breadcrumbs}>
-                                   <TabContainer
-                    title="Infraestructuras"
-                    routes={nestedRoutes[path]}
-                    url={url}
-                  ></TabContainer>
                     <route.component intl={intl} {...props} />
                   </Layout>
                 )}

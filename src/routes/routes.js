@@ -8,14 +8,14 @@ export const Routes = () => (
     {routes &&
       Array.isArray(routes) &&
       routes.map((route, index) => {
-        return (
+        return route.redirect ? (
+          <Redirect key={index} from={route.path} to={route.redirectTo} />
+        ) : (
           <Route
             key={index}
             path={route.path}
             exact={route.exact}
-            render={props => (
-                <route.component {...props} />
-            )}
+            render={props => <route.component {...props} />}
           />
         );
       })}
