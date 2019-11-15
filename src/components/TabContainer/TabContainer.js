@@ -3,6 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+
+/**Components */
+import Selector from 'components/Selector';
+/**Utils */
+import { languages } from '../../utils/const';
 /**Styles */
 import "./tabContainer.scss";
 
@@ -10,10 +15,16 @@ const TabContainer = ({ routes, title, url }) => {
   let location = useLocation();
   return (
     <>
+      <Selector
+        options={languages ? languages : []}
+        selectName={"languageSelect"}
+        defaultValue={""}
+      />
       <div className="tabContainer__wrapper">
         <div className="tabContainer__leftGroup">
           <div className="tabContainer__title">{title}</div>
           <div className="tabContainer__tabs">
+
             {routes.map((route, index) => {
               return (
                 route.label && (
