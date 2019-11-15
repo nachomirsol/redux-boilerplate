@@ -17,7 +17,7 @@
       tabsGradient: linear-gradient(to bottom, rgba($color-background-light-4, .0) 50%, rgba($color-background-light-4, 1) 100%),
       logoColor: $color-text-black-base,
       switcher:$color-background-dark-1,
-      switcherCircle:$color-background-light-1
+      switcherCircle:$color-background-dark-1
     ),
     dark: (
       bodyBackgroundColor: $color-background-dark-4,
@@ -34,6 +34,6 @@
       tabsGradient: linear-gradient(to bottom, rgba($color-background-dark-5, .0) 50%, rgba($color-background-dark-5, 1) 100%),
       logoColor: $color-text-white-base,
       switcher:$color-primary,
-      switcherCircle:$color-background-dark-1
+      switcherCircle:$color-background-light-1
     ),
   );

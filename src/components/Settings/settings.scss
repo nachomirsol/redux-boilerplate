@@ -4,12 +4,23 @@
     .settings__selector{
         display:flex;
         flex-direction:column;
+        margin-bottom:1rem;
         label{
             font-family: 'Myriad Pro Regular';
             font-size: 13px;
             padding-top: 3px;
+            margin-bottom:.5rem;
             color:#c5c5c5;
         }
 
+    }
+    .settings__switcher{
+        display:flex;
+        flex-direction:row;
+        .label__switcher{
+            font-family: 'Myriad Pro Regular';
+            font-size: 13px;
+            margin-left:8px;
+        }
     }
 }

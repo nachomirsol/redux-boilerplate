@@ -19,7 +19,10 @@ const Settings = ({ intl }) => {
                 <label htmlFor="languageSelector">{intl.formatMessage({ id: "app.components.Language.Selector.Title" })}</label>
                 <Selector options={languages} />
             </div>
-            <Switcher />
+            <div className="settings__switcher">
+                <Switcher />
+                <label htmlFor="themeSwitcher" className="label__switcher">{intl.formatMessage({ id: "app.components.Theme.Switcher.Title.Dark" })}</label>
+            </div>
         </div>
     )
 }
