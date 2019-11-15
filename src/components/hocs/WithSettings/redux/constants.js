@@ -1,0 +1,3 @@
+export const CHANGE_LOCALE = 'CHANGE_LOCALE';
+export const CHANGE_THEME = 'CHANGE_THEME';
+export const CHANGE_UNITS = 'CHANGE_UNITS';

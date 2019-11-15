@@ -31,9 +31,9 @@ library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, 
 
 const routes = Routes();
 
-const App = ({ locale }) => {
+const App = ({ settings }) => {
   useEffect(() => {
-    console.log("language App", locale);
+    console.log("language App", settings.locale);
   });
 
   const translations = {
@@ -42,7 +42,7 @@ const App = ({ locale }) => {
   };
 
   return (
-    <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
+    <IntlProvider key={settings.locale} locale={settings.locale} messages={translations[settings.locale]}>
       <BrowserRouter basename={"/"}>{routes}</BrowserRouter>
     </IntlProvider>
   );
@@ -53,7 +53,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  locale: state.locale.locale
+  settings: state.settings
 });
 
 export default connect(mapStateToProps)(App);
