@@ -21,5 +21,4 @@ Switcher.propTypes = {
     onChange: PropTypes.func.isRequired
 };
 
-
 export default Switcher

@@ -16,12 +16,6 @@ const TabContainer = ({ routes, title, url }) => {
   let location = useLocation();
   return (
     <>
-      <Selector
-        options={languages ? languages : []}
-        selectName={"languageSelect"}
-        defaultValue={""}
-      />
-      <Switcher />
       <div className="tabContainer__wrapper">
         <div className="tabContainer__leftGroup">
           <div className="tabContainer__title">{title}</div>
