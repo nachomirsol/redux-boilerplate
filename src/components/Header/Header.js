@@ -3,9 +3,10 @@ import React from "react";
 import PropTypes from 'prop-types';
 /**Components */
 import { Breadcrumb } from 'components/Breadcrumb';
-import UserAvatar from "components/UserAvatar";
 import HeaderTriggerIcon from "./components/HeaderTriggerIcon";
 import Icon from "components/Icon";
+import Settings from "components/Settings";
+import UserAvatar from "components/UserAvatar";
 /**Assets */
 import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
 /**Styles */
@@ -22,15 +23,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
           className="icon-wrapper menu-bars"
           onClick={() => handleSideBar()}
         >
-          {/* <HeaderTriggerIcon iconName="bars" place="right">
-          <div>
-            {" "}
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-          </div>
-        </HeaderTriggerIcon> */}
+
           <Icon name="bars" size="lg"></Icon>
         </span>
 
@@ -53,12 +46,9 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
         </HeaderTriggerIcon>
 
         <HeaderTriggerIcon iconName="cog">
-          <div>
+          <div onClick={(e) => e.stopPropagation()}>
             {" "}
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
+            <Settings />
           </div>
         </HeaderTriggerIcon>
 

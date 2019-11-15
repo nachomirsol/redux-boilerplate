@@ -1,0 +1,15 @@
+.settings__wrapper{
+    display:flex;
+    flex-direction:column;
+    .settings__selector{
+        display:flex;
+        flex-direction:column;
+        label{
+            font-family: 'Myriad Pro Regular';
+            font-size: 13px;
+            padding-top: 3px;
+            color:#c5c5c5;
+        }
+
+    }
+}

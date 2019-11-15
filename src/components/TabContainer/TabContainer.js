@@ -3,12 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-
-/**Components */
-import Selector from 'components/Selector';
-import Switcher from 'components/Switcher';
-/**Utils */
-import { languages } from '../../utils/const';
 /**Styles */
 import "./tabContainer.scss";
 
