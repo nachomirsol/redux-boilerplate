@@ -1,0 +1,47 @@
+@import "../../styles/styles-utils.scss";
+.subHeader__wrapper {
+  padding: $spacing-xs $spacing-s 0 $spacing-s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include themify($themes) {
+    background-color: themed("panelHeaderBackgroundColor");
+    color: themed("textColorBase");
+  }
+  .subHeader__title {
+    font-family: $font-secondary;
+    font-size: 28px;
+    padding-bottom: $spacing-xs;
+  }
+  .subHeader__toggle-buttons {
+    width: 250px;
+    overflow: hidden;
+    align-self: flex-end;
+
+    .subHeader-single-toggle-button {
+      background-color: transparent;
+      border: 1.5px solid $color-text-white-darker-1;
+      padding: $spacing-xxs $spacing-xs;
+      color: $color-text-white-darker-1;
+      cursor: pointer;
+      width: 50%;
+
+      &:first-of-type {
+        border-radius: 4px 0px 0px 4px;
+      }
+
+      &:last-of-type {
+        border-radius: 0px 4px 4px 0px;
+      }
+
+      &.active {
+        background-color: $color-background-light-5;
+        color:$color-text-black-base;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

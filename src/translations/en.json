@@ -5,5 +5,15 @@
     "app.components.Sidebar.LeakSearch": "Leak search",
     "app.components.Widget.Header.Title.Infraestructures": "Infraestructures",
     "app.components.Widget.Header.Title.Operation": "Operation",
-    "app.components.Widget.Header.Title.WaterQuality": "Water quality"
+    "app.components.Widget.Header.Title.WaterQuality": "Water quality",
+    "app.components.SubHeader.Population": "Population",
+    "app.components.SubHeader.Alarms": "Alarms",
+    "app.components.Tabs.Operation_State": "Operaction State",
+    "app.components.Tabs.Detailed_Overview": "Detailed Overview",
+    "app.components.Breadcrumb.Home": "Home",
+    "app.components.Breadcrumb.Operation_State": "Operaction State",
+    "app.components.Breadcrumb.Detailed_Overview": "Detailed Overview",
+    "app.components.Breadcrumb.Infraestructures": "Infraestructures",
+    "app.components.Breadcrumb.Energetic_Efficiency": "Energetic Efficiency",
+    "app.components.Breadcrumb.Leak_Search": "Leak Search"
 }

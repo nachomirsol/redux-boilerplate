@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
 import { Breadcrumb } from 'components/Breadcrumb';
+import { injectIntl } from "react-intl";
 import UserAvatar from "components/UserAvatar";
 import HeaderTriggerIcon from "./components/HeaderTriggerIcon";
 import Icon from "components/Icon";
@@ -10,7 +11,7 @@ import './header.scss';
 
 const loginPage = { userName: "Mateo" };
 
-const Header = ({ handleSideBar, breadcrumbs }) => {
+const Header = ({ handleSideBar, breadcrumbs, intl }) => {
   return (
     <div className="header">
       <div className="header__leftMenu">
@@ -30,7 +31,7 @@ const Header = ({ handleSideBar, breadcrumbs }) => {
           <Icon name="bars" size="lg"></Icon>
         </span>
 
-        <Breadcrumb breadcrumbs={breadcrumbs} />
+        <Breadcrumb breadcrumbs={breadcrumbs} intl={intl} />
       </div>
 
       <div className="logo">
@@ -106,4 +107,4 @@ Header.propTypes = {
   breadcrumbs: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default Header;
+export default injectIntl(Header);

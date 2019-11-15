@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import "./layout.scss";
 
 const Layout = ({ children, history, breadcrumbs }) => {
-  const [expandedSideBar, setExpandedSideBar] = useState(true);
+  const [expandedSideBar, setExpandedSideBar] = useState(false);
   const checkWindowSize = () => {
     if (window.innerWidth <= 768) {
       setExpandedSideBar(false);
