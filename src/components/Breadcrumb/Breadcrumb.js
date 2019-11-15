@@ -1,14 +1,10 @@
 import React from "react";
-/**Libraries */
-import Proptype from "prop-types";
+import Proptypes from "prop-types";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-/**Components */
-
-/**Styles */
 import "./breadcrumb.scss";
 
-const Breadcrumb = ({ breadcrumbs }) => {
+const Breadcrumb = ({ breadcrumbs, intl }) => {
   const history = useHistory();
   let BreadcrumbsItems = breadcrumbs
     ? breadcrumbs.map((breadcrumb, index) => {
@@ -23,7 +19,10 @@ const Breadcrumb = ({ breadcrumbs }) => {
               }
             }}
           >
-            <span>{breadcrumb.label}</span>
+            <span>
+              {intl.formatMessage({
+                id: `app.components.Breadcrumb.${breadcrumb.label}`
+              })}</span>
             <span className="breadcrumb__separator">/</span>
           </div>
         );
@@ -33,7 +32,9 @@ const Breadcrumb = ({ breadcrumbs }) => {
           className="breadcrumb__item breadcrumb__item--actived"
           key={`breadcrumb_item${index}`}
         >
-          <span>{breadcrumb.label}</span>
+          <span>                 {intl.formatMessage({
+            id: `app.components.Breadcrumb.${breadcrumb.label}`
+          })}</span>
         </div>
       );
     })
@@ -43,7 +44,8 @@ const Breadcrumb = ({ breadcrumbs }) => {
 };
 
 Breadcrumb.propTypes = {
-  breadcrumbs: Proptype.arrayOf(Proptype.object).isRequired
+  breadcrumbs: Proptypes.arrayOf(Proptypes.object).isRequired,
+  intl: Proptypes.object.isRequired
 };
 
 const mapStateToProps = ({ poblation }) => ({ poblation });

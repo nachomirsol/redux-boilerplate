@@ -6,5 +6,15 @@
     "app.components.Sidebar.LeakSearch": "Fugas",
     "app.components.Widget.Header.Title.Infraestructures": "Infraestructuras",
     "app.components.Widget.Header.Title.Operation": "Operación",
-    "app.components.Widget.Header.Title.WaterQuality": "Calidad Agua"
+    "app.components.Widget.Header.Title.WaterQuality": "Calidad Agua",
+    "app.components.SubHeader.Population": "Población",
+    "app.components.SubHeader.Alarms": "Alarmas",
+    "app.components.Tabs.Operation_State": "Estado Explotación",
+    "app.components.Tabs.Detailed_Overview": "Visión General Detallada",
+    "app.components.Breadcrumb.Home": "Inicio",
+    "app.components.Breadcrumb.Operation_State": "Estado Explotación",
+    "app.components.Breadcrumb.Detailed_Overview": "Visión General Detallada",
+    "app.components.Breadcrumb.Infraestructures": "Infraestructuras",
+    "app.components.Breadcrumb.Energetic_Efficiency": "Eficiencia energética",
+    "app.components.Breadcrumb.Leak_Search": "Fugas"
 }
