@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import todoListReducer from './containers/HomePage/reducers';
-import postListReducer from './containers/PostPage/reducers';
-import toggleReducer from './containers/WithToggle/reducers';
+import toggleReducer from './components/hocs/WithToggle/reducers';
+import languageReducer from './components/hocs/LanguageProvider/reducers';
 
 
 export default combineReducers({
-    todoList: todoListReducer,
-    postList: postListReducer,
-    toggleStatus: toggleReducer
+    toggleStatus: toggleReducer,
+    locale: languageReducer
 });

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>down-arrow (1)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.458163496">
+        <g id="Asset-Viewer-/-Multiple-selected-sectors" transform="translate(-836.000000, -31.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="select-mapa" transform="translate(629.000000, 15.000000)">
+                <g id="down-arrow-(1)" transform="translate(207.000000, 16.000000)">
+                    <path d="M13.8567551,0.154589372 C13.6637977,-0.0515297907 13.3502419,-0.0515297907 13.1572845,0.154589372 L7.00676653,6.73752013 L0.844188738,0.154589372 C0.651231312,-0.0515297907 0.337675495,-0.0515297907 0.144718069,0.154589372 C-0.0482393565,0.360708535 -0.0482393565,0.695652174 0.144718069,0.901771337 L6.64497135,7.84541063 C6.74145007,7.94847021 6.86204846,8 6.99470669,8 C7.11530508,8 7.24796331,7.94847021 7.34444202,7.84541063 L13.8446953,0.901771337 C14.0497126,0.695652174 14.0497126,0.360708535 13.8567551,0.154589372 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

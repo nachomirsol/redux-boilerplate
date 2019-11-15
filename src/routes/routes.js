@@ -1,13 +1,23 @@
 import * as React from "react";
 
-import { Route, Switch } from "react-router-dom";
-import { URL } from '../utils/const';
-import HomePage from '../containers/HomePage';
-import PostPage from '../containers/PostPage';
+import { Route, Switch, Redirect } from "react-router-dom";
+import { routes } from "./config";
 
 export const Routes = () => (
-    <Switch>
-        <Route exact={true} path="/" component={HomePage} />
-        <Route exact={true} path={URL.posts} component={PostPage} />
-    </Switch>
+  <Switch>
+    {routes &&
+      Array.isArray(routes) &&
+      routes.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            render={props => (
+                <route.component {...props} />
+            )}
+          />
+        );
+      })}
+  </Switch>
 );

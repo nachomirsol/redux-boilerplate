@@ -1,7 +1,9 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
 /*
  * Implementation of themes
  */
-
 @mixin themify($themes) {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {

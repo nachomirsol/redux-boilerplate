@@ -1,0 +1,70 @@
+@import "../../styles/styles-utils.scss";
+
+.user-avatar__wrapper {
+  user-select: none;   
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 $spacing-s;
+  @media (max-width: 768px) {
+    margin: 0 $spacing-xxs;
+  }
+}
+
+.user-avatar__photo-container {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: $spacing-xxs;
+}
+
+.user-avatar__photo-container--big {
+  width: 136px;
+  height: 136px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: $spacing-xxs;
+}
+
+.user-avatar__photo {
+  height: 100%;
+  width: auto;
+}
+
+.user-avatar__name {
+  font-family: "Myriad Pro Regular";
+}
+
+.user-avatar__dropdown {
+  cursor: pointer;
+  padding: 0px 2px 4px;
+  min-width: 150px;
+
+  label {
+    font-family: "Myriad Pro Regular";
+    font-size: 16px;
+    padding: 4px;
+  }
+}
+
+// .c-user-avatar__arrow{
+//     margin-left: 5px;
+//     height: 6px;
+//   }
+
+//   .c-user-avatar__arrow svg {
+//     height: 6px;
+//   }
+
+// .c-user-avatar--fix{
+//     -webkit-transform: translate(0,0);
+//             transform: translate(0,0);
+// }

@@ -1,0 +1,81 @@
+@import "../../styles/styles-utils.scss";
+
+.sidebar__wrapper {
+  @include themify($themes) {
+    color: themed("textColorBase");
+    background-color: themed("panelBackgroundColor");
+  }
+  padding: $spacing-s $spacing-xs;
+  transition: width 0s;
+  font-family: "Rubik", sans-serif;
+  width: 40px;
+  @media (max-width: 768px) {
+    width: 40px;
+  }
+}
+
+.sidebar__wrapper--expanded {
+  width: 320px;
+}
+
+.sidebar__items {
+  font-family: Rubik Regular;
+  font-size: $spacing-xs;
+  user-select: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 20px;
+  min-width: 40px;
+  min-height: 40px;
+
+  &.selected {
+    background-color: $color-primary;
+  }
+  &:hover {
+    @include themify($themes) {
+      background-color: themed("sidenavItemBackgroundColor");
+    }
+  }
+  .custom-icon {
+    float: none;
+    padding-right: 0;
+    height: 22px;
+    width: 22px;
+    max-width: 32px;
+    max-height: 32px;
+    margin: 0;
+    position: static;
+    top: 0;
+
+  }
+}
+
+.sidebar__items--expanded {
+  justify-content: normal;
+  padding: 0 $spacing-xs;
+  height: auto;
+  width: auto;
+
+  .custom-icon {
+    float: left;
+    padding-right: 12px;
+  }
+}
+
+.sidebar__alarms {
+  @include themify($themes) {
+    color: themed("textColorBase");
+  }
+  background-color: $color-primary;
+  margin-left: $spacing-xxs;
+  padding: 2px $spacing-xxs;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
