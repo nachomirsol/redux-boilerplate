@@ -47,7 +47,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
         </HeaderTriggerIcon>
 
         <HeaderTriggerIcon iconName="cog">
-          <div onClick={(e) => e.stopPropagation()}>
+          <div >
             {" "}
             <Settings />
           </div>

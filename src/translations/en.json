@@ -1,4 +1,5 @@
 {
+    "app.components.Language.Selector.Title": "Select language",
     "app.components.Sidebar.Infraestructures": "Infraestructures",
     "app.components.Sidebar.Services": "Services",
     "app.components.Sidebar.EnergeticEfficiency": "Energetic efficiency",

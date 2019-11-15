@@ -86,7 +86,7 @@ const PopoverController = ({
           <div
             className="popover__wrapper"
             style={offsetStyle ? offsetStyle : style}
-            onClick={e => e.stopPropagation()}
+            onMouseUp={e => e.stopPropagation()}
           >
             <svg
               className="popover__arrow"
