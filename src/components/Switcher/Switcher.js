@@ -4,21 +4,13 @@ import PropTypes from "prop-types";
 /**Styles */
 import './switcher.scss';
 
-const Switcher = ({ defaultChecked }) => {
-    const [isChecked, setIsChecked] = useState(defaultChecked);
-
-    const selectCheckbox = () => {
-        if (isChecked === true) {
-            setIsChecked(!isChecked)
-        } else {
-            setIsChecked(!isChecked)
-        }
-    }
+const Switcher = ({ defaultChecked, changeTheme }) => {
+    const [value, setValue] = useState(defaultChecked);
 
     return (
         <div className="switcher switcher__wrapper">
             <label className="switch" htmlFor="checkbox">
-                <input type="checkbox" onChange={() => selectCheckbox()} checked={isChecked} />
+                <input type="checkbox" onChange={() => setValue((previous) => !previous.value)} checked={value} />
                 <div className="slider round"></div>
             </label>
         </div>
