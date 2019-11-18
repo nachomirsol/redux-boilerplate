@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 /**Libraries */
 import PropTypes from "prop-types";
 /**Styles */
 import './switcher.scss';
 
-const Switcher = ({ onSwitch }) => {
+const Switcher = ({ type, checked = true, onChange }) => {
+    const [isChecked, setIsChecked] = useState(true)
 
     return (
         <div className="switcher switcher__wrapper">
             <label className="switch" htmlFor="checkbox">
-                <input type="checkbox" id="checkbox" onChange={(e) => onSwitch(e)} />
+                <input type={type} checked={isChecked} />
                 <div className="slider round"></div>
             </label>
         </div>
