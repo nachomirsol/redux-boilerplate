@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 /**Styles */
 import "./selector.scss";
 
-const Selector = ({ options, selectName, defaultValue, onChange }) => {
+const Selector = ({ options, selectName, value, onChange }) => {
     return (
         <div className="selector">
             <select
                 name={selectName}
-                defaultValue={defaultValue}
+                value={value}
                 onChange={(e) => onChange(e.target.value)}>
                 {options.map((option, index) => (
                     <option value={option ? option.value : option} key={index}>{option ? option.name : option}</option>
