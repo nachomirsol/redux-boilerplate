@@ -26,6 +26,6 @@ export default Selector;
 Selector.propTypes = {
     options: PropTypes.array.isRequired,
     selectName: PropTypes.string.isRequired,
-    defaultValue: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired
 };

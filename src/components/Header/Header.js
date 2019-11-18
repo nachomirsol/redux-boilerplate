@@ -14,7 +14,7 @@ import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
 import './header.scss';
 
 
-const loginPage = { userName: "Mateo" };
+const loginData = { userName: "Mateo" };
 
 const Header = ({ handleSideBar, breadcrumbs, intl }) => {
   return (
@@ -63,7 +63,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
           </div>
         </HeaderTriggerIcon>
 
-        <UserAvatar loginPage={loginPage}></UserAvatar>
+        <UserAvatar loginData={loginData}></UserAvatar>
 
         <HeaderTriggerIcon iconName="th" gradient={true} place="left">
           <div>
@@ -99,6 +99,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
 Header.propTypes = {
   handleSideBar: PropTypes.func.isRequired,
   breadcrumbs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  intl: PropTypes.object.isRequired,
 }
 
 export default injectIntl(Header);

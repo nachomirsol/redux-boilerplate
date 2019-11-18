@@ -1,20 +1,21 @@
-import { CHANGE_LOCALE } from './constants';
+import produce from "immer";
+import { CHANGE_LOCALE } from "./constants";
 
 const initialState = {
-    locale: 'es'
-}
+  locale: "es"
+};
 
-const LanguageReducer = (state = initialState, action) => {
-
+const LanguageReducer = (state = initialState, action) =>
+  produce(state, draft => {
     switch (action.type) {
-        case CHANGE_LOCALE:
-            return {
-                ...state,
-                locale: state.locale !== action.payload ? action.payload : state.locale
-            }
-        default:
-            return state
-    }
-}
+      case CHANGE_LOCALE:
+        state.locale =
+          draft.locale !== action.payload ? action.payload : state.locale;
+        break;
 
-export default LanguageReducer
+      default:
+        return draft;
+    }
+  });
+
+export default LanguageReducer;

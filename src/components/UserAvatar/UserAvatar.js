@@ -12,7 +12,7 @@ import avatarUnknown from 'assets/images/avatar-unknow.jpg';
 /**Styles */
 import "./userAvatar.scss";
 
-export const UserAvatar = props => {
+export const UserAvatar = ({ loginData }) => {
 
   const handleClickLogout = () => {
     console.log("log out");
@@ -20,17 +20,17 @@ export const UserAvatar = props => {
     // window.location.href = `/login`;
   };
   return (
-    <PopoverController>
-      <PopoverTrigger>
-        <div className="user-avatar__wrapper">
-          <div className="user-avatar__photo-container">
-            <img className="user-avatar__photo"
-              src={avatarUnknown}
-              alt=""
-            />
-          </div>
-          <div className="user-avatar__name">
-            {props.loginPage && props.loginPage.userName}
+      <PopoverController>
+        <PopoverTrigger>
+          <div className="user-avatar__wrapper">
+            <div className="user-avatar__photo-container">
+              <img className="user-avatar__photo"
+                src={avatarUnknown}
+                alt=""
+              />
+            </div>
+            <div className="user-avatar__name">
+              {loginData && loginData.userName}
           </div>
         </div>
       </PopoverTrigger>
@@ -43,7 +43,7 @@ export const UserAvatar = props => {
 };
 
 UserAvatar.propTypes = {
-  loginPage: PropTypes.object.isRequired,
+  loginData: PropTypes.object.isRequired,
 };
 
 UserAvatar.defaultProps = {};

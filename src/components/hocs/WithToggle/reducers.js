@@ -1,19 +1,19 @@
-import { TOGGLE_ITEM } from './constants'
+import produce from "immer";
+import { TOGGLE_ITEM } from "./constants";
 
 const initialState = {
-    toggleStatus: false
-}
+  toggleStatus: false
+};
 
-const ToggleReducer = (state = initialState, action) => {
+const ToggleReducer = (state = initialState, action) =>
+  produce(state, draft => {
     switch (action.type) {
-        case TOGGLE_ITEM:
-            return {
-                ...state,
-                toggleStatus: !state.toggleStatus
-            }
-        default:
-            return state
+      case TOGGLE_ITEM:
+        draft.toogleStatus = !state.toggleStatus;
+        break;
+      default:
+        return draft;
     }
-}
+  });
 
-export default ToggleReducer
+export default ToggleReducer;

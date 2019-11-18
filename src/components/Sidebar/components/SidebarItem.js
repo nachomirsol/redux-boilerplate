@@ -1,18 +1,15 @@
 import React from "react";
 /**Libraries */
 import { injectIntl } from "react-intl";
-import { compose } from "redux";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 /**Components */
 import Icon from "components/Icon";
 
 
-const SidebarItem = ({ expanded, item, intl, history }) => {
-  const {
-    location: { pathname }
-  } = history;
+const SidebarItem = ({ expanded, item, intl }) => {
+  const { pathname } = useLocation();
   const { alarms, icon, text, url, path } = item;
   return (
     <Link to={url}>
@@ -37,10 +34,6 @@ SidebarItem.propTypes = {
   expanded: PropTypes.bool.isRequired,
   item: PropTypes.object.isRequired,
   intl: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
 };
 
-export default compose(
-  injectIntl,
-  withRouter
-)(SidebarItem);
+export default injectIntl(SidebarItem);
