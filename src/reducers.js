@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import toggleStatus from './components/hocs/WithToggle/reducers';
-import locale from './components/hocs/LanguageProvider/reducers';
+import settings from './components/hocs/WithSettings/redux/reducers';
 
 
 // export default combineReducers({
@@ -14,7 +14,7 @@ import locale from './components/hocs/LanguageProvider/reducers';
 const createReducer = (injectedReducers) => {
     return combineReducers({
         toggleStatus,
-        locale,
+        settings,
         ...injectedReducers,
     });
 }

@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import Sidebar from "components/Sidebar";
-import PropTypes from "prop-types";
+/**Libraries */
 import { compose } from "redux";
-import { Header } from "components/Header";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
+/**Components */
 import { WithPageSettings } from "components/hocs/WithPageSettings";
+import { Header } from "components/Header";
+import Sidebar from "components/Sidebar";
+/**Styles*/
 import "./layout.scss";
 
 const Layout = ({ children, breadcrumbs, pageSettings, onToggleMenu }) => {

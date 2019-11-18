@@ -1,7 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux';
-import { toggle } from './actions'
+import React from 'react';
+/**Libraries */
 import { compose } from "redux";
+import { connect } from 'react-redux';
+/**Redux */
+import { toggle } from './actions'
+
 
 const withToggle = (WrappedComponent) =>
     class WithToggleComponent extends React.Component {

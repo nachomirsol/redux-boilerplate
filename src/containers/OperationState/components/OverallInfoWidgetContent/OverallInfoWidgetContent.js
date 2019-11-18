@@ -1,5 +1,5 @@
 import React from 'react';
-/*Librarys*/
+/*Libraries*/
 import PropTypes from "prop-types";
 /* Components */
 import Icon from "components/Icon";

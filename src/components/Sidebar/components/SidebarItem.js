@@ -1,9 +1,12 @@
 import React from "react";
+/**Libraries */
 import { injectIntl } from "react-intl";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Icon from "components/Icon";
 import PropTypes from "prop-types";
+/**Components */
+import Icon from "components/Icon";
+
 
 const SidebarItem = ({ expanded, item, intl }) => {
   const { pathname } = useLocation();

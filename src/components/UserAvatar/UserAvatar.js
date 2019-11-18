@@ -1,11 +1,15 @@
 import React from "react";
+/**Libraries */
 import { compose } from "redux";
 import { injectIntl } from "react-intl";
 import { withRouter } from "react-router-dom";
-import { PopoverController, PopoverTrigger } from "components/Popover";
 import PropTypes from "prop-types";
+/**Components */
+import { PopoverController, PopoverTrigger } from "components/Popover";
 import Icon from "components/Icon";
+/**Assets */
 import avatarUnknown from 'assets/images/avatar-unknow.jpg';
+/**Styles */
 import "./userAvatar.scss";
 
 export const UserAvatar = ({ loginData }) => {
@@ -27,14 +31,14 @@ export const UserAvatar = ({ loginData }) => {
             </div>
             <div className="user-avatar__name">
               {loginData && loginData.userName}
-            </div>
           </div>
-        </PopoverTrigger>
-        <div className="user-avatar__dropdown" onClick={() => handleClickLogout()}>
-          <Icon name="sign-out-alt"></Icon>
-          <label>Logout</label>
         </div>
-      </PopoverController>
+      </PopoverTrigger>
+      <div className="user-avatar__dropdown" onClick={() => handleClickLogout()}>
+        <Icon name="sign-out-alt"></Icon>
+        <label>Logout</label>
+      </div>
+    </PopoverController>
   );
 };
 

@@ -1,8 +1,11 @@
 import React from "react";
-import DeckGL from "deck.gl";
+/**Libraries */
 import { StaticMap } from "react-map-gl";
 import { GeoJsonLayer } from "@deck.gl/layers";
+import DeckGL from "deck.gl";
+/**Mock Data */
 import data from '../../mockData/geojsonMunicipios.json';
+/**Styles */
 import "./map.scss";
 
 const Map = () => {

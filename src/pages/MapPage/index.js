@@ -1,8 +1,11 @@
 import React from "react";
-import DeckGL from "deck.gl";
+/**Libraries */
 import { StaticMap } from "react-map-gl";
 import { PathLayer } from "@deck.gl/layers";
+import DeckGL from "deck.gl";
+/**Styles */
 import './MapPage.scss';
+
 // data needed for overlay here
 const data = [{
     name: "random-name",

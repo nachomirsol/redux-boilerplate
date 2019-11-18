@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+/**Libraries */
+import PropTypes from "prop-types";
+/**Components */
 import Icon from "components/Icon";
 import Modal from "../Modal";
-import PropTypes from "prop-types";
+/**Styles */
 import "./widget.scss";
 
 const Widget = ({ title, children }) => {
@@ -16,16 +19,16 @@ const Widget = ({ title, children }) => {
       </div>
     </Modal>
   ) : (
-    <div className="widget widget__wrapper" bg="bgGray1">
-      <div className="widget__header">
-        <div>{title}</div>
-        <div className="icons" onClick={() => setIsOpen(true)}>
-          <Icon name={"ellipsis-v"}></Icon>
+      <div className="widget widget__wrapper" bg="bgGray1">
+        <div className="widget__header">
+          <div>{title}</div>
+          <div className="icons" onClick={() => setIsOpen(true)}>
+            <Icon name={"ellipsis-v"}></Icon>
+          </div>
         </div>
+        <div className="widget__content">{children}</div>
       </div>
-      <div className="widget__content">{children}</div>
-    </div>
-  );
+    );
 };
 
 Widget.propTypes = {

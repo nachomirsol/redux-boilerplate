@@ -1,19 +1,19 @@
 import React from 'react';
-
+/**Libraries */
 import { connect } from 'react-redux';
-
 import { IntlProvider } from 'react-intl';
 
-export const LanguageProvider = ({ intl, messages, locale, children }) => { 
+
+export const LanguageProvider = ({ intl, messages, locale, children }) => {
     return (
-        <IntlProvider locale={locale} key={locale} messages={messages[locale]}>
+        <IntlProvider locale={settings.locale} key={settings.locale} messages={messages[settings.locale]}>
             {React.Children.only(children)}
         </IntlProvider>
     );
 }
 
 const mapStateToProps = (state) => ({
-    locale: state.locale
+    settings: state.settings
 })
 
 export default connect(mapStateToProps)(LanguageProvider);

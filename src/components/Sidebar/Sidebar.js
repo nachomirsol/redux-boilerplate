@@ -1,7 +1,11 @@
 import React from "react";
-import sidebarModel from './utils/sidebarModel';
-import SidebarItem from "./components/SidebarItem";
+/**Libraries */
 import PropTypes from "prop-types";
+/**Components */
+import SidebarItem from "./components/SidebarItem";
+/**Config utils */
+import sidebarModel from './utils/sidebarModel';
+/**Styles */
 import './sidebar.scss';
 
 

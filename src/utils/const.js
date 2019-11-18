@@ -1,4 +1,4 @@
-export const Languages = [{ code: 'es', display: 'Español' }, { code: 'en', display: 'English' }];
+export const languages = [{ value: 'es', name: 'Español' }, { value: 'en', name: 'English' }];
 
 export const menuData = {
     value: "22-hierarchy",

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
+/**Libraries */
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+/**Styles */
 import "../popover.scss";
 
 const portalContainer = document.getElementById("another-root");
@@ -84,7 +86,7 @@ const PopoverController = ({
           <div
             className="popover__wrapper"
             style={offsetStyle ? offsetStyle : style}
-            onClick={e => e.stopPropagation()}
+            onMouseUp={e => e.stopPropagation()}
           >
             <svg
               className="popover__arrow"

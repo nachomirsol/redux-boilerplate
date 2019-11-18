@@ -1,3 +1,4 @@
+/**Hardcoded data for different url pages */
 const sidebarModel = {
     general: {
         path: '/home',
