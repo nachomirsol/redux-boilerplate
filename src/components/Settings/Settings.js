@@ -25,7 +25,7 @@ const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
                 <Selector options={languages} onChange={(locale) => changeLocale(locale)} defaultValue={settings.locale} value={settings.locale} />
             </div>
             <div className="settings__switcher">
-                <Switcher onChange={(theme) => changeTheme(theme)} defaultChecked={settings.theme === 'theme-dark'} />
+                <Switcher changeTheme={(theme) => changeTheme(theme)} defaultChecked={settings.theme === 'theme-dark'} />
                 <label htmlFor="themeSwitcher" className="label__switcher">{intl.formatMessage({ id: "app.components.Theme.Switcher.Title.Dark" })}</label>
             </div>
         </div>

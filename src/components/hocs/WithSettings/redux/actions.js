@@ -9,6 +9,14 @@ export const changeLocale = (locale) => {
 }
 
 export const changeTheme = (theme) => {
+    if (theme === 'theme-light') {
+        document.body.classList.add(theme);
+        document.body.classList.remove('theme-dark')
+    } else {
+        document.body.classList.add(theme);
+        document.body.classList.remove('theme-light')
+    }
+
     return {
         type: CHANGE_THEME,
         payload: theme
