@@ -105,6 +105,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
 Header.propTypes = {
   handleSideBar: PropTypes.func.isRequired,
   breadcrumbs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  intl: PropTypes.object.isRequired,
 }
 
 export default injectIntl(Header);

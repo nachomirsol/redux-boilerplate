@@ -19,4 +19,8 @@ Sidebar.propTypes = {
   expanded: PropTypes.bool.isRequired,
 }
 
+Sidebar.defaultProps = {
+  expanded: false
+}
+
 export default Sidebar;

@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 import avatarUnknown from 'assets/images/avatar-unknow.jpg';
 import "./userAvatar.scss";
 
-export const UserAvatar = props => {
+export const UserAvatar = ({ loginData }) => {
 
   const handleClickLogout = () => {
     console.log("log out");
@@ -26,7 +26,7 @@ export const UserAvatar = props => {
               />
             </div>
             <div className="user-avatar__name">
-              {props.loginPage && props.loginPage.userName}
+              {loginData && loginData.userName}
             </div>
           </div>
         </PopoverTrigger>
@@ -39,7 +39,7 @@ export const UserAvatar = props => {
 };
 
 UserAvatar.propTypes = {
-  loginPage: PropTypes.object.isRequired,
+  loginData: PropTypes.object.isRequired,
 };
 
 UserAvatar.defaultProps = {};

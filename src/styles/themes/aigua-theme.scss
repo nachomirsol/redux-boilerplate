@@ -16,6 +16,7 @@
       textColorWeakest: $color-text-black-brighter-2,
       tabsGradient: linear-gradient(to bottom, rgba($color-background-light-4, .0) 50%, rgba($color-background-light-4, 1) 100%),
       logoColor: $color-text-black-base,
+      spinnerColor: $color-background-dark-6,
     ),
     dark: (
       bodyBackgroundColor: $color-background-dark-4,
@@ -31,5 +32,6 @@
       textColorWeakest: $color-text-white-darker-2,
       tabsGradient: linear-gradient(to bottom, rgba($color-background-dark-5, .0) 50%, rgba($color-background-dark-5, 1) 100%),
       logoColor: $color-text-white-base,
+      spinnerColor: $color-background-light-1,
     ),
   );
