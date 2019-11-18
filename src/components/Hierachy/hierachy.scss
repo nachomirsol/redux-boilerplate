@@ -1,8 +1,9 @@
 @import "../../styles/styles-utils.scss";
 .hierachy{
     width: 350px;
+    overflow:hidden;
     @include themify($themes) {
-        background-color: themed("textColorBase");
+        background-color: themed("hierachyBackground");
     }
     ul{
         list-style-type:none;
