@@ -35,7 +35,8 @@ const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
 
 Settings.propTypes = {
     changeLocale: PropTypes.func.isRequired,
-    changeTheme: PropTypes.func.isRequired
+    changeTheme: PropTypes.func.isRequired,
+    intl: PropTypes.object.isRequired
 };
 
 

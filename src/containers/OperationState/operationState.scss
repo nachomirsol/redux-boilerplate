@@ -15,18 +15,18 @@
       margin-right: 16px;
     }
 
-    // @media (min-width: 992px) and (max-width: 1366px) {
-    //   height: auto;
-    // }
+     @media (min-width: 992px) and (max-width: 1366px) {
+       height: auto;
+     }
 
-    // @media (max-width: 768px) {
-    //   flex-direction: column;
-    //   height: auto;
-    // }
+     @media (max-width: 768px) {
+       flex-direction: column;
+       height: auto;
+     }
   }
   .map__container {
       height: 50%;
-    // @media (min-width: 992px) and (max-width: 1366px) {
-    // }
+     @media (min-width: 992px) and (max-width: 1366px) {
+     }
   }
 }

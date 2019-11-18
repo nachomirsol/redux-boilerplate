@@ -49,7 +49,7 @@ const App = ({ settings }) => {
 };
 
 App.propTypes = {
-  locale: PropTypes.string.isRequired
+  settings: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
