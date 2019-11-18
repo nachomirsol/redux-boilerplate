@@ -5,6 +5,7 @@ import { compose } from 'redux';
 /**Actions*/
 import { changeLocale, changeTheme } from './redux/actions';
 
+/** This is a HOC that will make possible to inject functionality to other components as Settings component, like change user settings (language, theme...) */
 const withSettings = (WrappedComponent) =>
     class WithSettingsComponent extends React.Component {
         render() {

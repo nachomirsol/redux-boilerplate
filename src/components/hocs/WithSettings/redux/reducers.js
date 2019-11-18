@@ -12,6 +12,11 @@ const SettingsReducer = (state = initialState, action) => {
                 ...state,
                 locale: state.locale !== action.payload ? action.payload : state.locale
             }
+        case CHANGE_THEME:
+            return {
+                ...state,
+                theme: state.theme !== action.payload ? action.payload : state.theme
+            }
         default:
             return state
     }
