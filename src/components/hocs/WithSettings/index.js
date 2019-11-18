@@ -3,15 +3,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 /**Actions*/
-import { changeLocale, changeTheme } from './actions';
+import { changeLocale, changeTheme } from './redux/actions';
 
 const withSettings = (WrappedComponent) =>
-    class WithSettingsComponent extends React.component {
+    class WithSettingsComponent extends React.Component {
         render() {
             return (
                 <WrappedComponent
-                    locale={this.props.locale}
-                    theme={this.props.theme}
+                    settings={this.props.settings}
                     changeLocale={this.props.changeLocale}
                     changeTheme={this.props.changeTheme}
                 />
@@ -21,10 +20,9 @@ const withSettings = (WrappedComponent) =>
     }
 
 
-const mapStateToProps = (state) => ({
-    locale: state.locale.locale,
-    theme: state.theme.theme
-})
+const mapStateToProps = state => ({
+    settings: state.settings
+});
 
 const composedHoc = compose(
     connect(mapStateToProps, { changeLocale, changeTheme }),

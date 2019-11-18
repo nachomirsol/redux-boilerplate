@@ -10,11 +10,9 @@ const Selector = ({ options, selectName, defaultValue, onChange }) => {
             <select
                 name={selectName}
                 defaultValue={defaultValue}
-                onChange={e => {
-                    onChange(e);
-                }}>
+                onChange={(e) => onChange(e.target.value)}>
                 {options.map((option, index) => (
-                    <option value={option ? option.value : option}>{option ? option.name : option}</option>
+                    <option value={option ? option.value : option} key={index}>{option ? option.name : option}</option>
                 ))}
 
             </select>
