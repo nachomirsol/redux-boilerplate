@@ -9,13 +9,6 @@
         list-style-type:none;
         li{
             padding-top:8px;
-            span{
-                padding-left:8px;
-                font-size:13px;
-                @include themify($themes) {
-                    color: themed("textColorBase");
-                }
-            }
         }
     }
 }
