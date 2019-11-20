@@ -18,6 +18,52 @@
   margin-top: $spacing-xs;
 }
 
+.popover__wrapper--right {
+  margin-top: 0;
+  margin-right: $spacing-xs;
+  transform: translate(0%, -50%);
+}
+
+.popover__wrapper--right-top {
+  margin-top: 0;
+  margin-left: $spacing-xs;
+  transform: translate(0%, -90%);
+}
+
+.popover__wrapper--right-bottom {
+  margin-left: $spacing-xs;
+  transform: translate(0%, 0%);
+}
+
+.popover__wrapper--left {
+  margin-top: 0;
+  transform: translate(-100%, -50%);
+}
+
+.popover__wrapper--left-top {
+  margin-top: 0;
+  transform: translate(-100%, -90%);
+}
+
+.popover__wrapper--left-bottom {
+  transform: translate(-100%, 0%);
+}
+
+.popover__wrapper--top,
+.popover__wrapper--top-right,
+.popover__wrapper--top-left {
+  margin-top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.popover__wrapper--full-height {
+  margin-top: 0;
+  top: 0 !important;
+  .popover__body {
+    height: 100vh;
+  }
+}
+
 .popover__body {
   padding: $spacing-xxs $spacing-xs;
   max-width: none !important;
@@ -31,4 +77,67 @@
   polygon {
     fill: #31373f;
   }
+}
+
+.popover__arrow--left {
+  top: 50%;
+  left: 99%;
+  transform: translateY(3px) rotate(90deg);
+}
+
+.popover__arrow--left-top {
+  top: 90%;
+  left: 99%;
+  transform: translateY(3px) rotate(90deg);
+}
+
+.popover__arrow--left-bottom {
+  top: 0%;
+  left: 99%;
+  transform: translateY(3px) rotate(90deg);
+}
+
+.popover__arrow--right {
+  top: 50%;
+  left: 0%;
+  transform: translateX(-11px) translateY(3px) rotate(-90deg);
+}
+
+.popover__arrow--right-top {
+  top: 90%;
+  left: 0%;
+  transform: translateX(-11px) translateY(3px) rotate(-90deg);
+}
+
+.popover__arrow--right-bottom {
+  top: 0%;
+  left: 0%;
+  transform: translateX(-11px) translateY(3px) rotate(-90deg);
+}
+
+.popover__arrow--top {
+  top: 100%;
+  transform: rotate(180deg);
+}
+
+.popover__arrow--top-left {
+  top: 100%;
+  left: 90%;
+  transform: rotate(180deg);
+}
+
+.popover__arrow--top-right {
+  top: 100%;
+  left: 0%;
+  transform: rotate(180deg);
+}
+
+.popover__arrow--bottom-left {
+  left: 90%;
+  transform: translateY(-7px);
+}
+
+.popover__arrow--bottom-right {
+  left: 0%;
+  transform: translateY(-7px);
 }
