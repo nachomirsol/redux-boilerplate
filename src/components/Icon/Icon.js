@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 /**Components */
 import customIcons from "./customIcons";
-
+/**Styles */
+import "./icon.scss";
 
 const Icon = ({ name, size, color, custom }) => {
   if (name) {

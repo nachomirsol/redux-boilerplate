@@ -2,6 +2,7 @@
     "app.components.Language.Selector.Title": "Select language",
     "app.components.Theme.Switcher.Title.Light": "light mode",
     "app.components.Theme.Switcher.Title.Dark": "Dark mode",
+    "app.components.Sidebar.AllMyInfraestructure": "All My Infraestructure",
     "app.components.Sidebar.Infraestructures": "Infraestructures",
     "app.components.Sidebar.Services": "Services",
     "app.components.Sidebar.EnergeticEfficiency": "Energetic efficiency",

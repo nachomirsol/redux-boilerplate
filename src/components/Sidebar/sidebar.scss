@@ -18,7 +18,7 @@
   width: 320px;
 }
 
-.sidebar__items {
+.sidebar__item {
   font-family: Rubik Regular;
   font-size: $spacing-xs;
   user-select: none; 
@@ -33,16 +33,12 @@
   border-radius: 20px;
   min-width: 40px;
   min-height: 40px;
-
-  &.selected {
-    background-color: $color-primary;
-  }
   &:hover {
     @include themify($themes) {
       background-color: themed("sidenavItemBackgroundColor");
     }
   }
-  .custom-icon {
+  .custom-icon, .icon {
     float: none;
     padding-right: 0;
     height: 22px;
@@ -52,17 +48,20 @@
     margin: 0;
     position: static;
     top: 0;
-
   }
 }
 
-.sidebar__items--expanded {
+.sidebar__item--selected {
+  background-color: $color-primary;
+}
+
+.sidebar__item--expanded {
   justify-content: normal;
   padding: 0 $spacing-xs;
   height: auto;
   width: auto;
 
-  .custom-icon {
+  .custom-icon, .icon {
     float: left;
     padding-right: 12px;
   }
@@ -78,4 +77,12 @@
   border-radius: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.menu-separator {
+  margin: 20px 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  opacity: .15;
 }
