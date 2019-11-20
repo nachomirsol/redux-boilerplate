@@ -8,9 +8,9 @@ import Icon from "components/Icon";
 
 const HeaderTriggerIcon = ({ gradient, iconName, children, place }) => {
   return (
-    <PopoverController place={place}>
+    <PopoverController place={place} offCenter={true}>
       <PopoverTrigger>
-        <span className={`icon-wrapper ${gradient ? 'gradient' : ''}`}>
+        <span className={`icon-wrapper--light ${gradient ? 'gradient' : ''}`}>
           <Icon name={iconName} size="lg"></Icon>
         </span>
       </PopoverTrigger>

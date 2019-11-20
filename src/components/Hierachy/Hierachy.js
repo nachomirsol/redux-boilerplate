@@ -8,6 +8,7 @@ import HierachyItem from './components/HierachyItem';
 import './hierachy.scss';
 
 const Hierachy = ({ data, intl }) => {
+    let checkboxesArray = [];
 
     const [itemChecked, setItemChecked] = useState([]);
     const [checkboxTree, setCheckboxTree] = useState([]);
@@ -17,58 +18,48 @@ const Hierachy = ({ data, intl }) => {
     }, [])
 
 
-    const fillCheckboxTree = (data) => {
-        let checkboxesArray = [];
-        data.forEach((item) => {
-            if (!item.children.length > 0) {
-                checkboxesArray.push(item)
-            }
-            checkboxesArray.push(item)
-            fillCheckboxTree(item.children)
-            //console.log(checkboxesArray)
-        })
-        setCheckboxTree(checkboxTree.concat(...checkboxTree, checkboxesArray))
+    const fillCheckboxTree = (dataHierachy) => {
+        const checkboxTree = createCheckboxTree(dataHierachy);
+        setCheckboxTree(checkboxTree);
     }
 
-    /*const selectHierachy = (info, id) => {
-        alert(id)
-        console.log(info)
+    const createCheckboxTree = (dataHierachy) => {
+        return dataHierachy.map((item) => {
+            item = { ...item, checked: false }
+            if (item.children && item.children.length) {
+                item.children = createCheckboxTree(item.children);
+            }
+            return item;
+        })
+    }
 
-        if (info.children.length > 0) {
-            info.children.forEach((child) => {
-                console.log(child)
-                if (child.parentId === id) {
-                    setIsChecked(!isChecked)
-                }
-            })
-        }
-    }*/
-
-    const checkItem = (id, child) => {
-        let checkedCheckbox = [];
-        child.children.forEach((item) => {
-            if (item.children.length > 0) {
-                checkedCheckbox.push({ id: item.id, checked: true })
+    const checkItem = (data) => {
+        debugger;
+        Object.keys(data).forEach((item) => {
+            if (item.children && item.children.length) {
+                checkItem(item.children)
             } else {
-                checkedCheckbox.push({ id: item.id })
+                if (item.id === data.id) {
+                    item.checked = !item.checked
+                }
             }
         })
-        console.log(checkedCheckbox)
     }
 
-    const showHierachy = (data) => {
-        return data.map((item) => {
+    const showHierachy = (dataHierachy) => {
 
-            if (!item.children.length > 0) {
+        return dataHierachy.map((item) => {
+
+            if (!item.children.length) {
                 return (
                     <li key={item.id}>
                         <HierachyItem
                             dataInfo={item}
                             icon={''}
                             style={'withoutChildren'}
-                            onCheckItem={(id, child) => checkItem(id, child)}
+                            onCheckItem={(data) => checkItem(data)}
                             id={item.id}
-
+                            checked={item.checked}
                         />
                     </li>
                 )
@@ -81,9 +72,9 @@ const Hierachy = ({ data, intl }) => {
                             dataInfo={item}
                             icon={'fa fa-chevron-down'}
                             style={'withChildren'}
-                            onCheckItem={(id, child) => checkItem(id, child)}
-
+                            onCheckItem={(data) => checkItem(data)}
                             id={item.id}
+                            checked={item.checked}
 
                         />
                         {showHierachy(item.children)}
@@ -98,7 +89,7 @@ const Hierachy = ({ data, intl }) => {
 
         <div className="hierachy">
             <ul>
-                {showHierachy(data ? data.children : [])}
+                {showHierachy(checkboxTree ? checkboxTree : [])}
             </ul>
         </div>
     )

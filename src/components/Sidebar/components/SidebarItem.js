@@ -1,12 +1,10 @@
 import React from "react";
 /**Libraries */
-import { injectIntl } from "react-intl";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 /**Components */
 import Icon from "components/Icon";
-
 
 const SidebarItem = ({ expanded, item, intl }) => {
   const { pathname } = useLocation();
@@ -14,9 +12,9 @@ const SidebarItem = ({ expanded, item, intl }) => {
   return (
     <Link to={url}>
       <div
-        className={`sidebar__items 
-          ${expanded ? "sidebar__items--expanded" : ""}
-          ${ pathname.includes(path) ? "selected" : ""}`}
+        className={`sidebar__item 
+          ${expanded ? "sidebar__item--expanded" : ""}
+          ${pathname.includes(path) ? "sidebar__item--selected" : ""}`}
       >
         <Icon name={icon} custom={true} />
         {expanded && (
@@ -24,7 +22,9 @@ const SidebarItem = ({ expanded, item, intl }) => {
             {intl.formatMessage({ id: `app.components.Sidebar.${text}` })}
           </span>
         )}
-        {expanded && alarms > 0 && <span className="sidebar__alarms">{alarms}</span>}
+        {expanded && alarms > 0 && (
+          <span className="sidebar__alarms">{alarms}</span>
+        )}
       </div>
     </Link>
   );
@@ -33,7 +33,7 @@ const SidebarItem = ({ expanded, item, intl }) => {
 SidebarItem.propTypes = {
   expanded: PropTypes.bool.isRequired,
   item: PropTypes.object.isRequired,
-  intl: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired
 };
 
-export default injectIntl(SidebarItem);
+export default SidebarItem;

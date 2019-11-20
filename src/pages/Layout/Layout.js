@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 /**Libraries */
 import { compose } from "redux";
 import { useHistory } from "react-router-dom";
@@ -13,17 +13,6 @@ import "./layout.scss";
 const Layout = ({ children, breadcrumbs, pageSettings, onToggleMenu }) => {
   const { menuIsOpen } = pageSettings;
   const history = useHistory();
-  const checkWindowSize = () => {
-    if (window.innerWidth <= 768) {
-      onToggleMenu(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("resize", checkWindowSize);
-    return () => {
-      window.removeEventListener("resize", checkWindowSize);
-    };
-  });
   return (
     <div className="page">
       <Header
