@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 /**Libraries */
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
-import produce from "immer";
-import * as _ from "lodash";
+
 /**Components */
 import HierachyItem from "./components/HierachyItem";
 /**Styles */
 import "./hierachy.scss";
 
 const Hierachy = ({ data, intl }) => {
-  let checkboxesArray = [];
 
-  const [itemChecked, setItemChecked] = useState([]);
   const [checkboxTree, setCheckboxTree] = useState([]);
 
   useEffect(() => {
