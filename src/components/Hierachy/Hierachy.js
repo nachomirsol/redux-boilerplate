@@ -34,16 +34,46 @@ const Hierachy = ({ data, intl }) => {
     });
   };
 
-  const checkItem = data => {
-    const nextState = produce(checkboxTree, draftState => {
-      let itemChecked = draftState.find(item => item.id === data.id);
-      if (!itemChecked) {
-        itemChecked = _.chain(draftState)
-          .map("children") // pluck all children from data
-          .flatten() // flatten the elements into a single array
-          .find({ id: data.id }) // exatract the element with a id of item.id (id should be unique)
-          .value();
-      }
+//   const checkItem = data => {
+//     const nextState = produce(checkboxTree, draftState => {
+//       let itemChecked = draftState.find(item => item.id === data.id);
+//       if (!itemChecked) {
+//         itemChecked = _.chain(draftState)
+//           .map("children") // pluck all children from data
+//           .flatten() // flatten the elements into a single array
+//           .find({ id: data.id }) // exatract the element with a id of item.id (id should be unique)
+//           .value();
+//       }
+//       itemChecked.checked = !itemChecked.checked;
+//       if (itemChecked.children && itemChecked.children.length) {
+//         itemChecked.children = itemChecked.children.map(child => {
+//             child.checked = itemChecked.checked;
+//             return child;
+//         });
+//       }
+//       return draftState;
+//     });
+
+//     setCheckboxTree(nextState);
+//   };
+
+  const searchItem = (data, id) => {
+    let itemChecked = data.find(item => item.id === id);
+    if (!itemChecked) {
+        const flattenArray = data.reduce((array, item) => {
+            return array.concat(item.children)
+        }, []);
+        itemChecked = flattenArray.find(item => item.id === id);
+        if (!itemChecked) {
+            return searchItem(flattenArray);
+        }
+    }
+    return itemChecked;
+  }
+
+  const checkItem = id => {
+      const nextState = [...[], ...checkboxTree];
+      const itemChecked = searchItem(nextState, id);
       itemChecked.checked = !itemChecked.checked;
       if (itemChecked.children && itemChecked.children.length) {
         itemChecked.children = itemChecked.children.map(child => {
@@ -51,8 +81,6 @@ const Hierachy = ({ data, intl }) => {
             return child;
         });
       }
-      return draftState;
-    });
     setCheckboxTree(nextState);
   };
 
