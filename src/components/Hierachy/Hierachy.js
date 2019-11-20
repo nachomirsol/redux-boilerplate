@@ -9,7 +9,7 @@ import './hierachy.scss';
 
 const Hierachy = ({ data, intl }) => {
 
-    const [isChecked, setIsChecked] = useState([]);
+    const [itemChecked, setItemChecked] = useState([]);
     const [checkboxTree, setCheckboxTree] = useState([]);
 
     useEffect(() => {
@@ -25,12 +25,12 @@ const Hierachy = ({ data, intl }) => {
             }
             checkboxesArray.push(item)
             fillCheckboxTree(item.children)
-            console.log(checkboxesArray)
+            //console.log(checkboxesArray)
         })
         setCheckboxTree(checkboxTree.concat(...checkboxTree, checkboxesArray))
     }
 
-    const selectHierachy = (info, id) => {
+    /*const selectHierachy = (info, id) => {
         alert(id)
         console.log(info)
 
@@ -42,22 +42,31 @@ const Hierachy = ({ data, intl }) => {
                 }
             })
         }
+    }*/
+
+    const checkItem = (id, child) => {
+        let checkedCheckbox = [];
+        child.children.forEach((item) => {
+            if (item.children.length > 0) {
+                checkedCheckbox.push({ id: item.id, checked: true })
+            } else {
+                checkedCheckbox.push({ id: item.id })
+            }
+        })
+        console.log(checkedCheckbox)
     }
 
     const showHierachy = (data) => {
-
         return data.map((item) => {
 
             if (!item.children.length > 0) {
-
                 return (
                     <li key={item.id}>
                         <HierachyItem
                             dataInfo={item}
                             icon={''}
                             style={'withoutChildren'}
-                            onCheckItem={(info, id) => selectHierachy(info, id)}
-                            isChecked={isChecked}
+                            onCheckItem={(id, child) => checkItem(id, child)}
                             id={item.id}
 
                         />
@@ -66,15 +75,14 @@ const Hierachy = ({ data, intl }) => {
             }
 
             return (
-
                 <li key={item.id}>
                     <ul>
                         <HierachyItem
                             dataInfo={item}
                             icon={'fa fa-chevron-down'}
                             style={'withChildren'}
-                            onCheckItem={(info, id) => selectHierachy(info, id)}
-                            isChecked={isChecked}
+                            onCheckItem={(id, child) => checkItem(id, child)}
+
                             id={item.id}
 
                         />
@@ -83,8 +91,6 @@ const Hierachy = ({ data, intl }) => {
                 </li>
 
             );
-
-
         })
     }
 

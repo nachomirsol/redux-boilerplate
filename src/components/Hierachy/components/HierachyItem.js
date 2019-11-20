@@ -5,11 +5,11 @@ import React from 'react';
 import './hierachyItem.scss';
 
 
-const HierachyItem = ({ dataInfo, icon, style, onCheckItem, isChecked, id }) => {
+const HierachyItem = ({ dataInfo, icon, style, onCheckItem, id }) => {
     return (
         <div className={`${style}`}>
             <i className={`${icon}`} />
-            <input type="checkbox" onChange={() => onCheckItem(dataInfo, id)} checked={isChecked} />
+            <input type="checkbox" onChange={() => onCheckItem(id, dataInfo)} />
             <span>{dataInfo.label}</span>
         </div>
     )
