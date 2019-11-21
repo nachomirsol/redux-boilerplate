@@ -9,7 +9,7 @@ const HierachyItem = ({ dataInfo, icon, style, onCheckItem, id, checked }) => {
     return (
         <div className={`${style}`}>
             <i className={`${icon}`} />
-            <input type="checkbox" onChange={() => onCheckItem(dataInfo)} checked={checked} />
+            <input type="checkbox" onChange={() => onCheckItem(id, dataInfo)} checked={checked} />
             <span>{dataInfo.label}</span>
         </div>
     )
