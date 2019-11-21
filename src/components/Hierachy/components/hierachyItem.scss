@@ -1,18 +1,19 @@
 @import "../../../styles/styles-utils.scss";
 
-
-i{
-    font-size:12px;
-    padding-right:8px;
+.hierarchy-item {
+  i {
+    font-size: 12px;
+    padding-right: 8px;
     @include themify($themes) {
-        color: themed("textColorBase");
+      color: themed("textColorBase");
     }
-    cursor:pointer;
-}
-span{
-    padding-left:8px;
-    font-size:13px;
+    cursor: pointer;
+  }
+  span {
+    padding-left: 8px;
+    font-size: 13px;
     @include themify($themes) {
-        color: themed("textColorBase");
+      color: themed("textColorBase");
     }
+  }
 }

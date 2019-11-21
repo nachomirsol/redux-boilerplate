@@ -5,7 +5,10 @@ import { injectIntl } from "react-intl";
 /**Components */
 import SidebarItem from "./components/SidebarItem";
 import Icon from "components/Icon";
+import Hierachy from 'components/Hierachy';
 import { PopoverController, PopoverTrigger } from "components/Popover";
+/**Mock data */
+import hierachyData from '../../mockData/hierachyData/hierachyData.json';
 /**Config utils */
 import sidebarModel from "./utils/sidebarModel";
 /**Styles */
@@ -19,7 +22,7 @@ const Sidebar = ({ expanded, intl }) => {
         expanded ? "sidebar__wrapper--expanded" : ""
       }`}
     >
-      <div className="sidebar__hierarchy">
+
         <PopoverController
           place="right-bottom"
           fullHeight={true}
@@ -44,15 +47,10 @@ const Sidebar = ({ expanded, intl }) => {
               )}
             </div>
           </PopoverTrigger>
-          <div>
-            <div> APARCAOOOOLOLOLOLOLOLOLO </div>
-            <div> APARCAOOOOLOLOLOLOLOLOLO </div>
-            <div> APARCAOOOOLOLOLOLOLOLOLO </div>
-            <div> APARCAOOOOLOLOLOLOLOLOLO </div>
-            <div> APARCAOOOOLOLOLOLOLOLOLO </div>
+          <div className="sidebar__hierarchy">
+            <Hierachy data={hierachyData} />
           </div>
         </PopoverController>
-      </div>
 
       <div className="menu-separator"></div>
       {Object.keys(sidebarModel).map((item, index) => {

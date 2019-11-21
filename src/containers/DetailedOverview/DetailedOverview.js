@@ -11,7 +11,6 @@ import './detailedOverview.scss';
 const DetailedOverview = ({ intl }) => {
   return (
     <>
-      <Hierachy data={hierachyData} />
     </>
   )
 }
