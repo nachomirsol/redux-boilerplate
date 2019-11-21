@@ -32,6 +32,17 @@ const Hierachy = ({ data, intl }) => {
     setCheckboxTree(checkboxTree);
   };
 
+   /** This function checks the parent elements by recursively*/
+   const checkParentElements = (data, itemFounded) => {
+    if (itemFounded.parentId) {
+      const parent = searchHierachyElement(data, itemFounded.parentId);
+      if (parent) {
+        parent.checked = true;
+        checkParentElements(data, parent)
+      }
+    }
+  };
+
   /** This function search the id recursively over the hierachy tree and returns the item searched over the data we pass it by param*/
   const searchHierachyElement = (data, id) => {
     let itemFounded = data.find(item => item.id === id);
@@ -53,6 +64,9 @@ const Hierachy = ({ data, intl }) => {
 
     const itemFounded = searchHierachyElement(stateClone, id);
     itemFounded.checked = !itemFounded.checked;
+    if (itemFounded.checked) {
+      checkParentElements(stateClone, itemFounded);
+    }
 
     if (itemFounded.children && itemFounded.children.length) {
       itemFounded.children = itemFounded.children.map(child => {
