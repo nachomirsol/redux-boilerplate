@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 /**Libraries */
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
+
 /**Components */
-import HierachyItem from './components/HierachyItem';
+import HierachyItem from "./components/HierachyItem";
 /**Styles */
-import './hierachy.scss';
+import "./hierachy.scss";
 
 const Hierachy = ({ data, intl }) => {
 
@@ -133,6 +134,6 @@ const Hierachy = ({ data, intl }) => {
 Hierachy.propTypes = {
     intl: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired
-}
+};
 
 export default injectIntl(Hierachy);
