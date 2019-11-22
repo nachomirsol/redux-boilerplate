@@ -8,9 +8,9 @@
   padding: $spacing-s $spacing-xs;
   transition: width 0s;
   font-family: "Rubik", sans-serif;
-  width: 40px;
+  width: 75px;
   @media (max-width: 768px) {
-    width: 40px;
+    width: 75px;
   }
 }
 
@@ -21,7 +21,7 @@
 .sidebar__item {
   font-family: Rubik Regular;
   font-size: $spacing-xs;
-  user-select: none; 
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,11 +38,12 @@
       background-color: themed("sidenavItemBackgroundColor");
     }
   }
-  .custom-icon, .icon {
+  .custom-icon,
+  .icon {
     float: none;
-    padding-right: 0;
-    height: 22px;
-    width: 22px;
+    padding: 4px;
+    height: 42px;
+    width: 42px;
     max-width: 32px;
     max-height: 32px;
     margin: 0;
@@ -57,13 +58,14 @@
 
 .sidebar__item--expanded {
   justify-content: normal;
-  padding: 0 $spacing-xs;
+  padding: 0 $spacing-s;
   height: auto;
   width: auto;
 
-  .custom-icon, .icon {
+  .custom-icon,
+  .icon {
     float: left;
-    padding-right: 12px;
+    margin-right: 16px;
   }
 }
 
@@ -84,5 +86,10 @@
   height: 2px;
   width: 100%;
   background-color: #000;
-  opacity: .15;
+  opacity: 0.15;
+}
+
+.sidebar__hierarchy {
+  height: 100vh;
+  width: 350px;
 }
