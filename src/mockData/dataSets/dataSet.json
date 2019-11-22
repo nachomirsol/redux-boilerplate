@@ -1,0 +1,91 @@
+{
+    "name": "Go Aigua",
+    "category": "company",
+    "id": 1,
+    "selected": true,
+    "alarms": null,
+    "children": [
+        {
+            "name": "Area Verde",
+            "category": "delegation",
+            "id": 2,
+            "parentId": 1,
+            "selected": true,
+            "alarms": null,
+            "children": [
+                {
+                    "name": "Canals",
+                    "category": "population",
+                    "id": 7,
+                    "parentId": 2,
+                    "selected": true,
+                    "alarms": null,
+                    "children": [
+                        {
+                            "name": "Sector 1",
+                            "category": "sector",
+                            "id": 8,
+                            "parentId": 7,
+                            "selected": true,
+                            "alarms": null,
+                            "children": []
+                        },
+                        {
+                            "name": "Sector 2",
+                            "category": "sector",
+                            "id": 9,
+                            "parentId": 7,
+                            "selected": true,
+                            "alarms": null,
+                            "children": []
+                        },
+                        {
+                            "name": "Sector 3",
+                            "category": "sector",
+                            "id": 10,
+                            "parentId": 7,
+                            "selected": true,
+                            "alarms": null,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Xàtiva",
+                    "category": "population",
+                    "id": 8,
+                    "parentId": 2,
+                    "children": []
+                },
+                {
+                    "name": "Albaida",
+                    "category": "population",
+                    "id": 9,
+                    "parentId": 2,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Area Amarilla",
+            "category": "delegation",
+            "id": 4,
+            "parentId": 1,
+            "children": []
+        },
+        {
+            "name": "Area Roja",
+            "category": "delegation",
+            "id": 5,
+            "parentId": 1,
+            "children": []
+        },
+        {
+            "name": "Area Roja",
+            "category": "delegation",
+            "id": 6,
+            "parentId": 1,
+            "children": []
+        }
+    ]
+}
