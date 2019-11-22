@@ -1,15 +1,33 @@
 import React from "react";
-import sidebarModel from './utils/sidebarModel';
-import SidebarItem from "./components/SidebarItem";
+/**Libraries */
 import PropTypes from "prop-types";
-import './sidebar.scss';
+import { injectIntl } from "react-intl";
+/**Components */
+import SidebarItem from "./components/SidebarItem";
+import SidebarHierarchyItem from "./components/SidebarHierarchyItem";
+/**Config utils */
+import sidebarModel from "./utils/sidebarModel";
+/**Styles */
+import "./sidebar.scss";
 
-
-const Sidebar = ({ expanded }) => {
+const Sidebar = ({ expanded, intl }) => {
   return (
-    <div className={`sidebar__wrapper ${expanded ? 'sidebar__wrapper--expanded' : ''}`}>
+    <div
+      className={`sidebar__wrapper ${
+        expanded ? "sidebar__wrapper--expanded" : ""
+      }`}
+    >
+      <SidebarHierarchyItem expanded={expanded} intl={intl} />
+      <div className="menu-separator"></div>
       {Object.keys(sidebarModel).map((item, index) => {
-        return (<SidebarItem key={`sidebar-item-text-${index}`} expanded={expanded} item={sidebarModel[item]}></SidebarItem>)
+        return (
+          <SidebarItem
+            key={`sidebar-item-text-${index}`}
+            expanded={expanded}
+            item={sidebarModel[item]}
+            intl={intl}
+          ></SidebarItem>
+        );
       })}
     </div>
   );
@@ -17,6 +35,11 @@ const Sidebar = ({ expanded }) => {
 
 Sidebar.propTypes = {
   expanded: PropTypes.bool.isRequired,
-}
+  intl: PropTypes.object.isRequired
+};
 
-export default Sidebar;
+Sidebar.defaultProps = {
+  expanded: false
+};
+
+export default injectIntl(Sidebar);

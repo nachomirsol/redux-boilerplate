@@ -19,6 +19,7 @@ import "./homePage.scss";
 // This case we use the layout in the route instead of the component directly
 const HomePage = ({ intl }) => {
   let { path } = useRouteMatch();
+
   return (
     <div className="homePage homePage__wrapper">
       {nestedRoutes &&
@@ -40,7 +41,7 @@ const HomePage = ({ intl }) => {
                     onViewChange={currentView => console.log(currentView)}
                   ></SubHeader>
                   <Tabs intl={intl} routes={nestedRoutes[path]}></Tabs>
-                  <route.component intl={intl} {...props} />
+                  <route.component intl={intl} {...props} />{" "}
                 </Layout>
               )}
             />

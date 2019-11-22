@@ -1,4 +1,8 @@
 {
+    "app.components.Language.Selector.Title": "Select language",
+    "app.components.Theme.Switcher.Title.Light": "light mode",
+    "app.components.Theme.Switcher.Title.Dark": "Dark mode",
+    "app.components.Sidebar.AllMyInfraestructure": "All My Infraestructure",
     "app.components.Sidebar.Infraestructures": "Infraestructures",
     "app.components.Sidebar.Services": "Services",
     "app.components.Sidebar.EnergeticEfficiency": "Energetic efficiency",
@@ -15,5 +19,13 @@
     "app.components.Breadcrumb.Detailed_Overview": "Detailed Overview",
     "app.components.Breadcrumb.Infraestructures": "Infraestructures",
     "app.components.Breadcrumb.Energetic_Efficiency": "Energetic Efficiency",
-    "app.components.Breadcrumb.Leak_Search": "Leak Search"
+    "app.components.Breadcrumb.Leak_Search": "Leak Search",
+    "app.pages.LoginPage.Enter": "ENTER",
+    "app.pages.LoginPage.Forgot": "Forgot your password? Click here",
+    "app.pages.LoginPage.header": "",
+    "app.pages.LoginPage.password": "Password",
+    "app.pages.LoginPage.pleaseWait": "Please wait...",
+    "app.pages.LoginPage.success": "Success",
+    "app.pages.LoginPage.user": "User",
+    "app.pages.LoginPage.wrongPassword": "Incorrect user and password"
 }

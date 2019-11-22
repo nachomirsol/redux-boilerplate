@@ -1,7 +1,11 @@
 import React from "react";
+/**Libraries */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import customIcons from "./customIcons";
 import PropTypes from "prop-types";
+/**Components */
+import customIcons from "./customIcons";
+/**Styles */
+import "./icon.scss";
 
 const Icon = ({ name, size, color, custom }) => {
   if (name) {

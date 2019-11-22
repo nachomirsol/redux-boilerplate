@@ -44,11 +44,11 @@
 }
 
 .user-avatar__dropdown {
-  cursor: pointer;
+  cursor: pointer !important;
   padding: 0px 2px 4px;
   min-width: 150px;
 
-  label {
+  span {
     font-family: "Myriad Pro Regular";
     font-size: 16px;
     padding: 4px;

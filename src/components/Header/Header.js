@@ -1,15 +1,20 @@
 import React from "react";
-import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
+/**Libraries */
+import PropTypes from 'prop-types';
+/**Components */
 import { Breadcrumb } from 'components/Breadcrumb';
 import { injectIntl } from "react-intl";
-import UserAvatar from "components/UserAvatar";
 import HeaderTriggerIcon from "./components/HeaderTriggerIcon";
 import Icon from "components/Icon";
-import PropTypes from 'prop-types';
+import Settings from "components/Settings";
+import UserAvatar from "components/UserAvatar";
+/**Assets */
+import { ReactComponent as LogoGoAigua } from "assets/svg/goaigua-logo.svg";
+/**Styles */
 import './header.scss';
 
 
-const loginPage = { userName: "Mateo" };
+const loginData = { userName: "Mateo" };
 
 const Header = ({ handleSideBar, breadcrumbs, intl }) => {
   return (
@@ -19,15 +24,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
           className="icon-wrapper menu-bars"
           onClick={() => handleSideBar()}
         >
-           {/* <HeaderTriggerIcon iconName="bars" place="right">
-          <div>
-            {" "}
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-          </div>
-        </HeaderTriggerIcon> */}
+
           <Icon name="bars" size="lg"></Icon>
         </span>
 
@@ -50,12 +47,9 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
         </HeaderTriggerIcon>
 
         <HeaderTriggerIcon iconName="cog">
-          <div>
+          <div >
             {" "}
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
-            <p>fgsfdsfdsfds</p>
+            <Settings />
           </div>
         </HeaderTriggerIcon>
 
@@ -69,9 +63,9 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
           </div>
         </HeaderTriggerIcon>
 
-        <UserAvatar loginPage={loginPage}></UserAvatar>
+        <UserAvatar loginData={loginData}></UserAvatar>
 
-        <HeaderTriggerIcon iconName="th" gradient={true} place="left">
+        <HeaderTriggerIcon iconName="th" gradient={true} place="bottom-left">
           <div>
             {" "}
             <p>fgsfdsfdsfds</p>
@@ -105,6 +99,7 @@ const Header = ({ handleSideBar, breadcrumbs, intl }) => {
 Header.propTypes = {
   handleSideBar: PropTypes.func.isRequired,
   breadcrumbs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  intl: PropTypes.object.isRequired,
 }
 
 export default injectIntl(Header);

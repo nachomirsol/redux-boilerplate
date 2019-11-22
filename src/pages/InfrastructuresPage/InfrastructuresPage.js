@@ -1,16 +1,15 @@
 import React from "react";
 /*Librarys*/
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { createStructuredSelector } from "reselect";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
+import PropTypes from "prop-types";
 /* Components */
 import Layout from "../Layout";
 
 /* Config */
 import { nestedRoutes } from "routes/config";
-/* Mock data */
 /* Styles */
 import "./infrastructuresPage.scss";
 

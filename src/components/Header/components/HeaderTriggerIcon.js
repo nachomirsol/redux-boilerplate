@@ -1,15 +1,17 @@
 import React from "react";
+/**Libraries */
+import PropTypes from 'prop-types';
+/**Components */
 import { PopoverController, PopoverTrigger } from "components/Popover";
 import Icon from "components/Icon";
-import PropTypes from 'prop-types';
 
 
 const HeaderTriggerIcon = ({ gradient, iconName, children, place }) => {
   return (
-    <PopoverController place={place}>
+    <PopoverController place={place} offCenter={true}>
       <PopoverTrigger>
-        <span className={`icon-wrapper ${gradient ? 'gradient' : ''}`}>
-          <Icon  name={iconName} size="lg"></Icon>
+        <span className={`icon-wrapper--light ${gradient ? 'gradient' : ''}`}>
+          <Icon name={iconName} size="lg"></Icon>
         </span>
       </PopoverTrigger>
       {children}

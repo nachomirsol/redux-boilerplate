@@ -1,16 +1,20 @@
 import React from 'react';
-/*Librarys*/
+/*Libraries*/
 import PropTypes from "prop-types";
 /* Components */
+/**Styles */
 import './detailedOverview.scss';
 
-const DetailedOverview = ({ intl }) => (
+const DetailedOverview = () => {
+  return (
     <>
-DETAILED OVERVIERW!!
-  </>
-)
+    </>
+  )
+}
+
+
 
 DetailedOverview.propTypes = {
-    intl: PropTypes.object.isRequired
+  intl: PropTypes.object.isRequired
 }
 export default DetailedOverview;

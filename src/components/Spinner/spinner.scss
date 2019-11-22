@@ -1,0 +1,161 @@
+// 'three-bounce': { className: 'spinner_three-bounce', divCount: 3 },
+@import "../../styles/styles-utils.scss";
+.spinner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .spinner_message {
+    margin-top: $spacing-xs;
+    @include themify($themes) {
+      color: themed("textColorBase");
+    }
+  }
+
+  .spinner_three-bounce {
+    height: 24px;
+  }
+
+  .spinner_three-bounce > div {
+    margin-right: $spacing-xxs;
+    width: 24px;
+    height: 24px;
+    @include themify($themes) {
+      background-color: themed("spinnerColor");
+    }
+    border-radius: 100%;
+    display: inline-block;
+
+    -webkit-animation: spinner_bouncedelay 1.4s infinite ease-in-out;
+    animation: spinner_bouncedelay 1.4s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  .spinner_three-bounce--s > div {
+    width: 8px;
+    height: 8px;
+  }
+  .spinner_three-bounce--m > div {
+    width: 16px;
+    height: 16px;
+  }
+  .spinner_three-bounce--l > div {
+    width: 24px;
+    height: 24px;
+  }
+  .spinner_three-bounce--xl > div {
+    width: 32px;
+    height: 32px;
+  }
+
+  .spinner_three-bounce > div:first-child {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  .spinner_three-bounce > div:nth-child(2) {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+
+  @-webkit-keyframes spinner_bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes spinner_bouncedelay {
+    0%,
+    80%,
+    100% {
+      transform: scale(0);
+      -webkit-transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+    }
+  }
+}
+
+@-webkit-keyframes spinner_fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes spinner_fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes spinner_fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner_fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.spinner_fade-in {
+  -webkit-animation: spinner_fade-in 2s;
+  -moz-animation: spinner_fade-in 2s;
+  -o-animation: spinner_fade-in 2s;
+  -ms-animation: spinner_fade-in 2s;
+  animation: spinner_fade-in 2s;
+}
+
+.spinner_fade-in-half-second {
+  -webkit-animation: spinner_fade-in 1s;
+  -moz-animation: spinner_fade-in 1s;
+  -o-animation: spinner_fade-in 1s;
+  -ms-animation: spinner_fade-in 1s;
+  animation: spinner_fade-in 1s;
+}
+
+.spinner_fade-in-quarter-second {
+  -webkit-animation: spinner_fade-in 0.5s;
+  -moz-animation: spinner_fade-in 0.5s;
+  -o-animation: spinner_fade-in 0.5s;
+  -ms-animation: spinner_fade-in 0.5s;
+  animation: spinner_fade-in 0.5s;
+}

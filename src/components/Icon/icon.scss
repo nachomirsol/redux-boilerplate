@@ -1,0 +1,26 @@
+@import "../../styles/styles-utils.scss";
+
+.icon-wrapper {
+    cursor: pointer;
+    svg {
+      max-width: 32px;
+      max-height: 32px;
+      path {
+        @include themify($themes) {
+          fill: themed("textColorBase");
+        }
+      }
+    }
+  }
+
+  .icon-wrapper--light {
+    svg {
+      path {
+        fill: transparent;
+        @include themify($themes) {
+          stroke: themed("textColorBase");
+        }
+        stroke-width: 35px;
+      }
+    }
+  }

@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
+/**Libraries */
 import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
-
-import { Routes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
-
 import { IntlProvider } from "react-intl";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,
@@ -19,21 +15,26 @@ import {
   faEllipsisV,
   faBolt,
   faBroadcastTower,
-  faGlassWhiskey
+  faGlassWhiskey,
+  faChevronDown,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
-
+/**Components */
+import { Routes } from "./routes/routes";
+/**Translations data */
 import es_translations from "./translations/es.json";
 import en_translations from "./translations/en.json";
+/**Styles */
 import "styles/main.scss";
 
 // add font awesome icons to the library in order to import just used icons
-library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey);
+library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey, faChevronDown, faMapMarkerAlt);
 
 const routes = Routes();
 
-const App = ({ locale }) => {
+const App = ({ settings }) => {
   useEffect(() => {
-    console.log("language App", locale);
+    console.log("language App", settings.locale);
   });
 
   const translations = {
@@ -42,18 +43,18 @@ const App = ({ locale }) => {
   };
 
   return (
-    <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
+    <IntlProvider key={settings.locale} locale={settings.locale} messages={translations[settings.locale]}>
       <BrowserRouter basename={"/"}>{routes}</BrowserRouter>
     </IntlProvider>
   );
 };
 
 App.propTypes = {
-  locale: PropTypes.string.isRequired
+  settings: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  locale: state.locale.locale
+  settings: state.settings
 });
 
 export default connect(mapStateToProps)(App);

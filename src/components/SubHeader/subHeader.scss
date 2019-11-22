@@ -11,7 +11,6 @@
   .subHeader__title {
     font-family: $font-secondary;
     font-size: 28px;
-    padding-bottom: $spacing-xs;
   }
   .subHeader__toggle-buttons {
     width: 250px;
@@ -44,4 +43,14 @@
       }
     }
   }
+  @media (max-width:768px){
+    display:flex;
+    flex-direction: column;
+    .subHeader__toggle-buttons{
+      align-self: flex-start;
+      padding-top:$spacing-xxs;
+    }
+    
+  }
+
 }

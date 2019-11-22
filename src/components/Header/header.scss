@@ -43,43 +43,26 @@
   }
 }
 
-.icon-wrapper {
-  cursor: pointer;
-  svg {
-    max-width: 32px;
-    max-height: 32px;
-    path {
-      @include themify($themes) {
-        fill: themed("textColorBase");
-      }
-    }
-  }
-  &.gradient {
-    path {
-      fill: url(#my-cool-gradient) !important;
-      stroke-width: 0 !important;
-    }
-  }
-}
 .header__leftMenu {
   display: flex;
   align-items: center;
+  .icon-wrapper {
+    margin-right: $spacing-xs;
+  }
 }
 
 .header__rightMenu {
   display: flex;
   align-items: center;
-  .icon-wrapper{
+  .icon-wrapper--light{
     svg {
-      padding: 0px 4px 0px 4px;
-      path {
-        fill: transparent;
-        @include themify($themes) {
-          stroke: themed("textColorBase");
-        }
-        stroke-width: 35px;
-      }
       margin-right: $spacing-xs;
+    }
+    &.gradient {
+      path {
+        fill: url(#my-cool-gradient) !important;
+        stroke-width: 0 !important;
+      }
     }
   }
   

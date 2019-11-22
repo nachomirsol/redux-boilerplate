@@ -1,9 +1,11 @@
 import React from 'react';
-
+/**Libraries */
 import Highcharts from 'highcharts/highstock';
-import PropTypes from 'prop-types';
 import HighchartsReact from 'highcharts-react-official';
+import PropTypes from 'prop-types';
+/**Config Helper */
 import { pieChartLegendStyle, barChartLegendStyle, areaChartLegendStyle, responsiveChartStyle } from './config';
+/**Styles */
 import './chart.scss';
 
 const Chart = ({ type, title, subtitle, xAxis, yAxis, data }) => {

@@ -1,4 +1,8 @@
 {
+    "app.components.Language.Selector.Title": "Seleccione idioma",
+    "app.components.Theme.Switcher.Title.Light": "Modo claro",
+    "app.components.Theme.Switcher.Title.Dark": "Modo oscuro",
+    "app.components.Sidebar.AllMyInfraestructure": "Toda Mi Infraestructura",
     "app.components.Sidebar.Infraestructures": "Infraestructuras",
     "app.components.Sidebar.Services": "Servicios",
     "app.components.Sidebar.EnergeticEfficiency": "Eficiencia energética",
@@ -15,5 +19,13 @@
     "app.components.Breadcrumb.Detailed_Overview": "Visión General Detallada",
     "app.components.Breadcrumb.Infraestructures": "Infraestructuras",
     "app.components.Breadcrumb.Energetic_Efficiency": "Eficiencia energética",
-    "app.components.Breadcrumb.Leak_Search": "Fugas"
+    "app.components.Breadcrumb.Leak_Search": "Fugas",
+    "app.pages.LoginPage.Enter": "ENTRAR",
+    "app.pages.LoginPage.Forgot": "Has olvidado la contraseña? Click aquí",
+    "app.pages.LoginPage.header": "This is LoginPage container !",
+    "app.pages.LoginPage.password": "Contraseña",
+    "app.pages.LoginPage.pleaseWait": "Por favor espere...",
+    "app.pages.LoginPage.success": "Exito",
+    "app.pages.LoginPage.user": "Usuario",
+    "app.pages.LoginPage.wrongPassword": "Usuario y contraseña incorrectos."
 }

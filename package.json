@@ -2,7 +2,6 @@
   "name": "redux-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/home",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
@@ -12,6 +11,8 @@
     "highcharts": "^7.2.1",
     "highcharts-react-official": "^2.2.2",
     "immer": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

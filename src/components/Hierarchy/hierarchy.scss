@@ -1,0 +1,35 @@
+@import "../../styles/styles-utils.scss";
+.hierarchy {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include themify($themes) {
+    background-color: themed("hierarchyBackground");
+  }
+  .hierarchy__wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: 16px;
+  }
+  .hierarchy__list {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 24px;
+    ul {
+      list-style-type: none;
+
+      li {
+        padding-top: 8px;
+        &.expanded {
+          display: none;
+        }
+      }
+    }
+  }
+}
