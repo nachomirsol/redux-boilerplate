@@ -1,57 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 /**Libraries */
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
 /**Components */
 import SidebarItem from "./components/SidebarItem";
-import Icon from "components/Icon";
-import Hierachy from 'components/Hierachy';
-import { PopoverController, PopoverTrigger } from "components/Popover";
-/**Mock data */
-import hierachyData from '../../mockData/hierachyData/hierachyData.json';
+import SidebarHierarchyItem from "./components/SidebarHierarchyItem";
 /**Config utils */
 import sidebarModel from "./utils/sidebarModel";
 /**Styles */
 import "./sidebar.scss";
 
 const Sidebar = ({ expanded, intl }) => {
-  const [hierarchyOpen, setHierarchyOpen] = useState(false);
   return (
     <div
       className={`sidebar__wrapper ${
         expanded ? "sidebar__wrapper--expanded" : ""
       }`}
     >
-
-        <PopoverController
-          place="right-bottom"
-          fullHeight={true}
-          reloadPosition={expanded}
-          handleIsOpen={isOpen => {
-            setHierarchyOpen(isOpen);
-          }}
-        >
-          <PopoverTrigger>
-            <div
-              className={`sidebar__item icon-wrapper--light 
-              ${expanded ? "sidebar__item--expanded" : ""}
-              ${hierarchyOpen ? "sidebar__item--selected" : ""}`}
-            >
-              <Icon name="map-marker-alt" />
-              {expanded && (
-                <span>
-                  {intl.formatMessage({
-                    id: "app.components.Sidebar.AllMyInfraestructure"
-                  })}
-                </span>
-              )}
-            </div>
-          </PopoverTrigger>
-          <div className="sidebar__hierarchy">
-            <Hierachy data={hierachyData} />
-          </div>
-        </PopoverController>
-
+      <SidebarHierarchyItem expanded={expanded} intl={intl} />
       <div className="menu-separator"></div>
       {Object.keys(sidebarModel).map((item, index) => {
         return (
