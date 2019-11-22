@@ -8,7 +8,7 @@ import Switcher from 'components/Switcher';
 import withSettings from 'components/hocs/WithSettings';
 
 /**Utils */
-import { languages } from '../../utils/const';
+import { languages } from 'utils/const';
 /**Styles */
 import './settings.scss';
 
@@ -36,7 +36,8 @@ const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
 Settings.propTypes = {
     changeLocale: PropTypes.func.isRequired,
     changeTheme: PropTypes.func.isRequired,
-    intl: PropTypes.object.isRequired
+    intl: PropTypes.object.isRequired,
+    settings: PropTypes.object,
 };
 
 

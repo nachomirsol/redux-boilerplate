@@ -2,12 +2,21 @@ import React, { useState, useEffect, useCallback } from "react";
 /**Libraries */
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+/**Utils */
+import { getPopoverPosition } from '../utils/popoverPosition';
 /**Styles */
 import "../popover.scss";
 
 const portalContainer = document.getElementById("another-root");
 
-const PopoverController = ({ children, place, offCenter, fullHeight, reloadPosition, handleIsOpen }) => {
+const PopoverController = ({
+  children,
+  place,
+  offCenter,
+  fullHeight,
+  reloadPosition,
+  handleIsOpen
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({
     position: "absolute",
@@ -23,123 +32,28 @@ const PopoverController = ({ children, place, offCenter, fullHeight, reloadPosit
       handleIsOpen && handleIsOpen(!isOpen);
     });
   };
-  const close = () => {
-    setIsOpen(false);
-    handleIsOpen && handleIsOpen(!false);
-  };
 
   useEffect(() => {
+    const close = () => {
+      setIsOpen(false);
+      handleIsOpen && handleIsOpen(!false);
+    };
     if (isOpen && !fullHeight) {
       window.addEventListener("click", close);
     }
     return () => window.removeEventListener("click", close);
-  }, [isOpen]);
+  }, [isOpen, fullHeight, handleIsOpen]);
 
   const setPosition = useCallback(
-    ({ left, top, height, width }) => {
-      if (!offCenter) {
-        switch (place) {
-          case "top":
-          case "top-left":
-          case "top-right":
-            setStyle(s => ({
-              ...s,
-              left: left + width / 2,
-              top: top - height
-            }));
-            break;
-          case "right":
-            setStyle(s => ({
-              ...s,
-              left: left + width,
-              top
-            }));
-            break;
-          case "right-top":
-            setStyle(s => ({
-              ...s,
-              left: left + width,
-              top: top - height / 2
-            }));
-            break;
-          case "right-bottom":
-            setStyle(s => ({
-              ...s,
-              left: left + width,
-              top: top + height / 2
-            }));
-            break;
-          case "left":
-            setStyle(s => ({
-              ...s,
-              left,
-              top
-            }));
-            break;
-          case "left-top":
-            setStyle(s => ({
-              ...s,
-              left,
-              top: top - height / 2
-            }));
-            break;
-          case "left-bottom":
-            setStyle(s => ({
-              ...s,
-              left,
-              top: top + height / 2
-            }));
-            break;
-          default:
-            // cases: bottom, bottom-right, bottom-left
-            setStyle(s => ({
-              ...s,
-              left: left + width / 2,
-              top: top + height
-            }));
-            break;
-        }
-      } else {
-        switch (place) {
-          case "top":
-          case "top-left":
-          case "left-top":
-            setStyle(s => ({
-              ...s,
-              left,
-              top: top - height
-            }));
-            break;
-          case "right-top":
-          case "top-right":
-            setStyle(s => ({
-              ...s,
-              left: left + width,
-              top: top - height
-            }));
-            break;
-          case "right":
-            setStyle(s => ({
-              ...s,
-              left: left + width,
-              top
-            }));
-            break;
-          case "left":
-            setStyle(s => ({ ...s, left, top }));
-            break;
-          case "rigth-bottom":
-          case "bottom-right":
-            setStyle(s => ({ ...s, left: left + width, top: top + height }));
-            break;
-          default:
-            // cases: bottom, bottom-left, left-bottom
-            setStyle(s => ({ ...s, left, top: top + height }));
-            break;
-        }
-      }
+    triggerPosition => {
+      const popoverPosition = getPopoverPosition(
+        triggerPosition,
+        place,
+        offCenter
+      );
+      setStyle(s => ({ ...s, ...popoverPosition }));
     },
-    [setStyle, offCenter, reloadPosition]
+    [setStyle, offCenter, reloadPosition, place]
   );
 
   const measuredRef = useCallback(
@@ -171,7 +85,9 @@ const PopoverController = ({ children, place, offCenter, fullHeight, reloadPosit
         isOpen &&
         ReactDOM.createPortal(
           <div
-            className={`popover__wrapper popover__wrapper--${place} ${fullHeight ? 'popover__wrapper--full-height' : ''}`}
+            className={`popover__wrapper popover__wrapper--${place} ${
+              fullHeight ? "popover__wrapper--full-height" : ""
+            }`}
             style={offsetStyle ? offsetStyle : style}
             onClick={e => e.stopPropagation()}
           >

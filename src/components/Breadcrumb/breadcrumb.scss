@@ -1,6 +1,7 @@
 @import "../../styles/styles-utils.scss";
 
 .breadcrumb {
+  user-select: none;
   font-family: Rubik;
   border-radius: 0;
   margin: 0;
