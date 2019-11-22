@@ -1,5 +1,5 @@
 /**Pages */
-import { LoginPage, HomePage, InfrastructuresPage, LeakSearchPage, EnergeticEfficiencyPage } from "pages";
+import { HomePage, InfrastructuresPage, LeakSearchPage, EnergeticEfficiencyPage } from "pages";
 /**Containers */
 import OperationState from "containers/OperationState/OperationState";
 import DetailedOverview from "containers/DetailedOverview/DetailedOverview";
@@ -40,12 +40,7 @@ const routes = [
     path: "/",
     redirect: true,
     redirectTo: '/home',
-  },
-  {
-    path: "/login",
-    component: LoginPage,
-    exact: false
-  },
+  }
 ];
 
 const nestedRoutes = {
