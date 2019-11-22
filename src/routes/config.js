@@ -48,7 +48,7 @@ const routes = [
   {
     path: "/",
     redirect: true,
-    redirectTo: "/home"
+    redirectTo: '/home',
   }
 ];
 
