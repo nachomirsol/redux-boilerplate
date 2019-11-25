@@ -6,15 +6,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4px;
   .total-alarms {
     display: flex;
     justify-content: center;
-    padding: 8px;
     span {
       font-family: $font-primary;
-      font-size: 48px;
+      font-size: 40px;
       font-weight: bold;
-      padding: 4px;
+      padding: 0px 4px;
       &.high-severity-alarm {
         @include themify($themes) {
           border-bottom: 3px solid themed("alertColor");

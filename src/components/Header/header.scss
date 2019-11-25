@@ -24,9 +24,6 @@
   position: relative;
   .menu-bars {
     cursor: "pointer";
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
 }
 
@@ -34,6 +31,7 @@
   position: absolute;
   left: 45%;
   @media (max-width: 992px) {
+    margin-right: 16px;
     position: static;
   }
   path {
@@ -49,12 +47,15 @@
   .icon-wrapper {
     margin-right: $spacing-xs;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .header__rightMenu {
   display: flex;
   align-items: center;
-  .icon-wrapper--light{
+  .icon-wrapper--light {
     cursor: pointer;
     svg {
       margin-right: $spacing-xs;
@@ -66,5 +67,4 @@
       }
     }
   }
-  
 }

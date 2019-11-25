@@ -1,6 +1,6 @@
 @import "../../styles/styles-utils.scss";
 .tabs__wrapper {
-  padding: $spacing-s $spacing-s $spacing-xxs $spacing-s;
+  padding: $spacing-xxs $spacing-s $spacing-xxs $spacing-s;
   @include themify($themes) {
     background-color: themed("panelHeaderBackgroundColor");
     color: themed("textColorBase");
@@ -9,6 +9,17 @@
     margin-right: $spacing-xs;
     &.selected {
       border-bottom: 3px solid $color-primary;
+    }
+  }
+  @media (max-width: 768px) {
+    .tabs__tabs {
+      display: flex;
+      .tabs__tab {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 20px;
+      }
     }
   }
 }

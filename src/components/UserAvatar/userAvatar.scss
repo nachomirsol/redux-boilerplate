@@ -40,7 +40,11 @@
 }
 
 .user-avatar__name {
+  display: block;
   font-family: "Myriad Pro Regular";
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .user-avatar__dropdown {

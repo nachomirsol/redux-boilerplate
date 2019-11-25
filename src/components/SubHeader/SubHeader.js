@@ -14,6 +14,7 @@ const SubHeader = ({ intl, onViewChange }) => {
               id: "app.components.SubHeader.Title"
             })}
           </span>
+          <div className="subHeader__chips-container">
           <SubHeaderChip
             iconName="ruler"
             title={intl.formatMessage({
@@ -35,6 +36,8 @@ const SubHeader = ({ intl, onViewChange }) => {
             })}
             amount="3123"
           ></SubHeaderChip>
+          </div>
+          
         </div>
         <div className="subHeader__toggle-buttons">
           <button
