@@ -165,7 +165,7 @@ export function login(email, password, history, params, onRefreshLogin) {
       if (redirectUrl !== undefined) {
         history.push(`/redirect/${redirectUrl}`);
       } else {
-        history.push(`/home`);
+        history.push('/');
       }
     }, 1000);
   };

@@ -1,13 +1,41 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./subHeader.scss";
+import SubHeaderChip from "./components/SubHeaderChip";
 
-const SubHeader = ({ title, intl, onViewChange }) => {
+const SubHeader = ({ intl, onViewChange }) => {
   const [viewMode, setViewMode] = useState("population");
   return (
     <>
       <div className="subHeader__wrapper">
-        <div className="subHeader__title">{title}</div>
+        <div className="subHeader__title">
+          <span>
+            {intl.formatMessage({
+              id: "app.components.SubHeader.Title"
+            })}
+          </span>
+          <SubHeaderChip
+            iconName="ruler"
+            title={intl.formatMessage({
+              id: "app.components.SubHeader.NetLength"
+            })}
+            amount="23KM"
+          ></SubHeaderChip>
+          <SubHeaderChip
+            iconName="users"
+            title={intl.formatMessage({
+              id: "app.components.SubHeader.SupplyPoints"
+            })}
+            amount="12234"
+          ></SubHeaderChip>
+          <SubHeaderChip
+            iconName="tint"
+            title={intl.formatMessage({
+              id: "app.components.SubHeader.Connections"
+            })}
+            amount="3123"
+          ></SubHeaderChip>
+        </div>
         <div className="subHeader__toggle-buttons">
           <button
             className={`subHeader-single-toggle-button ${
@@ -42,7 +70,6 @@ const SubHeader = ({ title, intl, onViewChange }) => {
 };
 
 SubHeader.propTypes = {
-  title: PropTypes.string.isRequired,
   intl: PropTypes.object.isRequired,
   onViewChange: PropTypes.func.isRequired
 };

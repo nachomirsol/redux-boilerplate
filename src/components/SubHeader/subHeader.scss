@@ -1,5 +1,6 @@
 @import "../../styles/styles-utils.scss";
 .subHeader__wrapper {
+  user-select: none;
   padding: $spacing-xs $spacing-s 0 $spacing-s;
   display: flex;
   flex-direction: row;
@@ -11,6 +12,17 @@
   .subHeader__title {
     font-family: $font-secondary;
     font-size: 28px;
+  }
+  .subHeader__chip {
+    margin-left: $spacing-xs;
+    font-size: 14px;
+    padding: 4px $spacing-xs;
+    background-color: $color-primary;
+    border-radius: 0.4em;
+    cursor: pointer;
+    .icon {
+      margin-right: $spacing-xxs;
+    }
   }
   .subHeader__toggle-buttons {
     width: 250px;
