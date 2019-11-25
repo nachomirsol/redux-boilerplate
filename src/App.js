@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 /**Libraries */
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -19,9 +18,13 @@ import {
   faChevronDown,
   faChevronRight,
   faMapMarkerAlt,
+  faRuler,
+  faUsers,
+  faTint,
 } from "@fortawesome/free-solid-svg-icons";
 /**Components */
 import { Routes } from "./routes/routes";
+import withSettings from 'components/hocs/WithSettings';
 /**Translations data */
 import es_translations from "./translations/es.json";
 import en_translations from "./translations/en.json";
@@ -29,14 +32,16 @@ import en_translations from "./translations/en.json";
 import "styles/main.scss";
 
 // add font awesome icons to the library in order to import just used icons
-library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey, faChevronDown, faChevronRight, faMapMarkerAlt);
+library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey, faChevronDown, faChevronRight, faMapMarkerAlt, faRuler, faUsers, faTint);
 
 const routes = Routes();
 
-const App = ({ settings }) => {
+const App = ({ settings, changeTheme }) => {
+
   useEffect(() => {
     console.log("language App", settings.locale);
-  });
+    changeTheme(settings.theme);
+  }, [changeTheme, settings]);
 
   const translations = {
     es: es_translations,
@@ -51,11 +56,8 @@ const App = ({ settings }) => {
 };
 
 App.propTypes = {
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
+  changeTheme: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({
-  settings: state.settings
-});
-
-export default connect(mapStateToProps)(App);
+export default withSettings((App));

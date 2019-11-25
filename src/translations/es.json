@@ -10,6 +10,10 @@
     "app.components.Widget.Header.Title.Infraestructures": "Infraestructuras",
     "app.components.Widget.Header.Title.Operation": "Operación",
     "app.components.Widget.Header.Title.WaterQuality": "Calidad Agua",
+    "app.components.SubHeader.Title": "Toda mi explotación",
+    "app.components.SubHeader.NetLength": "Longitud de la red",
+    "app.components.SubHeader.SupplyPoints": "Puntos de suministro",
+    "app.components.SubHeader.Connections": "Acometidas",
     "app.components.SubHeader.Population": "Población",
     "app.components.SubHeader.Alarms": "Alarmas",
     "app.components.Tabs.Operation_State": "Estado Explotación",
@@ -19,5 +23,13 @@
     "app.components.Breadcrumb.Detailed_Overview": "Visión General Detallada",
     "app.components.Breadcrumb.Infraestructures": "Infraestructuras",
     "app.components.Breadcrumb.Energetic_Efficiency": "Eficiencia energética",
-    "app.components.Breadcrumb.Leak_Search": "Fugas"
+    "app.components.Breadcrumb.Leak_Search": "Fugas",
+    "app.pages.LoginPage.Enter": "ENTRAR",
+    "app.pages.LoginPage.Forgot": "Has olvidado la contraseña? Click aquí",
+    "app.pages.LoginPage.header": "This is LoginPage container !",
+    "app.pages.LoginPage.password": "Contraseña",
+    "app.pages.LoginPage.pleaseWait": "Por favor espere...",
+    "app.pages.LoginPage.success": "Exito",
+    "app.pages.LoginPage.user": "Usuario",
+    "app.pages.LoginPage.wrongPassword": "Usuario y contraseña incorrectos."
 }

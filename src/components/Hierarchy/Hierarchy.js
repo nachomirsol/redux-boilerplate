@@ -1,50 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 /**Libraries */
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
 
 /**Components */
-import HierachyItem from "./components/HierachyItem";
+import HierarchyItem from "./components/HierarchyItem";
 /**Styles */
-import "./hierachy.scss";
+import "./hierarchy.scss";
 
-const Hierachy = ({ data, intl }) => {
+const Hierarchy = ({ data, intl }) => {
   const [checkboxTree, setCheckboxTree] = useState([]);
 
-  useEffect(() => {
-    fillCheckboxTree(data.children);
-  }, []);
-
-  /** This function reproduces the hierachy list tree recived by API or by json file and adds 2 elements, checked and displayed .but it is not in the state yet */
-  const createCheckboxTree = hierachyList => {
-    return hierachyList.map(item => {
+  /** This function reproduces the hierarchy list tree recived by API or by json file and adds 2 elements, checked and displayed .but it is not in the state yet */
+  const createCheckboxTree = useCallback(hierarchyList => {
+    return hierarchyList.map(item => {
       item = { ...item, checked: false, displayed: false };
       if (item.children && item.children.length) {
         item.children = createCheckboxTree(item.children);
       }
       return item;
     });
-  };
+  }, []);
 
   /** This function is to fill the react state with the createdCheckboxTree */
-  const fillCheckboxTree = hierachyList => {
-    const checkboxTree = createCheckboxTree(hierachyList);
-    setCheckboxTree(checkboxTree);
-  };
+  const fillCheckboxTree = useCallback(
+    hierarchyList => {
+      const checkboxTree = createCheckboxTree(hierarchyList);
+      setCheckboxTree(checkboxTree);
+    },
+    [createCheckboxTree, setCheckboxTree]
+  );
 
-   /** This function checks the parent elements by recursively*/
-   const checkParentElements = (data, itemFounded) => {
+  useEffect(() => {
+    fillCheckboxTree(data.children);
+  }, [fillCheckboxTree, data.children]);
+
+  /** This function checks the parent elements by recursively*/
+  const checkParentElements = (data, itemFounded) => {
     if (itemFounded.parentId) {
-      const parent = searchHierachyElement(data, itemFounded.parentId);
+      const parent = searchHierarchyElement(data, itemFounded.parentId);
       if (parent) {
         parent.checked = true;
-        checkParentElements(data, parent)
+        checkParentElements(data, parent);
       }
     }
   };
 
-  /** This function search the id recursively over the hierachy tree and returns the item searched over the data we pass it by param*/
-  const searchHierachyElement = (data, id) => {
+  /** This function search the id recursively over the hierarchy tree and returns the item searched over the data we pass it by param*/
+  const searchHierarchyElement = (data, id) => {
     let itemFounded = data.find(item => item.id === id);
     if (!itemFounded) {
       const flattenArray = data.reduce((arr, item) => {
@@ -52,17 +55,17 @@ const Hierachy = ({ data, intl }) => {
       }, []);
       itemFounded = flattenArray.find(item => item.id === id);
       if (!itemFounded) {
-        return searchHierachyElement(flattenArray);
+        return searchHierarchyElement(flattenArray);
       }
     }
     return itemFounded;
   };
 
   /** This function is to change the checked status from the searched element, if it has children, all the children will be changed the checked status */
-  const checkHierachyElement = id => {
+  const checkHierarchyElement = id => {
     const stateClone = [...checkboxTree];
 
-    const itemFounded = searchHierachyElement(stateClone, id);
+    const itemFounded = searchHierarchyElement(stateClone, id);
     itemFounded.checked = !itemFounded.checked;
     if (itemFounded.checked) {
       checkParentElements(stateClone, itemFounded);
@@ -81,7 +84,7 @@ const Hierachy = ({ data, intl }) => {
   const displayChildren = id => {
     const stateClone = [...checkboxTree];
 
-    const itemsDisplayed = searchHierachyElement(stateClone, id);
+    const itemsDisplayed = searchHierarchyElement(stateClone, id);
     itemsDisplayed.displayed = !itemsDisplayed.displayed;
 
     if (itemsDisplayed.children && itemsDisplayed.children.length) {
@@ -93,18 +96,18 @@ const Hierachy = ({ data, intl }) => {
     setCheckboxTree(stateClone);
   };
 
-  /** This function prints the hierachy tree in render */
-  const showHierachyTree = dataHierachy => {
-    return dataHierachy.map(item => {
+  /** This function prints the hierarchy tree in render */
+  const showHierarchyTree = dataHierarchy => {
+    return dataHierarchy.map(item => {
       if (!item.children.length) {
         return (
           <li
             key={item.id}
             className={item.displayed === true ? `expanded` : ``}
           >
-            <HierachyItem
+            <HierarchyItem
               dataInfo={item}
-              onCheckItem={id => checkHierachyElement(id)}
+              onCheckItem={id => checkHierarchyElement(id)}
               id={item.id}
               checked={item.checked}
               onDisplayChildren={id => displayChildren(id)}
@@ -116,31 +119,31 @@ const Hierachy = ({ data, intl }) => {
 
       return (
         <li key={item.id}>
-          <HierachyItem
+          <HierarchyItem
             dataInfo={item}
             icon={
               item.displayed === true
                 ? `fa fa-chevron-right`
                 : `fa fa-chevron-down`
             }
-            onCheckItem={id => checkHierachyElement(id)}
+            onCheckItem={id => checkHierarchyElement(id)}
             id={item.id}
             checked={item.checked}
             onDisplayChildren={id => displayChildren(id)}
             displayed={item.displayed}
           />
-          <ul>{showHierachyTree(item.children)}</ul>
+          <ul>{showHierarchyTree(item.children)}</ul>
         </li>
       );
     });
   };
 
   return (
-    <div className="hierachy">
+    <div className="hierarchy">
       <div> SEARCH </div>
-      <div className="hierachy__wrapper">
-        <div className="hierachy__list">
-          <ul>{showHierachyTree(checkboxTree ? checkboxTree : [])}</ul>
+      <div className="hierarchy__wrapper">
+        <div className="hierarchy__list">
+          <ul>{showHierarchyTree(checkboxTree ? checkboxTree : [])}</ul>
         </div>
       </div>
       <div style={{ height: "40px" }}> ADVANCED OPTIONS </div>
@@ -148,9 +151,9 @@ const Hierachy = ({ data, intl }) => {
   );
 };
 
-Hierachy.propTypes = {
+Hierarchy.propTypes = {
   intl: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired
 };
 
-export default injectIntl(Hierachy);
+export default injectIntl(Hierarchy);

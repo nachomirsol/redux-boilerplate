@@ -36,10 +36,9 @@ const HomePage = ({ intl }) => {
               render={props => (
                 <Layout breadcrumbs={route.breadcrumbs}>
                   <SubHeader
-                    title="Toda mi explotación"
                     intl={intl}
                     onViewChange={currentView => console.log(currentView)}
-                  ></SubHeader>
+                  />
                   <Tabs intl={intl} routes={nestedRoutes[path]}></Tabs>
                   <route.component intl={intl} {...props} />{" "}
                 </Layout>

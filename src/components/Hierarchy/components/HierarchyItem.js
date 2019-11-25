@@ -2,10 +2,10 @@ import React from 'react';
 /**Components */
 
 /**Styles */
-import './hierachyItem.scss';
+import './hierarchyItem.scss';
 
 
-const HierachyItem = ({ dataInfo, icon, style, onCheckItem, onDisplayChildren, id, checked }) => {
+const HierarchyItem = ({ dataInfo, icon, style, onCheckItem, onDisplayChildren, id, checked }) => {
     return (
 
         <div className="hierarchy-item">
@@ -16,4 +16,4 @@ const HierachyItem = ({ dataInfo, icon, style, onCheckItem, onDisplayChildren, i
     )
 }
 
-export default HierachyItem
+export default HierarchyItem

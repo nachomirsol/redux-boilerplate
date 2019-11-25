@@ -10,6 +10,10 @@
     "app.components.Widget.Header.Title.Infraestructures": "Infraestructures",
     "app.components.Widget.Header.Title.Operation": "Operation",
     "app.components.Widget.Header.Title.WaterQuality": "Water quality",
+    "app.components.SubHeader.Title": "All My Infraestructure",
+    "app.components.SubHeader.NetLength": "Net length",
+    "app.components.SubHeader.SupplyPoints": "Supply points",
+    "app.components.SubHeader.Connections": "Connections",
     "app.components.SubHeader.Population": "Population",
     "app.components.SubHeader.Alarms": "Alarms",
     "app.components.Tabs.Operation_State": "Operaction State",
@@ -19,5 +23,13 @@
     "app.components.Breadcrumb.Detailed_Overview": "Detailed Overview",
     "app.components.Breadcrumb.Infraestructures": "Infraestructures",
     "app.components.Breadcrumb.Energetic_Efficiency": "Energetic Efficiency",
-    "app.components.Breadcrumb.Leak_Search": "Leak Search"
+    "app.components.Breadcrumb.Leak_Search": "Leak Search",
+    "app.pages.LoginPage.Enter": "ENTER",
+    "app.pages.LoginPage.Forgot": "Forgot your password? Click here",
+    "app.pages.LoginPage.header": "",
+    "app.pages.LoginPage.password": "Password",
+    "app.pages.LoginPage.pleaseWait": "Please wait...",
+    "app.pages.LoginPage.success": "Success",
+    "app.pages.LoginPage.user": "User",
+    "app.pages.LoginPage.wrongPassword": "Incorrect user and password"
 }

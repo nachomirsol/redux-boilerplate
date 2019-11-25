@@ -1,4 +1,4 @@
-#modal button,
+.modal button,
 .details button {
     background-color: #ad343e;
     padding: 5px 25px;
@@ -11,9 +11,9 @@
     cursor: pointer;
 }
 
-#modal {
+.modal {
     background-color: rgba(125, 125, 125, 0.88);
-    position: relative;
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
@@ -24,11 +24,11 @@
     align-items: center;
 }
 
-#modal:empty {
+.modal:empty {
     display: none;
 }
 
-#modal > div {
+.modal > div {
     background-color: white;
     max-width: 500px;
     padding: 15px;
@@ -36,13 +36,13 @@
     text-align: center;
 }
 
-#modal .close {
+.modal .close {
     position: absolute;
     top: 0;
     right: 5px;
     cursor: pointer;
 }
 
-#modal .popup {
+.modal .popup {
     position: relative;
 }

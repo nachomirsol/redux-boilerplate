@@ -4,9 +4,15 @@
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
     0 1px 8px 0 rgba(0, 0, 0, 0.2);
     .filterPanel__header{
-        padding:8px;
+        display:flex;
+        justify-content:space-between;
+        padding:8px 8px 8px 16px;
         @include themify($themes) {
             background-color: themed("panelHeaderBackgroundColor");
+        }
+        i{
+            cursor:pointer;
+            
         }
         span{
             font-size:14px;
@@ -17,7 +23,7 @@
     }
 
     .filterPanel__content{
-        padding:8px;
+        padding:8px 8px 8px 16px;
         .filter{
             font-size:14px;
             @include themify($themes) {

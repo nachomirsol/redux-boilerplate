@@ -8,13 +8,12 @@ import Switcher from 'components/Switcher';
 import withSettings from 'components/hocs/WithSettings';
 
 /**Utils */
-import { languages } from '../../utils/const';
+import { languages } from 'utils/const';
 /**Styles */
 import './settings.scss';
 
 
 const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
-
     /** Settings component is being injected functionality with the withSettings component, wich is a HOC responsible from the redux change settings state,
      * So changeLocale and changeTheme are actions or functions coming from the withsettings
     */
@@ -22,7 +21,7 @@ const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
         <div className="settings settings__wrapper">
             <div className="settings__selector">
                 <label htmlFor="languageSelector">{intl.formatMessage({ id: "app.components.Language.Selector.Title" })}</label>
-                <Selector options={languages} onChange={(locale) => changeLocale(locale)} defaultValue={settings.locale} value={settings.locale} />
+                <Selector selectName="settings-language-selector" options={languages} onChange={(locale) => changeLocale(locale)} defaultValue={settings.locale} value={settings.locale} />
             </div>
             <div className="settings__switcher">
                 <Switcher changeTheme={(theme) => changeTheme(theme)} defaultChecked={settings.theme === 'theme-dark'} />
@@ -36,7 +35,8 @@ const Settings = ({ intl, settings, changeLocale, changeTheme }) => {
 Settings.propTypes = {
     changeLocale: PropTypes.func.isRequired,
     changeTheme: PropTypes.func.isRequired,
-    intl: PropTypes.object.isRequired
+    intl: PropTypes.object.isRequired,
+    settings: PropTypes.object,
 };
 
 
