@@ -12,7 +12,7 @@ import './detailedOverview.scss';
 const DetailedOverview = ({ intl }) => {
   return (
     <>
-      <FilterPanel />
+      <FilterPanel intl={intl} />
     </>
   )
 }

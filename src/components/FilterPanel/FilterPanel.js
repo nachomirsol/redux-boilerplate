@@ -1,12 +1,14 @@
 import React from 'react';
 /**Libraries */
 import PropTypes from "prop-types";
+
 /**Components */
+import FilterPanelItem from "./components/FilterPanelItem";
 import Icon from "components/Icon";
 /**Styles */
 import "./filterPanel.scss";
 
-const FilterPanel = () => {
+const FilterPanel = ({ intl }) => {
     /**Pending make this component dynamic mapping elements */
     return (
         <div className="filterPanel__wrapper">
@@ -16,38 +18,27 @@ const FilterPanel = () => {
             </div>
             <div className="filterPanel__content">
                 <div className="filter">
-                    <span className="title">    Tipo</span>
+                    <span className="title"> Tipo</span>
                     <ul>
                         <li>
-                            <label className="checkbox-container"> Depósitos
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
+                            <FilterPanelItem name={"depósitos"} />
                         </li>
                         <li>
-                            <label className="checkbox-container"> Bombas
-                                <input type="checkbox" />
-                                <span className="checkmark"></span>
-                            </label>
+                            <FilterPanelItem name={"Puntos de producción"} />
                         </li>
-
-
                     </ul>
                 </div>
                 <div className="filter">
                     <span>Niveles de alarma</span>
                     <ul>
                         <li>
-                            <input type="checkbox" />
-                            <span>Normal</span>
+                            <FilterPanelItem name={"Rojo"} />
                         </li>
                         <li>
-                            <input type="checkbox" />
-                            <span>Warning</span>
+                            <FilterPanelItem name={"Amarillo"} />
                         </li>
                         <li>
-                            <input type="checkbox" />
-                            <span>Critical</span>
+                            <FilterPanelItem name={"Verde"} />
                         </li>
                     </ul>
                 </div>
