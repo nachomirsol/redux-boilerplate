@@ -21,6 +21,7 @@
   padding: $spacing-xxs $spacing-xs;
 }
 .widget__content {
+
   @include themify($themes) {
     background-color: themed("panelBackgroundColor");
   }

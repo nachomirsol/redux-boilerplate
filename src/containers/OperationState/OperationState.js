@@ -56,6 +56,8 @@ const OperationState = ({ intl }) => {
                   id: "app.components.Widget.Header.Title.WaterQuality"
                 })}
               >
+
+
                 <OverallInfoWidgetContent
                   icons={[
                     { name: "", text: "-" },
@@ -67,9 +69,12 @@ const OperationState = ({ intl }) => {
                 {/** Consider this icosn data inside a config file */}
               </Widget>
             </div>
+
             <div className="map__container">
+
               <Map></Map>
             </div>
+
           </>
         )}
     </div>
