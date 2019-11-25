@@ -38,7 +38,9 @@
     }
     
     input:checked ~ .checkmark {
-        background-color: #0073aa;
+        @include themify($themes) {
+            background-color: themed("switcher");
+        }
     }
 
     input:checked ~ .checkmark:after {

@@ -8,10 +8,10 @@ import "./statusIndicator.scss";
 
 const StatusIndicator = ({ alarms, status }) => {
     return (
-        <div class="status__wrapper">
+        <div className="status__wrapper">
             <div className="status__content">
                 <span className="status__text">Normal</span>
-                <ul class="status__indicator">
+                <ul className="status__indicator">
                     <li className="ok highlighted">
                         <span></span>
                     </li>

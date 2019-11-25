@@ -30,7 +30,7 @@ const FilterPanel = ({ intl }) => {
                                 <span className="title"> Tipo</span>
                                 <ul>
                                     <li>
-                                        <FilterPanelItem name={"depósitos"} />
+                                        <FilterPanelItem name={"Depósitos"} />
                                     </li>
                                     <li>
                                         <FilterPanelItem name={"Puntos de producción"} />
@@ -54,7 +54,6 @@ const FilterPanel = ({ intl }) => {
                         </div>
                     )
                 }
-
             </div>
         </div>
     )

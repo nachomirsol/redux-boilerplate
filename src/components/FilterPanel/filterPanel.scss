@@ -1,14 +1,19 @@
 @import "../../styles/styles-utils.scss";
 .filterPanel__wrapper{
+    position:absolute;
+    right:0px;
+    margin:16px;
+    z-index:1;
     width:224px;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
     0 1px 8px 0 rgba(0, 0, 0, 0.2);
     .filterPanel__header{
         display:flex;
         justify-content:space-between;
-        padding:8px 8px 8px 16px;
+        padding:16px 8px 16px 16px;
+        font-family:$font-secondary;
         @include themify($themes) {
-            background-color: themed("panelHeaderBackgroundColor");
+            background-color: themed("widgetHeaderColor");
         }
         i{
             cursor:pointer;
@@ -23,8 +28,11 @@
     }
 
     .filterPanel__content{
-        padding:8px 8px 8px 16px;
+        @include themify($themes) {
+            background-color: themed("panelBackgroundColor");
+        }
         .filter{
+            padding:8px 8px 8px 16px;
             font-size:14px;
             @include themify($themes) {
                 color: themed("textColorWeaker");
@@ -32,10 +40,13 @@
         }
         ul{
             list-style-type:none;
-            padding:0 0 0 16px;
+            padding: 0 0 16px;
+            margin:0px;
             li{
                 position:relative;
+                padding:8px 0 0 0;
                 font-size:12px;
+                font-family:$font-secondary;
                 @include themify($themes) {
                     color: themed("textColorWeaker");
                 }

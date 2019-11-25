@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 /*Librarys*/
 import PropTypes from "prop-types";
 /* Components */
+import FilterPanel from "components/FilterPanel";
 import Map from "components/Map";
 import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent/OverallInfoWidgetContent";
 import Spinner from "components/Spinner";
 import StatusIndicator from "components/StatusIndicator";
+import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
+/**Mock Data */
+import data from '../../mockData/dataModel.json';
 /**Styles */
 import "./operationState.scss";
 
@@ -71,8 +75,9 @@ const OperationState = ({ intl }) => {
             </div>
 
             <div className="map__container">
-
-              <Map></Map>
+              <FilterPanel intl={intl} />
+              <StatusLegend />
+              <Map data={data}></Map>
             </div>
 
           </>

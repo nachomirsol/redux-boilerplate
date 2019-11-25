@@ -9,7 +9,7 @@ import './detailedOverview.scss';
 const DetailedOverview = ({ intl }) => {
   return (
     <>
-      <FilterPanel intl={intl} />
+
     </>
   )
 }
