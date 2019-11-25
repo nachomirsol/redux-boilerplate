@@ -18,8 +18,8 @@ const PrivateRoute = ({ path, exact, Page }) => {
         return fakeAuth().isAuthenticated ? (
           <Page {...props} />
         ) : (
-          <Redirect to="/login" />
-        );
+            <Redirect to="/login" />
+          );
       }}
     />
   );
@@ -49,14 +49,14 @@ export const Routes = () => (
         return route.redirect ? (
           <Redirect key={index} from={route.path} to={route.redirectTo} />
         ) : (
-          <PrivateRoute
-            key={index}
-            // route={route}
-            path={route.path}
-            exact={route.exact}
-            Page={route.component}
-          />
-        );
+            <PrivateRoute
+              key={index}
+              // route={route}
+              path={route.path}
+              exact={route.exact}
+              Page={route.component}
+            />
+          );
       })}
   </Switch>
 );

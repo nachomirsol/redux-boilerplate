@@ -16,6 +16,7 @@ import {
   faBroadcastTower,
   faGlassWhiskey,
   faChevronDown,
+  faChevronRight,
   faMapMarkerAlt,
   faRuler,
   faUsers,
@@ -31,7 +32,7 @@ import en_translations from "./translations/en.json";
 import "styles/main.scss";
 
 // add font awesome icons to the library in order to import just used icons
-library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey, faChevronDown, faMapMarkerAlt, faRuler, faUsers, faTint);
+library.add(faBars, faQuestion, faCog, faBell, faSignOutAlt, faTh, faEllipsisV, faBolt, faBroadcastTower, faGlassWhiskey, faChevronDown, faChevronRight, faMapMarkerAlt, faRuler, faUsers, faTint);
 
 const routes = Routes();
 

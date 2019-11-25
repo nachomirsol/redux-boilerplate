@@ -1,0 +1,46 @@
+@import "../../styles/styles-utils.scss";
+.filterPanel__wrapper{
+    width:224px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
+    0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    .filterPanel__header{
+        display:flex;
+        justify-content:space-between;
+        padding:8px 8px 8px 16px;
+        @include themify($themes) {
+            background-color: themed("panelHeaderBackgroundColor");
+        }
+        i{
+            cursor:pointer;
+            
+        }
+        span{
+            font-size:14px;
+            @include themify($themes) {
+                color: themed("textColorBase");
+            }
+        }
+    }
+
+    .filterPanel__content{
+        padding:8px 8px 8px 16px;
+        .filter{
+            font-size:14px;
+            @include themify($themes) {
+                color: themed("textColorWeaker");
+            }
+        }
+        ul{
+            list-style-type:none;
+            padding:0 0 0 16px;
+            li{
+                position:relative;
+                font-size:12px;
+                @include themify($themes) {
+                    color: themed("textColorWeaker");
+                }
+            }
+        }
+    }
+}
+

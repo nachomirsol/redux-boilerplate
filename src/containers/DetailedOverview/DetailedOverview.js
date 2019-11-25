@@ -2,12 +2,14 @@ import React from 'react';
 /*Libraries*/
 import PropTypes from "prop-types";
 /* Components */
+import FilterPanel from "components/FilterPanel";
 /**Styles */
 import './detailedOverview.scss';
 
-const DetailedOverview = () => {
+const DetailedOverview = ({ intl }) => {
   return (
     <>
+      <FilterPanel intl={intl} />
     </>
   )
 }
