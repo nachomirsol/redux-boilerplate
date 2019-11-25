@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 /*Librarys*/
 import PropTypes from "prop-types";
 /* Components */
-import Widget from "components/Widget";
-import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent/OverallInfoWidgetContent";
 import Map from "components/Map";
+import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent/OverallInfoWidgetContent";
 import Spinner from "components/Spinner";
+import StatusIndicator from "components/StatusIndicator";
+import Widget from "components/Widget";
+/**Styles */
 import "./operationState.scss";
+
 
 const OperationState = ({ intl }) => {
   const [showSpinner, setShowSpinner] = useState(true);
@@ -21,62 +24,59 @@ const OperationState = ({ intl }) => {
       {showSpinner ? (
         <Spinner message="Loading"></Spinner>
       ) : (
-        <>
-          <div className="widget__container">
-            <Widget
-              title={intl.formatMessage({
-                id: "app.components.Widget.Header.Title.Infraestructures"
-              })}
-            >
-              {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
-              <OverallInfoWidgetContent
-                icons={[
-                  { name: "glass-whiskey", text: "depósito" },
-                  { name: "cog", text: "Config" },
-                  { name: "bolt", text: "Alarmas" }
-                ]}
-                minRange={""}
-                maxRange={""}
-              />
-            </Widget>
+          <>
+            <div className="widget__container">
+              <Widget
+                title={intl.formatMessage({
+                  id: "app.components.Widget.Header.Title.Infraestructures"
+                })}
+              >
+                {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
+                <StatusIndicator />
+              </Widget>
 
-            <Widget
-              title={intl.formatMessage({
-                id: "app.components.Widget.Header.Title.Operation"
-              })}
-            >
-              <OverallInfoWidgetContent
-                icons={[
-                  { name: "broadcast-tower", text: "Comunicación" },
-                  { name: "cog", text: "fugas" }
-                ]}
-                minRange={""}
-                maxRange={""}
-              />
-              {/** Consider this icosn data inside a config file */}
-            </Widget>
+              <Widget
+                title={intl.formatMessage({
+                  id: "app.components.Widget.Header.Title.Operation"
+                })}
+              >
+                <OverallInfoWidgetContent
+                  icons={[
+                    { name: "broadcast-tower", text: "Comunicación" },
+                    { name: "cog", text: "fugas" }
+                  ]}
+                  minRange={""}
+                  maxRange={""}
+                />
+                {/** Consider this icosn data inside a config file */}
+              </Widget>
 
-            <Widget
-              title={intl.formatMessage({
-                id: "app.components.Widget.Header.Title.WaterQuality"
-              })}
-            >
-              <OverallInfoWidgetContent
-                icons={[
-                  { name: "", text: "-" },
-                  { name: "", text: "-" }
-                ]}
-                minRange={"0.45"}
-                maxRange={"0.96"}
-              />
-              {/** Consider this icosn data inside a config file */}
-            </Widget>
-          </div>
-          <div className="map__container">
-            <Map></Map>
-          </div>
-        </>
-      )}
+              <Widget
+                title={intl.formatMessage({
+                  id: "app.components.Widget.Header.Title.WaterQuality"
+                })}
+              >
+
+
+                <OverallInfoWidgetContent
+                  icons={[
+                    { name: "", text: "-" },
+                    { name: "", text: "-" }
+                  ]}
+                  minRange={"0.45"}
+                  maxRange={"0.96"}
+                />
+                {/** Consider this icosn data inside a config file */}
+              </Widget>
+            </div>
+
+            <div className="map__container">
+
+              <Map></Map>
+            </div>
+
+          </>
+        )}
     </div>
   );
 };
