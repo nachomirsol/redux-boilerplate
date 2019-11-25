@@ -48,7 +48,7 @@ const routes = [
   {
     path: "/",
     redirect: true,
-    redirectTo: '/home',
+    redirectTo: '/home/operation-state',
   }
 ];
 
@@ -73,11 +73,6 @@ const nestedRoutes = {
         { url: "/", label: "Detailed_Overview" }
       ],
       exact: true
-    },
-    {
-      path: "/",
-      redirect: true,
-      redirectTo: "/home/operation-state"
     }
   ],
   "/infraestructures": [

@@ -1,21 +1,18 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 /**Libraries */
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 /**Utils */
-import { getPopoverPosition } from '../utils/popoverPosition';
+import { getTooltipPosition } from '../utils/tooltipPosition';
 /**Styles */
-import "../popover.scss";
+import "../tooltip.scss";
 
 const portalContainer = document.getElementById("another-root");
 
-const PopoverController = ({
+const TooltipController = ({
   children,
   place,
   offCenter,
-  fullHeight,
-  reloadPosition,
-  handleIsOpen
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({
@@ -26,34 +23,23 @@ const PopoverController = ({
   const [offsetStyle, setOffsetStyle] = useState(null);
 
   const open = () => {
-    // This setTimeot adds the setIsOpen function call at the end of the JS queue, IDK handle the cleaning function to prevent it from running after this function
-    setTimeout(() => {
-      setIsOpen(!isOpen);
-      handleIsOpen && handleIsOpen(!isOpen);
-    });
+      setIsOpen(true);
   };
 
-  useEffect(() => {
-    const close = () => {
-      setIsOpen(false);
-      handleIsOpen && handleIsOpen(false);
-    };
-    if (isOpen && !fullHeight) {
-      window.addEventListener("click", close);
-    }
-    return () => window.removeEventListener("click", close);
-  }, [isOpen, fullHeight, handleIsOpen]);
+  const close = () => {
+    setIsOpen(false);
+  };
 
   const setPosition = useCallback(
     triggerPosition => {
-      const popoverPosition = getPopoverPosition(
+      const tooltipPosition = getTooltipPosition(
         triggerPosition,
         place,
         offCenter
       );
-      setStyle(s => ({ ...s, ...popoverPosition }));
+      setStyle(s => ({ ...s, ...tooltipPosition }));
     },
-    [setStyle, offCenter, reloadPosition, place]
+    [setStyle, offCenter, place]
   );
 
   const measuredRef = useCallback(
@@ -79,27 +65,24 @@ const PopoverController = ({
 
   const inputChildren = React.Children.map(children, child => {
     if (child.type.displayName === "Trigger") {
-      return React.cloneElement(child, { open, setPosition });
+      return React.cloneElement(child, { open, close, setPosition });
     } else {
       return (
         isOpen &&
         ReactDOM.createPortal(
           <div
-            className={`popover__wrapper popover__wrapper--${place} ${
-              fullHeight ? "popover__wrapper--full-height" : ""
-            }`}
+            className={`tooltip__wrapper tooltip__wrapper--${place}`}
             style={offsetStyle ? offsetStyle : style}
-            onClick={e => e.stopPropagation()}
+            onMouseEnter={e => e.stopPropagation()}
           >
             <svg
-              className={`popover__arrow popover__arrow--${place}`}
+              className={`tooltip__arrow tooltip__arrow--${place}`}
               width="14"
               height="7"
-              style={fullHeight ? { top: style.top } : {}}
             >
               <polygon points="0,7 7,0, 14,7"></polygon>
             </svg>
-            <div className="popover__body">
+            <div className="tooltip__body">
               {React.cloneElement(child, { ref: measuredRef })}
             </div>
           </div>,
@@ -111,7 +94,7 @@ const PopoverController = ({
   return inputChildren;
 };
 
-PopoverController.propTypes = {
+TooltipController.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -120,4 +103,4 @@ PopoverController.propTypes = {
   offCenter: PropTypes.bool
 };
 
-export default PopoverController;
+export default TooltipController;
