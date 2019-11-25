@@ -72,9 +72,9 @@ const OperationState = ({ intl }) => {
               {/** Consider this icosn data inside a config file */}
             </Widget>
           </div>
-          <div className="map__container">
+          {/* <div className="map__container"> */}
             <Map></Map>
-          </div>
+          {/* </div> */}
         </>
       )}
     </div>

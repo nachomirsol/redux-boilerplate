@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useCallback } from "react";
 /**Libraries */
 import PropTypes from "prop-types";
 
-
 const TooltipTrigger = ({ children, open, close, setPosition }) => {
   const reference = useRef(null);
 
@@ -11,10 +10,21 @@ const TooltipTrigger = ({ children, open, close, setPosition }) => {
   }, [setPosition]);
 
   useEffect(() => {
+    window.addEventListener("resize", updatePostion);
+    return () => {
+      window.removeEventListener("resize", updatePostion);
+    };
+  }, [updatePostion]);
+
+  useEffect(() => {
     updatePostion();
   }, [updatePostion]);
-  
-  return React.cloneElement(children, { onMouseEnter: open, onMouseLeave: close, ref: reference });
+
+  return React.cloneElement(children, {
+    onMouseEnter: open,
+    onMouseLeave: close,
+    ref: reference
+  });
 };
 
 TooltipTrigger.displayName = "Trigger";
@@ -25,6 +35,7 @@ TooltipTrigger.propTypes = {
   ]).isRequired,
   setPosition: PropTypes.func,
   open: PropTypes.func,
+  close: PropTypes.func
 };
 
 export default TooltipTrigger;
