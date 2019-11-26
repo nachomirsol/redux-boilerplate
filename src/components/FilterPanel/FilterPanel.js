@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 /**Styles */
 import "./filterPanel.scss";
 
-const FilterPanel = ({ intl, onCheckAsset }) => {
+const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
     const [expanded, setExpanded] = useState(true);
 
     const toggleFilter = () => {
@@ -30,10 +30,10 @@ const FilterPanel = ({ intl, onCheckAsset }) => {
                                 <span className="title"> Tipo</span>
                                 <ul>
                                     <li>
-                                        <FilterPanelItem name={"deposito"} onCheckAsset={(id, name) => onCheckAsset(id, name)} id={1} />
+                                        <FilterPanelItem name={"deposito"} onCheckAsset={onCheckAsset} id={1} />
                                     </li>
                                     <li>
-                                        <FilterPanelItem name={"bomba"} onCheckAsset={(id, name) => onCheckAsset(id, name)} id={2} />
+                                        <FilterPanelItem name={"bomba"} onCheckAsset={onCheckAsset} id={2} />
                                     </li>
                                 </ul>
                             </div>
@@ -41,13 +41,13 @@ const FilterPanel = ({ intl, onCheckAsset }) => {
                                 <span>Niveles de alarma</span>
                                 <ul>
                                     <li>
-                                        <FilterPanelItem name={"Rojo"} />
+                                        <FilterPanelItem status={"critical"} name={"Critical"} onCheckAlertStatus={onCheckAlertStatus} />
                                     </li>
                                     <li>
-                                        <FilterPanelItem name={"Amarillo"} />
+                                        <FilterPanelItem status={"warning"} name={"Warning"} onCheckAlertStatus={onCheckAlertStatus} />
                                     </li>
                                     <li>
-                                        <FilterPanelItem name={"Verde"} />
+                                        <FilterPanelItem status={"ok"} name={"Normal"} onCheckAlertStatus={onCheckAlertStatus} />
                                     </li>
                                 </ul>
                             </div>

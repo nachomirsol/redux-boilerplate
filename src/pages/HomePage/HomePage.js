@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 /*Librarys*/
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -9,7 +9,8 @@ import { Route, useRouteMatch, Redirect } from "react-router-dom";
 import Layout from "../Layout";
 import SubHeader from "components/SubHeader";
 import Tabs from "components/Tabs";
-
+/**Redux */
+import { createHierarchy } from "./redux/actions";
 /* Config */
 import { nestedRoutes } from "routes/config";
 /* Mock data */
@@ -17,9 +18,11 @@ import { nestedRoutes } from "routes/config";
 import "./homePage.scss";
 
 // This case we use the layout in the route instead of the component directly
-const HomePage = ({ intl }) => {
+const HomePage = ({ intl, createHierarchy }) => {
   let { path } = useRouteMatch();
-
+  useEffect(() => {
+    createHierarchy();
+  }, [])
   return (
     <div className="homePage homePage__wrapper">
       {nestedRoutes &&
@@ -29,22 +32,22 @@ const HomePage = ({ intl }) => {
           return route.redirect ? (
             <Redirect key={index} from={route.path} to={route.redirectTo} />
           ) : (
-            <Route
-              key={index}
-              exact={route.exact}
-              path={route.path}
-              render={props => (
-                <Layout breadcrumbs={route.breadcrumbs}>
-                  <SubHeader
-                    intl={intl}
-                    onViewChange={currentView => console.log(currentView)}
-                  />
-                  <Tabs intl={intl} routes={nestedRoutes[path]}></Tabs>
-                  <route.component intl={intl} {...props} />{" "}
-                </Layout>
-              )}
-            />
-          );
+              <Route
+                key={index}
+                exact={route.exact}
+                path={route.path}
+                render={props => (
+                  <Layout breadcrumbs={route.breadcrumbs}>
+                    <SubHeader
+                      intl={intl}
+                      onViewChange={currentView => console.log(currentView)}
+                    />
+                    <Tabs intl={intl} routes={nestedRoutes[path]}></Tabs>
+                    <route.component intl={intl} {...props} />{" "}
+                  </Layout>
+                )}
+              />
+            );
         })}
     </div>
   );
@@ -55,9 +58,16 @@ HomePage.propTypes = {
 };
 
 // This works
-/*const mapStateToProps = (state) => ({
-    todoList:state.todoList.todoList
-})*/
+const mapStateToProps = (state) => ({
+  hierarchy: state.hierarchy.hierarchy
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createHierarchy: () => dispatch(createHierarchy()),
+    dispatch
+  };
+}
 
 // This works better in case of state tree is modified
 
@@ -71,8 +81,8 @@ const mapStateToProps = (state) => ({
 */
 
 // This works better in terms of performance using createStructuredSelector and selectors
-const mapStateToProps = createStructuredSelector({
-  // todoList: makeSelectTodoList()
-});
+// const mapStateToProps = createStructuredSelector({
+//   // todoList: makeSelectTodoList()
+// });
 
-export default connect(mapStateToProps)(injectIntl(HomePage));
+export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomePage));

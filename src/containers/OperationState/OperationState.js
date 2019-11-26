@@ -41,8 +41,29 @@ const OperationState = ({ intl }) => {
   }
 
   const checkAsset = (id, name) => {
-    alert(name)
+    let assets = [...dataIconsState];
+    assets = assets.map((item) => {
+      if (item.assetName === name) {
+        item.selected = !item.selected
+      }
+      return item
+    })
+    setDataIcons(assets)
+
   }
+
+  const checkAlertStatus = (id, status) => {
+    let assets = [...dataIconsState];
+    assets = assets.map((item) => {
+      if (item.state === status) {
+        item.selected = !item.selected
+      }
+      return item
+    })
+    setDataIcons(assets)
+  }
+
+
 
   return (
     <div className="operationState operationState__wrapper">
@@ -70,9 +91,9 @@ const OperationState = ({ intl }) => {
             </div>
 
             <div className="map__container">
-              <FilterPanel intl={intl} onCheckAsset={(id, name) => checkAsset(id, name)} />
+              <FilterPanel intl={intl} onCheckAsset={checkAsset} onCheckAlertStatus={checkAlertStatus} />
               <StatusLegend />
-              <Map dataArea={dataAreasState} dataIcon={dataIconsState}></Map>
+              <Map dataArea={dataAreasState} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
             </div>
           </>
         )}

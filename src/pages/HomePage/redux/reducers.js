@@ -1,27 +1,13 @@
-import { ADD_TODO, GET_TODOS, DELETE_TODO } from './constants'
+import { SET_HIERARCHY, GET_HIERARCHY, CREATE_HIERACHY } from './constants'
 
 const initialState = {
-    todoList: []
+    hierarchy: []
 };
 
-const todoListReducer = (state = initialState, action) => {
+const homePageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_TODO:
-            return {
-                ...state,
-                todoList: [...state.todoList, action.payload]
-            }
-        case GET_TODOS:
-            return {
-                ...state,
-                todoList: state.todoList
-            }
-        case DELETE_TODO:
-
-            return {
-                ...state,
-                todoList: state.todoList.filter(todo => todo !== action.payload)
-            }
+        case CREATE_HIERACHY:
+            return { ...state, hierarchy: action.payload }
         default:
             return state
     }
@@ -29,4 +15,4 @@ const todoListReducer = (state = initialState, action) => {
 
 }
 
-export default todoListReducer;
+export default homePageReducer;

@@ -9,6 +9,7 @@ import HierarchyItem from "./components/HierarchyItem";
 import "./hierarchy.scss";
 
 const Hierarchy = ({ data, intl }) => {
+
   const [checkboxTree, setCheckboxTree] = useState([]);
 
   /** This function reproduces the hierarchy list tree recived by API or by json file and adds 2 elements, checked and displayed .but it is not in the state yet */

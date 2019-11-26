@@ -1,24 +1,20 @@
-import { ADD_TODO, GET_TODOS, DELETE_TODO } from './constants'
+import { SET_HIERARCHY, GET_HIERARCHY, CREATE_HIERACHY } from './constants'
+import { createCheckboxTree } from 'services/hierachyService';
+/**Mock data */
+import hierarchyData from "../../../mockData/hierarchyData/hierarchyData.json";
 
-export const addTodo = (data) => {
+// export const setHierarchy = (data) => {
 
+//     return {
+//         type: SET_HIERACHY,
+//         payload: data
+//     };
+
+// }
+
+export const createHierarchy = (data) => {
     return {
-        type: ADD_TODO,
-        payload: data
+        type: CREATE_HIERACHY,
+        payload: createCheckboxTree(hierarchyData.children)
     };
-
-}
-
-export const getTodos = () => {
-    return {
-        type: GET_TODOS,
-        payload: ''
-    }
-}
-
-export const deleteTodo = (name) => {
-    return {
-        type: DELETE_TODO,
-        payload: name
-    }
 }

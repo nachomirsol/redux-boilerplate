@@ -1,3 +1,3 @@
-export const ADD_TODO = 'ADD_TODO';
-export const GET_TODOS = 'GET_TODOS';
-export const DELETE_TODO = 'DELETE_TODO'
+export const SET_HIERARCHY = 'SET_HIERARCHY';
+export const GET_HIERARCHY = 'GET_HIERARCHY';
+export const CREATE_HIERACHY = 'CREATE_HIERACHY';
