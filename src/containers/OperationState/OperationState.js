@@ -10,7 +10,7 @@ import StatusIndicator from "components/StatusIndicator";
 import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
 /**Mock Data */
-import data from '../../mockData/dataModel.json';
+import dataAreas from '../../mockData/areasDataModel.json';
 /**Styles */
 import "./operationState.scss";
 
@@ -77,7 +77,7 @@ const OperationState = ({ intl }) => {
             <div className="map__container">
               <FilterPanel intl={intl} />
               <StatusLegend />
-              <Map data={data}></Map>
+              <Map data={dataAreas}></Map>
             </div>
 
           </>

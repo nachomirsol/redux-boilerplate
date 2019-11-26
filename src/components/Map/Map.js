@@ -1,7 +1,7 @@
 import React from "react";
 /**Libraries */
 import { StaticMap } from "react-map-gl";
-import { GeoJsonLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, IconLayer } from "@deck.gl/layers";
 import DeckGL from "deck.gl";
 
 /**Styles */

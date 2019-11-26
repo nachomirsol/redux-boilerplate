@@ -8,7 +8,8 @@
                 "dmaName": "Paterna",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 12
+                "valueAlarms": 12,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -101,7 +102,8 @@
                 "dmaName": "Manises",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 7
+                "valueAlarms": 7,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -190,7 +192,8 @@
                 "dmaName": "Mislata",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 16
+                "valueAlarms": 16,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -231,7 +234,8 @@
                 "dmaName": "Aldaia",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2
+                "valueAlarms": 2,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -284,7 +288,8 @@
                 "dmaName": "Xirivella",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2
+                "valueAlarms": 2,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -349,6 +354,146 @@
                         [
                             -0.4328441619873047,
                             39.45402268055877
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "dmaId": 6,
+                "dmaName": "Alaquas",
+                "valuePerformance": 1.0,
+                "valueDeployment": 1.0,
+                "valueAlarms": 2,
+                "selected": true
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.4759740829467773,
+                            39.4606827841832
+                        ],
+                        [
+                            -0.47112464904785156,
+                            39.44703054295593
+                        ],
+                        [
+                            -0.4608678817749023,
+                            39.44835612061033
+                        ],
+                        [
+                            -0.4562330245971679,
+                            39.44958225747452
+                        ],
+                        [
+                            -0.4558038711547851,
+                            39.45137171576916
+                        ],
+                        [
+                            -0.45159816741943354,
+                            39.453492495675995
+                        ],
+                        [
+                            -0.44713497161865234,
+                            39.45836341742585
+                        ],
+                        [
+                            -0.44709205627441406,
+                            39.459191771568335
+                        ],
+                        [
+                            -0.44769287109374994,
+                            39.4606827841832
+                        ],
+                        [
+                            -0.44756412506103516,
+                            39.461842438579836
+                        ],
+                        [
+                            -0.4759740829467773,
+                            39.4606827841832
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "dmaId": 7,
+                "dmaName": "Picassent",
+                "valuePerformance": 1.0,
+                "valueDeployment": 1.0,
+                "valueAlarms": 2,
+                "selected": true
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.4741287231445312,
+                            39.35633433468824
+                        ],
+                        [
+                            -0.47254085540771484,
+                            39.35577022349665
+                        ],
+                        [
+                            -0.4703950881958008,
+                            39.35354691738977
+                        ],
+                        [
+                            -0.4680347442626953,
+                            39.35377920641225
+                        ],
+                        [
+                            -0.4609966278076172,
+                            39.35815936910077
+                        ],
+                        [
+                            -0.45949459075927734,
+                            39.35792709464162
+                        ],
+                        [
+                            -0.45520305633544916,
+                            39.360482071214925
+                        ],
+                        [
+                            -0.4516410827636719,
+                            39.362638796880844
+                        ],
+                        [
+                            -0.45086860656738276,
+                            39.365193601114576
+                        ],
+                        [
+                            -0.45477390289306635,
+                            39.367980553694544
+                        ],
+                        [
+                            -0.4601812362670898,
+                            39.36887633626097
+                        ],
+                        [
+                            -0.46339988708496094,
+                            39.36904222066042
+                        ],
+                        [
+                            -0.4740858078002929,
+                            39.36582399297898
+                        ],
+                        [
+                            -0.4747295379638672,
+                            39.3645963825205
+                        ],
+                        [
+                            -0.4741287231445312,
+                            39.35633433468824
                         ]
                     ]
                 ]

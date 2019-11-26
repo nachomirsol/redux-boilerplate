@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Alaquas",
+        "code": "AQ",
+        "address": "Blasco Ibañez Este",
+        "id": 1,
+        "dmaId": 6,
+        "assetName": "deposito",
+        "coordinates": [
+            -0.45248329639434814,
+            39.4591586375919
+        ],
+        "selected": true
+    },
+    {
+        "name": "Alaquas",
+        "code": "AQ",
+        "address": "Blasco Ibañez Este",
+        "id": 2,
+        "dmaId": 6,
+        "assetName": "deposito",
+        "coordinates": [
+            -0.4548758268356323,
+            39.458653342497016
+        ],
+        "selected": true
+    },
+    {
+        "name": "Manises",
+        "code": "MN",
+        "address": "Manises Ficticio",
+        "id": 3,
+        "dmaId": 2,
+        "assetName": "bomba",
+        "coordinates": [
+            -0.5084609985351562,
+            39.52092608447839
+        ],
+        "selected": true
+    },
+    {
+        "name": "Manises",
+        "code": "MN",
+        "address": "Manises Ficticio",
+        "id": 4,
+        "dmaId": 2,
+        "assetName": "deposito",
+        "coordinates": [
+            -0.5200481414794922,
+            39.510927787044295
+        ],
+        "selected": true
+    },
+    {
+        "name": "Manises",
+        "code": "MN",
+        "address": "Manises Ficticio",
+        "id": 5,
+        "dmaId": 2,
+        "assetName": "bomba",
+        "coordinates": [
+            -0.5052852630615234,
+            39.5189397823224
+        ],
+        "selected": true
+    },
+    {
+        "name": "Picassent",
+        "code": "PI",
+        "address": "Picassent-S1-Deposito",
+        "id": 6,
+        "dmaId": 7,
+        "assetName": "deposito",
+        "coordinates": [
+            -0.46919345855712885,
+            39.36316967298492
+        ],
+        "selected": true
+    },
+]

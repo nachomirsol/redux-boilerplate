@@ -1,7 +1,7 @@
 @import "../../styles/styles-utils.scss";
 
 .operationState__wrapper {
-  padding: $spacing-s;
+  padding: $spacing-xs;
   height: 100%;
   .widget__container {
     display: flex;
@@ -14,20 +14,19 @@
     .widget:not(:last-child) {
       margin-right: 16px;
     }
-
-     @media (min-width: 992px) and (max-width: 1366px) {
-       height: auto;
-     }
-
-     @media (max-width: 768px) {
-       flex-direction: column;
-       height: auto;
-     }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      height: 616px;
+    }
   }
   .map__container {
-      position:relative;
-      height: 60%;
-     @media (min-width: 992px) and (max-width: 1366px) {
-     }
+    height: 60%;
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+  }
+  padding-bottom: 10px;
+  @media (max-width: 768px) {
+    overflow-y: auto;
   }
 }

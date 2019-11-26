@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $font-primary;
-  overflow: hidden;
+* {
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -16,7 +12,16 @@ body {
     border-radius: 10px;
     cursor: pointer !important;
   }
-
+}
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  height: 100%;
+  overflow: hidden;
   /* Handle on hover */
   // ::-webkit-scrollbar-thumb:hover {
   //   background: #555;
