@@ -1,6 +1,7 @@
 @import "../../styles/styles-utils.scss";
 
 .widget__wrapper {
+  min-height: 152px;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -75,6 +75,11 @@
         outline: none;
       }
     }
+    @media (max-width: 768px) {
+      .subHeader-single-toggle-button {
+        padding: 4px $spacing-xxs;
+      }
+    }
   }
 
   @media (max-width: 768px) {
