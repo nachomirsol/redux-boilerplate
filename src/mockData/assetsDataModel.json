@@ -10,6 +10,7 @@
             -0.45248329639434814,
             39.4591586375919
         ],
+        "state": "critical",
         "selected": true
     },
     {
@@ -23,6 +24,7 @@
             -0.4701805114746093,
             39.45402268055877
         ],
+        "state": "warning",
         "selected": true
     },
     {
@@ -36,6 +38,7 @@
             -0.46151161193847656,
             39.491986670574235
         ],
+        "state": "critical",
         "selected": true
     },
     {
@@ -49,6 +52,7 @@
             -0.45799255371093744,
             39.489867063731005
         ],
+        "state": "warning",
         "selected": true
     },
     {
@@ -62,6 +66,7 @@
             -0.47799110412597656,
             39.49152301209883
         ],
+        "state": "critical",
         "selected": true
     },
     {
@@ -75,6 +80,7 @@
             -0.46919345855712885,
             39.36316967298492
         ],
+        "state": "warning",
         "selected": true
     },
     {
@@ -88,6 +94,7 @@
             -0.4445171356201172,
             39.50457050531535
         ],
+        "state": "critical",
         "selected": true
     },
     {
@@ -96,11 +103,12 @@
         "address": "Depósito xirivella",
         "id": 8,
         "dmaId": 5,
-        "assetName": "depósito",
+        "assetName": "deposito",
         "coordinates": [
             -0.4332733154296875,
             39.465089368099164
         ],
+        "state": "critical",
         "selected": true
     },
     {
@@ -114,6 +122,7 @@
             -0.4154634475708008,
             39.475458648837424
         ],
+        "state": "ok",
         "selected": true
     }
 ]
