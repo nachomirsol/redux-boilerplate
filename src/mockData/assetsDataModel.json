@@ -20,8 +20,8 @@
         "dmaId": 6,
         "assetName": "deposito",
         "coordinates": [
-            -0.4548758268356323,
-            39.458653342497016
+            -0.4701805114746093,
+            39.45402268055877
         ],
         "selected": true
     },
@@ -33,8 +33,8 @@
         "dmaId": 2,
         "assetName": "bomba",
         "coordinates": [
-            -0.5084609985351562,
-            39.52092608447839
+            -0.46151161193847656,
+            39.491986670574235
         ],
         "selected": true
     },
@@ -44,10 +44,10 @@
         "address": "Manises Ficticio",
         "id": 4,
         "dmaId": 2,
-        "assetName": "deposito",
+        "assetName": "bomba",
         "coordinates": [
-            -0.5200481414794922,
-            39.510927787044295
+            -0.45799255371093744,
+            39.489867063731005
         ],
         "selected": true
     },
@@ -59,8 +59,8 @@
         "dmaId": 2,
         "assetName": "bomba",
         "coordinates": [
-            -0.5052852630615234,
-            39.5189397823224
+            -0.47799110412597656,
+            39.49152301209883
         ],
         "selected": true
     },
@@ -77,4 +77,43 @@
         ],
         "selected": true
     },
+    {
+        "name": "Paterna",
+        "code": "PT",
+        "address": "Depósito paterna",
+        "id": 7,
+        "dmaId": 1,
+        "assetName": "bomba",
+        "coordinates": [
+            -0.4445171356201172,
+            39.50457050531535
+        ],
+        "selected": true
+    },
+    {
+        "name": "Xirivella",
+        "code": "XV",
+        "address": "Depósito xirivella",
+        "id": 8,
+        "dmaId": 5,
+        "assetName": "depósito",
+        "coordinates": [
+            -0.4332733154296875,
+            39.465089368099164
+        ],
+        "selected": true
+    },
+    {
+        "name": "Mislata",
+        "code": "XV",
+        "address": "Depósito xirivella",
+        "id": 9,
+        "dmaId": 3,
+        "assetName": "bomba",
+        "coordinates": [
+            -0.4154634475708008,
+            39.475458648837424
+        ],
+        "selected": true
+    }
 ]

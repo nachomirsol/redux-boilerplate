@@ -4,24 +4,41 @@ import PropTypes from "prop-types";
 /* Components */
 import FilterPanel from "components/FilterPanel";
 import Map from "components/Map";
-import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent/OverallInfoWidgetContent";
 import Spinner from "components/Spinner";
-import StatusIndicator from "components/StatusIndicator";
 import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
 /**Mock Data */
 import dataAreas from '../../mockData/areasDataModel.json';
+import dataIcons from '../../mockData/assetsDataModel.json';
+/**Utils */
+import operationStateModel from "./utils/operationStateModel";
 /**Styles */
 import "./operationState.scss";
 
-
 const OperationState = ({ intl }) => {
   const [showSpinner, setShowSpinner] = useState(true);
+
+  const [dataIconsState, setDataIcons] = useState(null);
+  const [dataAreasState, setDataAreas] = useState(null);
+
+  useEffect(() => {
+    createIconsState(dataIcons);
+    createAreasState(dataAreas);
+  }, [])
+
   useEffect(() => {
     setTimeout(() => {
       setShowSpinner(false);
     }, 1000);
   }, []);
+
+  const createIconsState = (data) => {
+    setDataIcons(data)
+  }
+
+  const createAreasState = (data) => {
+    setDataAreas(data)
+  }
 
   return (
     <div className="operationState operationState__wrapper">
@@ -30,56 +47,29 @@ const OperationState = ({ intl }) => {
       ) : (
           <>
             <div className="widget__container">
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.Infraestructures"
-                })}
-              >
-                {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
-                <StatusIndicator />
-              </Widget>
-
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.Operation"
-                })}
-              >
-                <OverallInfoWidgetContent
-                  icons={[
-                    { name: "broadcast-tower", text: "Comunicación" },
-                    { name: "cog", text: "fugas" }
-                  ]}
-                  minRange={""}
-                  maxRange={""}
-                />
-                {/** Consider this icosn data inside a config file */}
-              </Widget>
-
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.WaterQuality"
-                })}
-              >
-
-
-                <OverallInfoWidgetContent
-                  icons={[
-                    { name: "", text: "-" },
-                    { name: "", text: "-" }
-                  ]}
-                  minRange={"0.45"}
-                  maxRange={"0.96"}
-                />
-                {/** Consider this icosn data inside a config file */}
-              </Widget>
+              {operationStateModel.map((widgetData, index) => {
+                return (
+                  <Widget
+                    key={index}
+                    title={intl.formatMessage({ id: widgetData.title })}
+                  >
+                    {widgetData.hasProps ? (
+                      <widgetData.Component
+                        {...widgetData.widgetProps}
+                      ></widgetData.Component>
+                    ) : (
+                        <widgetData.Component />
+                      )}
+                  </Widget>
+                );
+              })}
             </div>
 
             <div className="map__container">
               <FilterPanel intl={intl} />
               <StatusLegend />
-              <Map data={dataAreas}></Map>
+              <Map dataArea={dataAreasState} dataIcon={dataIconsState}></Map>
             </div>
-
           </>
         )}
     </div>
