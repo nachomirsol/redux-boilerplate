@@ -16,8 +16,8 @@ import operationStateModel from "./utils/operationStateModel";
 import "./operationState.scss";
 
 const OperationState = ({ intl }) => {
-  const [showSpinner, setShowSpinner] = useState(true);
 
+  const [showSpinner, setShowSpinner] = useState(true);
   const [dataIconsState, setDataIcons] = useState(null);
   const [dataAreasState, setDataAreas] = useState(null);
 
@@ -38,6 +38,10 @@ const OperationState = ({ intl }) => {
 
   const createAreasState = (data) => {
     setDataAreas(data)
+  }
+
+  const checkAsset = (id, name) => {
+    alert(name)
   }
 
   return (
@@ -66,7 +70,7 @@ const OperationState = ({ intl }) => {
             </div>
 
             <div className="map__container">
-              <FilterPanel intl={intl} />
+              <FilterPanel intl={intl} onCheckAsset={(id, name) => checkAsset(id, name)} />
               <StatusLegend />
               <Map dataArea={dataAreasState} dataIcon={dataIconsState}></Map>
             </div>

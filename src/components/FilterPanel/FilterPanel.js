@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 /**Styles */
 import "./filterPanel.scss";
 
-const FilterPanel = ({ intl }) => {
+const FilterPanel = ({ intl, onCheckAsset }) => {
     const [expanded, setExpanded] = useState(true);
 
     const toggleFilter = () => {
@@ -30,10 +30,10 @@ const FilterPanel = ({ intl }) => {
                                 <span className="title"> Tipo</span>
                                 <ul>
                                     <li>
-                                        <FilterPanelItem name={"Depósitos"} />
+                                        <FilterPanelItem name={"deposito"} onCheckAsset={(id, name) => onCheckAsset(id, name)} id={1} />
                                     </li>
                                     <li>
-                                        <FilterPanelItem name={"Puntos de producción"} />
+                                        <FilterPanelItem name={"bomba"} onCheckAsset={(id, name) => onCheckAsset(id, name)} id={2} />
                                     </li>
                                 </ul>
                             </div>

@@ -63,6 +63,30 @@
             "tag": null,
             "alarms": 6,
             "children": []
+        },
+        {
+            "label": "Alaquas",
+            "value": "6-dma",
+            "icon": "dma",
+            "favourite": false,
+            "sensorizable": true,
+            "id": 6,
+            "parentId": null,
+            "tag": null,
+            "alarms": 11,
+            "children": []
+        },
+        {
+            "label": "Picassent",
+            "value": "7-dma",
+            "icon": "dma",
+            "favourite": false,
+            "sensorizable": true,
+            "id": 7,
+            "parentId": null,
+            "tag": null,
+            "alarms": 7,
+            "children": []
         }
     ]
 }
