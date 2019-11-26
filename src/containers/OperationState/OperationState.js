@@ -3,13 +3,12 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 /* Components */
 import Map from "components/Map";
-import OverallInfoWidgetContent from "./components/OverallInfoWidgetContent/OverallInfoWidgetContent";
 import Spinner from "components/Spinner";
-import StatusIndicator from "components/StatusIndicator";
 import Widget from "components/Widget";
+/**Utils */
+import operationStateModel from "./utils/operationStateModel";
 /**Styles */
 import "./operationState.scss";
-
 
 const OperationState = ({ intl }) => {
   const [showSpinner, setShowSpinner] = useState(true);
@@ -24,58 +23,31 @@ const OperationState = ({ intl }) => {
       {showSpinner ? (
         <Spinner message="Loading"></Spinner>
       ) : (
-          <>
-            <div className="widget__container">
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.Infraestructures"
-                })}
-              >
-                {/*<Chart type={'pie'} title={''} subtitle={''} data={chartData} />*/}
-                <StatusIndicator />
-              </Widget>
+        <>
+          <div className="widget__container">
+            {operationStateModel.map((widgetData, index) => {
+              return (
+                <Widget
+                  key={index}
+                  title={intl.formatMessage({ id: widgetData.title })}
+                >
+                  {widgetData.hasPros ? (
+                    <widgetData.Component
+                      {...widgetData.widgetProps}
+                    ></widgetData.Component>
+                  ) : (
+                    <widgetData.Component/>
+                  )}
+                </Widget>
+              );
+            })}
+          </div>
 
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.Operation"
-                })}
-              >
-                <OverallInfoWidgetContent
-                  icons={[
-                    { name: "broadcast-tower", text: "Comunicación" },
-                    { name: "cog", text: "fugas" }
-                  ]}
-                  minRange={""}
-                  maxRange={""}
-                />
-                {/** Consider this icosn data inside a config file */}
-              </Widget>
-
-              <Widget
-                title={intl.formatMessage({
-                  id: "app.components.Widget.Header.Title.WaterQuality"
-                })}
-              >
-
-
-                <OverallInfoWidgetContent
-                  icons={[
-                    { name: "", text: "-" },
-                    { name: "", text: "-" }
-                  ]}
-                  minRange={"0.45"}
-                  maxRange={"0.96"}
-                />
-                {/** Consider this icosn data inside a config file */}
-              </Widget>
-            </div>
-
-            <div className="map__container">
-              <Map></Map>
-            </div>
-
-          </>
-        )}
+          <div className="map__container">
+            <Map></Map>
+          </div>
+        </>
+      )}
     </div>
   );
 };
