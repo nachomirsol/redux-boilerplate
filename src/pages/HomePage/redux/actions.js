@@ -1,9 +1,12 @@
-import { CREATE_HIERARCHY, DISPLAY_HIERARCHY_CHILDREN, CHECK_HIERARCHY_ITEM, CREATE_MAP_AREAS } from './constants'
+import { CREATE_HIERARCHY, DISPLAY_HIERARCHY_CHILDREN, CHECK_HIERARCHY_ITEM, CREATE_MAP_AREAS, CREATE_ASSETS } from './constants'
 import { createCheckboxTree, displayHierarchyChildren, checkHierarchyItem } from 'services/hierachyService';
 import { createMapAreas } from 'services/mapService';
-/**Mock data */
+import { createAssetIcons } from 'services/assetsService';
+
 import hierarchyData from "../../../mockData/hierarchyData/hierarchyData.json";
 import mapAreasData from "../../../mockData/areasDataModel.json";
+import assetsData from "../../../mockData/assetsDataModel.json";
+
 
 
 export const createHierarchy = () => {
@@ -33,6 +36,12 @@ export const createAreas = () => {
         type: CREATE_MAP_AREAS,
         payload: createMapAreas(mapAreasData)
     }
+}
 
+export const createAssets = () => {
+    return {
+        type: CREATE_ASSETS,
+        payload: createAssetIcons(assetsData)
+    }
 }
 
