@@ -5,7 +5,7 @@
         "address": "Blasco Ibañez Este",
         "id": 1,
         "dmaId": 6,
-        "assetName": "deposito",
+        "assetName": "bomba",
         "coordinates": [
             -0.45248329639434814,
             39.4591586375919
@@ -61,7 +61,7 @@
         "address": "Manises Ficticio",
         "id": 5,
         "dmaId": 2,
-        "assetName": "bomba",
+        "assetName": "deposito",
         "coordinates": [
             -0.47799110412597656,
             39.49152301209883

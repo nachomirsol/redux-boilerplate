@@ -5,88 +5,146 @@
     "id": 22,
     "children": [
         {
-            "label": "Paterna",
-            "value": "1-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 1,
-            "parentId": null,
-            "tag": null,
-            "alarms": 5,
-            "children": []
+            "label": "EMPRESA 1",
+            "id": 100,
+            "children": [
+                {
+                    "label": "Paterna",
+                    "value": "1-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 1,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 5,
+                    "warns": 3,
+                    "children": []
+                },
+                {
+                    "label": "Manises",
+                    "value": "2-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 2,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": null,
+                    "warns": 0,
+                    "children": []
+                },
+                {
+                    "label": "Mislata",
+                    "value": "3-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 3,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 2,
+                    "warns": 0,
+                    "children": []
+                },
+                {
+                    "label": "Aldaia",
+                    "value": "4-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 4,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 12,
+                    "warns": 6,
+                    "children": []
+                },
+                {
+                    "label": "Xirivella",
+                    "value": "5-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 5,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 6,
+                    "warns": 1,
+                    "children": []
+                },
+                {
+                    "label": "Alaquas",
+                    "value": "6-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 6,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 11,
+                    "warns": 0,
+                    "children": []
+                },
+                {
+                    "label": "Picassent",
+                    "value": "7-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 7,
+                    "parentId": 100,
+                    "tag": null,
+                    "alarms": 7,
+                    "warns": 2,
+                    "children": []
+                }
+            ]
         },
         {
-            "label": "Manises",
-            "value": "2-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 2,
-            "parentId": null,
-            "tag": null,
-            "alarms": null,
-            "children": []
-        },
-        {
-            "label": "Mislata",
-            "value": "3-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 3,
-            "parentId": null,
-            "tag": null,
-            "alarms": 2,
-            "children": []
-        },
-        {
-            "label": "Aldaia",
-            "value": "4-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 4,
-            "parentId": null,
-            "tag": null,
-            "alarms": 12,
-            "children": []
-        },
-        {
-            "label": "Xirivella",
-            "value": "5-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 5,
-            "parentId": null,
-            "tag": null,
-            "alarms": 6,
-            "children": []
-        },
-        {
-            "label": "Alaquas",
-            "value": "6-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 6,
-            "parentId": null,
-            "tag": null,
-            "alarms": 11,
-            "children": []
-        },
-        {
-            "label": "Picassent",
-            "value": "7-dma",
-            "icon": "dma",
-            "favourite": false,
-            "sensorizable": true,
-            "id": 7,
-            "parentId": null,
-            "tag": null,
-            "alarms": 7,
-            "children": []
+            "label": "EMPRESA 2",
+            "id": 200,
+            "children": [
+                {
+                    "label": "Burjassot",
+                    "value": "8-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 8,
+                    "parentId": 200,
+                    "tag": null,
+                    "alarms": 0,
+                    "warns": 0,
+                    "children": []
+                },
+                {
+                    "label": "Torrent",
+                    "value": "9-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 9,
+                    "parentId": 200,
+                    "tag": null,
+                    "alarms": 0,
+                    "warns": 0,
+                    "children": []
+                },
+                {
+                    "label": "Alboraia",
+                    "value": "10-dma",
+                    "icon": "dma",
+                    "favourite": false,
+                    "sensorizable": true,
+                    "id": 10,
+                    "parentId": 200,
+                    "tag": null,
+                    "alarms": 2,
+                    "warns": 1,
+                    "children": []
+                }
+            ]
         }
     ]
 }

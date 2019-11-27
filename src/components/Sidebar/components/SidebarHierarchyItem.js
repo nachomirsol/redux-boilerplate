@@ -36,7 +36,7 @@ const SidebarHierarchyItem = ({ expanded, intl }) => {
         </div>
       </PopoverTrigger>
       <div className="sidebar__hierarchy">
-        <Hierarchy data={hierarchyData} />
+        <Hierarchy />
       </div>
     </PopoverController>
   );

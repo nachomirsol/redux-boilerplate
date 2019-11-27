@@ -58,9 +58,9 @@ HomePage.propTypes = {
 };
 
 // This works
-const mapStateToProps = (state) => ({
+/*const mapStateToProps = (state) => ({
   hierarchy: state.hierarchy.hierarchy
-});
+});*/
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -85,4 +85,4 @@ const mapStateToProps = (state) => ({
 //   // todoList: makeSelectTodoList()
 // });
 
-export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomePage));
+export default connect(null, mapDispatchToProps)(injectIntl(HomePage));

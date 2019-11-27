@@ -68,6 +68,8 @@ export const createCheckboxTree = hierarchyData => {
 //   });
 // }, []);
 
+
+
 // /** This function is to fill the react state with the createdCheckboxTree */
 // const fillCheckboxTree = useCallback(
 //   hierarchyList => {
@@ -92,20 +94,21 @@ export const createCheckboxTree = hierarchyData => {
 //   }
 // };
 
-// /** This function search the id recursively over the hierarchy tree and returns the item searched over the data we pass it by param*/
-// const searchHierarchyElement = (data, id) => {
-//   let itemFounded = data.find(item => item.id === id);
-//   if (!itemFounded) {
-//     const flattenArray = data.reduce((arr, item) => {
-//       return arr.concat(item.children);
-//     }, []);
-//     itemFounded = flattenArray.find(item => item.id === id);
-//     if (!itemFounded) {
-//       return searchHierarchyElement(flattenArray);
-//     }
-//   }
-//   return itemFounded;
-// };
+/** This function search the id recursively over the hierarchy tree and returns the item searched over the data we pass it by param*/
+export const searchHierarchyElement = (data, id) => {
+    alert(id)
+    let itemFounded = data.find(item => item.id === id);
+    if (!itemFounded) {
+        const flattenArray = data.reduce((arr, item) => {
+            return arr.concat(item.children);
+        }, []);
+        itemFounded = flattenArray.find(item => item.id === id);
+        if (!itemFounded) {
+            return searchHierarchyElement(flattenArray);
+        }
+    }
+    return itemFounded;
+};
 
 // /** This function is to change the checked status from the searched element, if it has children, all the children will be changed the checked status */
 // const checkHierarchyElement = id => {
