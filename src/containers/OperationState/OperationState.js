@@ -7,6 +7,8 @@ import Map from "components/Map";
 import Spinner from "components/Spinner";
 import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
+/**Redux */
+import { connect } from 'react-redux';
 /**Mock Data */
 import dataAreas from '../../mockData/areasDataModel.json';
 import dataIcons from '../../mockData/assetsDataModel.json';
@@ -15,7 +17,7 @@ import operationStateModel from "./utils/operationStateModel";
 /**Styles */
 import "./operationState.scss";
 
-const OperationState = ({ intl }) => {
+const OperationState = ({ intl, mapAreas }) => {
 
   const [showSpinner, setShowSpinner] = useState(true);
   const [dataIconsState, setDataIcons] = useState(null);
@@ -93,7 +95,7 @@ const OperationState = ({ intl }) => {
             <div className="map__container">
               <FilterPanel intl={intl} onCheckAsset={checkAsset} onCheckAlertStatus={checkAlertStatus} />
               <StatusLegend />
-              <Map dataArea={dataAreasState} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
+              <Map dataArea={mapAreas.features.filter(item => item.properties.selected)} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
             </div>
           </>
         )}
@@ -101,7 +103,11 @@ const OperationState = ({ intl }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  mapAreas: state.hierarchy.mapAreas
+})
+
 OperationState.propTypes = {
   intl: PropTypes.object.isRequired
 };
-export default OperationState;
+export default connect(mapStateToProps)(OperationState);

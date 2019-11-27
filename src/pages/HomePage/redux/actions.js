@@ -1,16 +1,10 @@
-import { SET_HIERARCHY, GET_HIERARCHY, CREATE_HIERARCHY, SEARCH_HIERARCHY_ELEMENT } from './constants'
-import { createCheckboxTree, searchHierarchyElement } from 'services/hierachyService';
+import { CREATE_HIERARCHY, DISPLAY_HIERARCHY_CHILDREN, CHECK_HIERARCHY_ITEM, CREATE_MAP_AREAS } from './constants'
+import { createCheckboxTree, displayHierarchyChildren, checkHierarchyItem } from 'services/hierachyService';
+import { createMapAreas } from 'services/mapService';
 /**Mock data */
 import hierarchyData from "../../../mockData/hierarchyData/hierarchyData.json";
+import mapAreasData from "../../../mockData/areasDataModel.json";
 
-// export const setHierarchy = (data) => {
-
-//     return {
-//         type: SET_HIERACHY,
-//         payload: data
-//     };
-
-// }
 
 export const createHierarchy = () => {
     return {
@@ -19,9 +13,26 @@ export const createHierarchy = () => {
     };
 }
 
-/*export const searchHierarchy = () => {
+export const checkHierarchy = (id) => {
+
     return {
-        type: SEARCH_HIERARCHY_ELEMENT,
-        payload: searchHierarchyElement(hierachyData.children)
+        type: CHECK_HIERARCHY_ITEM,
+        payload: checkHierarchyItem(hierarchyData.children, id)
     }
-}*/
+}
+
+export const displayHierarchy = (id) => {
+    return {
+        type: DISPLAY_HIERARCHY_CHILDREN,
+        payload: displayHierarchyChildren(hierarchyData.children, id)
+    }
+}
+
+export const createAreas = () => {
+    return {
+        type: CREATE_MAP_AREAS,
+        payload: createMapAreas(mapAreasData)
+    }
+
+}
+

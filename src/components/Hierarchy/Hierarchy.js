@@ -3,76 +3,19 @@ import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { injectIntl } from "react-intl";
-
 /**Components */
 import HierarchyItem from "./components/HierarchyItem";
+/**Redux */
+import { checkHierarchy, displayHierarchy } from "../../pages/HomePage/redux/actions";
 /**Styles */
 import "./hierarchy.scss";
 
-const Hierarchy = ({ hierarchy, intl }) => {
-  /** This function checks the parent elements by recursively*/
-  const checkParentElements = (data, itemFounded) => {
-    if (itemFounded.parentId) {
-      const parent = searchHierarchyElement(data, itemFounded.parentId);
-      if (parent) {
-        parent.checked = true;
-        checkParentElements(data, parent);
-      }
-    }
-  };
+const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
 
-  /** This function search the id recursively over the hierarchy tree and returns the item searched over the data we pass it by param*/
-  const searchHierarchyElement = (data, id) => {
-    let itemFounded = data.find(item => item.id === id);
-    if (!itemFounded) {
-      const flattenArray = data.reduce((arr, item) => {
-        return arr.concat(item.children);
-      }, []);
-      itemFounded = flattenArray.find(item => item.id === id);
-      if (!itemFounded) {
-        return searchHierarchyElement(flattenArray);
-      }
-    }
-    return itemFounded;
-  };
-
-  /** This function is to change the checked status from the searched element, if it has children, all the children will be changed the checked status */
-  /*   const checkHierarchyElement = id => {
-      const stateClone = [...checkboxTree];
-  
-      const itemFounded = searchHierarchyElement(stateClone, id);
-      itemFounded.checked = !itemFounded.checked;
-      if (itemFounded.checked) {
-        checkParentElements(stateClone, itemFounded);
-      }
-  
-      if (itemFounded.children && itemFounded.children.length) {
-        itemFounded.children = itemFounded.children.map(child => {
-          child.checked = itemFounded.checked;
-          return child;
-        });
-      }
-      setCheckboxTree(stateClone);
-    }; */
-
-  /** This function is to change the displayed status from the searched element, if it has children, all the children will be changed the display status */
-  /*   const displayChildren = id => {
-      const stateClone = [...checkboxTree];
-  
-      const itemsDisplayed = searchHierarchyElement(stateClone, id);
-      itemsDisplayed.displayed = !itemsDisplayed.displayed;
-  
-      if (itemsDisplayed.children && itemsDisplayed.children.length) {
-        itemsDisplayed.children = itemsDisplayed.children.map(child => {
-          child.displayed = !child.displayed;
-          return child;
-        });
-      }
-      setCheckboxTree(stateClone);
-    }; */
 
   /** This function prints the hierarchy tree in render */
   const showHierarchyTree = dataHierarchy => {
+
     return dataHierarchy.map(item => {
       if (!item.children.length) {
         return (
@@ -82,10 +25,10 @@ const Hierarchy = ({ hierarchy, intl }) => {
           >
             <HierarchyItem
               dataInfo={item}
-              // onCheckItem={id => checkHierarchyElement(id)}
+              onCheckItem={checkHierarchy}
               id={item.id}
               checked={item.checked}
-              // onDisplayChildren={id => displayChildren(id)}
+              onDisplayChildren={displayHierarchy}
               displayed={item.displayed}
             />
           </li>
@@ -101,10 +44,10 @@ const Hierarchy = ({ hierarchy, intl }) => {
                 ? `fa fa-chevron-right`
                 : `fa fa-chevron-down`
             }
-            // onCheckItem={id => checkHierarchyElement(id)}
+            onCheckItem={checkHierarchy}
             id={item.id}
             checked={item.checked}
-            // onDisplayChildren={id => displayChildren(id)}
+            onDisplayChildren={displayHierarchy}
             displayed={item.displayed}
           />
           <ul>{showHierarchyTree(item.children)}</ul>
@@ -126,6 +69,15 @@ const Hierarchy = ({ hierarchy, intl }) => {
   );
 };
 
+function mapDispatchToProps(dispatch) {
+
+  return {
+    checkHierarchy: (id) => dispatch(checkHierarchy(id)),
+    displayHierarchy: (id) => dispatch(displayHierarchy(id)),
+    dispatch
+  };
+}
+
 const mapStateToProps = (state) => ({
   hierarchy: state.hierarchy.hierarchy
 })
@@ -135,4 +87,4 @@ Hierarchy.propTypes = {
   hierarchyData: PropTypes.array.isRequired
 };
 
-export default connect(mapStateToProps)(injectIntl(Hierarchy));
+export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(Hierarchy));

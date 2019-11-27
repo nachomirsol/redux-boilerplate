@@ -30,7 +30,7 @@
                     "id": 2,
                     "parentId": 100,
                     "tag": null,
-                    "alarms": null,
+                    "alarms": 1,
                     "warns": 0,
                     "children": []
                 },
