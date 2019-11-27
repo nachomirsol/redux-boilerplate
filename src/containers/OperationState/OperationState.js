@@ -13,12 +13,14 @@ import { connect } from 'react-redux';
 import dataAreas from 'mockData/areasDataModel.json';
 import dataIcons from 'mockData/assetsDataModel.json';
 import userPermissions from 'mockData/userPermissions.json';
+/**Services */
+import { searchHierarchyItem } from 'services/hierachyService';
 /**Utils */
 import operationStateModel from "./utils/operationStateModel";
 /**Styles */
 import "./operationState.scss";
 
-const OperationState = ({ intl, mapAreas }) => {
+const OperationState = ({ intl, mapAreas, hierarchy }) => {
 
   const [showSpinner, setShowSpinner] = useState(true);
   const [dataIconsState, setDataIcons] = useState(null);
@@ -74,6 +76,16 @@ const OperationState = ({ intl, mapAreas }) => {
     return false;
   }
 
+  const AreasSelected = () => {
+    return mapAreas.features.filter(item => {
+      const element = searchHierarchyItem(hierarchy, item.properties.dmaId);
+      if (element && element.checked) {
+        return element;
+      }
+      return null;
+    })
+  }
+
 
 
   return (
@@ -85,27 +97,27 @@ const OperationState = ({ intl, mapAreas }) => {
             <div className="widget__container">
               {operationStateModel.map((widgetData, index) => {
                 return userHasPermission(widgetData) ?
-                (
-                  <Widget
-                    key={index}
-                    title={intl.formatMessage({ id: widgetData.title })}
-                  >
-                    {widgetData.hasProps ? (
-                      <widgetData.Component
-                        {...widgetData.widgetProps}
-                      ></widgetData.Component>
-                    ) : (
-                        <widgetData.Component />
-                      )}
-                  </Widget>
-                ) : null;
+                  (
+                    <Widget
+                      key={index}
+                      title={intl.formatMessage({ id: widgetData.title })}
+                    >
+                      {widgetData.hasProps ? (
+                        <widgetData.Component
+                          {...widgetData.widgetProps}
+                        ></widgetData.Component>
+                      ) : (
+                          <widgetData.Component />
+                        )}
+                    </Widget>
+                  ) : null;
               })}
             </div>
 
             <div className="map__container">
               <FilterPanel intl={intl} onCheckAsset={checkAsset} onCheckAlertStatus={checkAlertStatus} />
               <StatusLegend />
-              <Map dataArea={mapAreas.features.filter(item => item.properties.selected)} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
+              <Map dataArea={AreasSelected()} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
             </div>
           </>
         )}
@@ -114,8 +126,18 @@ const OperationState = ({ intl, mapAreas }) => {
 };
 
 const mapStateToProps = (state) => ({
+  hierarchy: state.hierarchy.hierarchy,
   mapAreas: state.hierarchy.mapAreas
 })
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     searchHierarchyItem: () => dispatch(searchHierarchyItem()),
+//     dispatch
+//   };
+// }
+
+
 
 OperationState.propTypes = {
   intl: PropTypes.object.isRequired

@@ -63,7 +63,7 @@ HomePage.propTypes = {
   hierarchy: state.hierarchy.hierarchy
 });*/
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     createHierarchy: () => dispatch(createHierarchy()),
     createAreas: () => dispatch(createAreas()),
