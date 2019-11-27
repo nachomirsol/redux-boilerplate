@@ -20,6 +20,9 @@
   justify-content: space-between;
   align-items: center;
   padding: $spacing-xxs $spacing-xs;
+  .widget__header-title {
+    margin-right: 4px;
+  }
 }
 .widget__content {
 

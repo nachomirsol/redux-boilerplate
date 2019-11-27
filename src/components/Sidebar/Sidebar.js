@@ -17,7 +17,7 @@ const Sidebar = ({ expanded, intl }) => {
         expanded ? "sidebar__wrapper--expanded" : ""
         }`}
     >
-      {/* <SidebarHierarchyItem expanded={expanded} intl={intl} /> */}
+      <SidebarHierarchyItem expanded={expanded} intl={intl} />
       <div className="menu-separator"></div>
       {Object.keys(sidebarModel).map((item, index) => {
         return (

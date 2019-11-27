@@ -12,9 +12,9 @@
     justify-content: center;
     span {
       font-family: $font-primary;
-      font-size: 40px;
+      font-size: 30px;
       font-weight: bold;
-      padding: 0px 4px;
+      padding: 4px;
       &.high-severity-alarm {
         @include themify($themes) {
           border-bottom: 3px solid themed("alertColor");

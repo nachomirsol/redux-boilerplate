@@ -11,15 +11,16 @@
       border-bottom: 3px solid $color-primary;
     }
   }
-  @media (max-width: 768px) {
-    .tabs__tabs {
-      display: flex;
-      .tabs__tab {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        height: 24px;
-      }
+}
+
+@media (max-width: 768px) {
+  .tabs__tabs {
+    display: flex !important;
+    .tabs__tab {
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      height: 24px !important;
     }
   }
 }

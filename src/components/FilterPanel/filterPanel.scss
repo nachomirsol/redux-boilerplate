@@ -1,10 +1,11 @@
 @import "../../styles/styles-utils.scss";
 .filterPanel__wrapper{
     position:absolute;
+    user-select: none;
     right:0px;
     margin:16px;
-    z-index:1;
-    width:224px;
+    z-index: 3;
+    max-width:350px;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18),
     0 1px 8px 0 rgba(0, 0, 0, 0.2);
     .filterPanel__header{
@@ -15,9 +16,12 @@
         @include themify($themes) {
             background-color: themed("widgetHeaderColor");
         }
-        i{
+        .icon{
+            @include themify($themes) {
+                color: themed("textColorBase");
+            }
             cursor:pointer;
-            
+            margin-right: 4px;
         }
         span{
             font-size:14px;
@@ -28,11 +32,12 @@
     }
 
     .filterPanel__content{
+        padding: 0 24px;
         @include themify($themes) {
             background-color: themed("panelBackgroundColor");
         }
         .filter{
-            padding:8px 8px 8px 16px;
+            padding:8px 8px 0 16px;
             font-size:14px;
             @include themify($themes) {
                 color: themed("textColorWeaker");
