@@ -84,7 +84,7 @@ const mapStateToProps = (state) => ({
 
 Hierarchy.propTypes = {
   intl: PropTypes.object.isRequired,
-  hierarchyData: PropTypes.array.isRequired
+  hierarchy: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(Hierarchy));

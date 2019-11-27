@@ -10,7 +10,6 @@ import Widget from "components/Widget";
 /**Redux */
 import { connect } from 'react-redux';
 /**Mock Data */
-import dataAreas from 'mockData/areasDataModel.json';
 import dataIcons from 'mockData/assetsDataModel.json';
 import userPermissions from 'mockData/userPermissions.json';
 /**Services */
@@ -24,11 +23,9 @@ const OperationState = ({ intl, mapAreas, hierarchy }) => {
 
   const [showSpinner, setShowSpinner] = useState(true);
   const [dataIconsState, setDataIcons] = useState(null);
-  const [dataAreasState, setDataAreas] = useState(null);
 
   useEffect(() => {
     createIconsState(dataIcons);
-    createAreasState(dataAreas);
   }, [])
 
   useEffect(() => {
@@ -39,10 +36,6 @@ const OperationState = ({ intl, mapAreas, hierarchy }) => {
 
   const createIconsState = (data) => {
     setDataIcons(data)
-  }
-
-  const createAreasState = (data) => {
-    setDataAreas(data)
   }
 
   const checkAsset = (id, name) => {
@@ -76,7 +69,7 @@ const OperationState = ({ intl, mapAreas, hierarchy }) => {
     return false;
   }
 
-  const AreasSelected = () => {
+  const areasSelected = () => {
     return mapAreas.features.filter(item => {
       const element = searchHierarchyItem(hierarchy, item.properties.dmaId);
       if (element && element.checked) {
@@ -117,7 +110,7 @@ const OperationState = ({ intl, mapAreas, hierarchy }) => {
             <div className="map__container">
               <FilterPanel intl={intl} onCheckAsset={checkAsset} onCheckAlertStatus={checkAlertStatus} />
               <StatusLegend />
-              <Map dataArea={AreasSelected()} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
+              <Map dataArea={areasSelected()} dataIcon={dataIconsState.filter(item => item.selected)}></Map>
             </div>
           </>
         )}
@@ -129,14 +122,6 @@ const mapStateToProps = (state) => ({
   hierarchy: state.hierarchy.hierarchy,
   mapAreas: state.hierarchy.mapAreas
 })
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     searchHierarchyItem: () => dispatch(searchHierarchyItem()),
-//     dispatch
-//   };
-// }
-
 
 
 OperationState.propTypes = {

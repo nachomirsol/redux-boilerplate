@@ -11,7 +11,6 @@
     min-height: calc(100vh - 64px);
     height: 100%;
   }
-
   .container {
     overflow: hidden;
     width: 100%;
@@ -26,6 +25,7 @@
     max-width: calc(100vw - 72px) !important;
   }
 }
+
 @media (max-height: 650px) and (orientation: landscape) {
   .container {
     overflow-y: auto !important;
