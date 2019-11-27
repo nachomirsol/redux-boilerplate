@@ -2,7 +2,8 @@ import { CREATE_HIERARCHY, CHECK_HIERARCHY_ITEM, DISPLAY_HIERARCHY_CHILDREN, CRE
 
 const initialState = {
     hierarchy: [],
-    mapAreas: []
+    mapAreas: [],
+    iconAssets: []
 };
 
 const homePageReducer = (state = initialState, action) => {
