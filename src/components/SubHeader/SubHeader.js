@@ -15,30 +15,31 @@ const SubHeader = ({ intl, onViewChange }) => {
             })}
           </span>
           <div className="subHeader__chips-container">
-          <SubHeaderChip
-            iconName="ruler"
-            title={intl.formatMessage({
-              id: "app.components.SubHeader.NetLength"
-            })}
-            amount="23KM"
-          ></SubHeaderChip>
-          <SubHeaderChip
-            iconName="users"
-            title={intl.formatMessage({
-              id: "app.components.SubHeader.SupplyPoints"
-            })}
-            amount="12234"
-          ></SubHeaderChip>
-          <SubHeaderChip
-            iconName="tint"
-            title={intl.formatMessage({
-              id: "app.components.SubHeader.Connections"
-            })}
-            amount="3123"
-          ></SubHeaderChip>
+            <SubHeaderChip
+              iconName="ruler"
+              title={intl.formatMessage({
+                id: "app.components.SubHeader.NetLength"
+              })}
+              amount="23KM"
+            ></SubHeaderChip>
+            <SubHeaderChip
+              iconName="users"
+              title={intl.formatMessage({
+                id: "app.components.SubHeader.SupplyPoints"
+              })}
+              amount="12234"
+            ></SubHeaderChip>
+            <SubHeaderChip
+              iconName="tint"
+              title={intl.formatMessage({
+                id: "app.components.SubHeader.Connections"
+              })}
+              amount="3123"
+            ></SubHeaderChip>
           </div>
-          
+
         </div>
+        {/*
         <div className="subHeader__toggle-buttons">
           <button
             className={`subHeader-single-toggle-button ${
@@ -67,6 +68,7 @@ const SubHeader = ({ intl, onViewChange }) => {
             })}
           </button>
         </div>
+          */}
       </div>
     </>
   );

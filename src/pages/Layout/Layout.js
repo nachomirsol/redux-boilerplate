@@ -11,6 +11,7 @@ import Sidebar from "components/Sidebar";
 import "./layout.scss";
 
 const Layout = ({ children, breadcrumbs, pageSettings, onToggleMenu }) => {
+
   const { menuIsOpen } = pageSettings;
   const history = useHistory();
   return (
