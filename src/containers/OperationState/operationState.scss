@@ -4,9 +4,10 @@
   padding: $spacing-xs;
   height: 100%;
   .widget__container {
-    display: flex;
+    overflow-x: auto;
     width: 100%;
-    height: 40%;
+    height: 35%;
+    display: flex;
 
     .widget {
       margin-bottom: 16px;
@@ -14,19 +15,60 @@
     .widget:not(:last-child) {
       margin-right: 16px;
     }
-    @media (max-width: 768px) {
-      flex-direction: column;
-      height: 616px;
-    }
   }
   .map__container {
-    height: 60%;
-    @media (max-width: 768px) {
-      height: 400px;
-    }
+    position: relative;
+    height: 56.5%;
   }
   padding-bottom: 10px;
-  @media (max-width: 768px) {
-    overflow-y: auto;
+}
+
+/** WIDTH **/
+@media (max-width: 768px) {
+  .operationState__wrapper {
+    overflow-y: auto !important;
+  }
+  .widget__container {
+    height: initial !important;
+    display: inline !important;
+  }
+  .map__container {
+    height: 100% !important;
+  }
+}
+@media (min-width: 1920px) {
+  .widget__container {
+    height: 30% !important;
+  }
+  .map__container {
+    height: 65% !important;
+  }
+}
+/** HEIGHT **/
+@media (min-height: 1080px) {
+  .widget__container {
+    height: 25% !important;
+  }
+}
+/** HEIGHT-LANDSCAPE **/
+@media (max-height: 650px) and (orientation: landscape) {
+  .operationState__wrapper {
+    display: inline;
+  }
+  .widget__container {
+    height: 40% !important;
+  }
+  .map__container {
+    height: 100% !important;
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .widget__container {
+    height: 60% !important;
+  }
+}
+@media (max-height: 375px) and (orientation: landscape) {
+  .widget__container {
+    height: 65% !important;
   }
 }

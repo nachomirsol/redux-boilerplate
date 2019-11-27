@@ -14,13 +14,13 @@ const sidebarModel = {
         icon: 'infraestructures',
         alarms: 0
     },
-    eEfficiency: {
-        path: '/energetic-efficiency',
-        url: '/energetic-efficiency',
-        text: 'EnergeticEfficiency',
-        icon: 'eEfficiency',
-        alarms: 1
-    },
+    // eEfficiency: {
+    //     path: '/energetic-efficiency',
+    //     url: '/energetic-efficiency',
+    //     text: 'EnergeticEfficiency',
+    //     icon: 'eEfficiency',
+    //     alarms: 1
+    // },
     leakSearch: {
         path: '/leakSearch',
         url: '/leakSearch',

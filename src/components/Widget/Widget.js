@@ -21,7 +21,7 @@ const Widget = ({ title, children }) => {
   return (
     <div className="widget widget__wrapper" bg="bgGray1">
       <div className="widget__header">
-        <div>{title}</div>
+        <div className="widget__header-title">{title}</div>
         <div
           className="icons"
           onClick={

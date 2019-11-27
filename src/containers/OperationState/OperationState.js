@@ -10,8 +10,9 @@ import Widget from "components/Widget";
 /**Redux */
 import { connect } from 'react-redux';
 /**Mock Data */
-import dataAreas from '../../mockData/areasDataModel.json';
-import dataIcons from '../../mockData/assetsDataModel.json';
+import dataAreas from 'mockData/areasDataModel.json';
+import dataIcons from 'mockData/assetsDataModel.json';
+import userPermissions from 'mockData/userPermissions.json';
 /**Utils */
 import operationStateModel from "./utils/operationStateModel";
 /**Styles */
@@ -65,6 +66,14 @@ const OperationState = ({ intl, mapAreas }) => {
     setDataIcons(assets)
   }
 
+  const userHasPermission = (widgetData) => {
+    const currentUser = localStorage.getItem("userName");
+    if (userPermissions && userPermissions[currentUser]) {
+      return userPermissions[currentUser].opertationStateWidgets.includes(widgetData.name);
+    }
+    return false;
+  }
+
 
 
   return (
@@ -75,7 +84,8 @@ const OperationState = ({ intl, mapAreas }) => {
           <>
             <div className="widget__container">
               {operationStateModel.map((widgetData, index) => {
-                return (
+                return userHasPermission(widgetData) ?
+                (
                   <Widget
                     key={index}
                     title={intl.formatMessage({ id: widgetData.title })}
@@ -88,7 +98,7 @@ const OperationState = ({ intl, mapAreas }) => {
                         <widgetData.Component />
                       )}
                   </Widget>
-                );
+                ) : null;
               })}
             </div>
 

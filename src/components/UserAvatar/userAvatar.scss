@@ -13,9 +13,6 @@
   -ms-flex-align: center;
   align-items: center;
   margin: 0 $spacing-s;
-  @media (max-width: 768px) {
-    margin: 0 $spacing-xxs;
-  }
 }
 
 .user-avatar__photo-container {
@@ -42,9 +39,6 @@
 .user-avatar__name {
   display: block;
   font-family: "Myriad Pro Regular";
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 
 .user-avatar__dropdown {
@@ -56,6 +50,15 @@
     font-family: "Myriad Pro Regular";
     font-size: 16px;
     padding: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-avatar__wrapper {
+    margin: 0 $spacing-xxs !important;
+  }
+  .user-avatar__name {
+    display: none !important;
   }
 }
 
