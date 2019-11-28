@@ -9,7 +9,10 @@ import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
 /**Redux */
 import { connect } from "react-redux";
-import { checkAssets } from "../../pages/HomePage/redux/actions";
+import {
+  checkAssets,
+  changeFilterState
+} from "../../pages/HomePage/redux/actions";
 /**Mock Data */
 import userPermissions from "mockData/userPermissions.json";
 /**Utils */
@@ -23,7 +26,8 @@ const OperationState = ({
   iconAssets,
   selectedMapAreas,
   selectedIconAssets,
-  checkAssets
+  checkAssets,
+  filters
 }) => {
   const [showSpinner, setShowSpinner] = useState(true);
 
@@ -48,31 +52,34 @@ const OperationState = ({
       {showSpinner ? (
         <Spinner message="Loading"></Spinner>
       ) : (
-          <>
-            <div className="widget__container">
-              {operationStateModel.map((widgetData, index) => {
-                return userHasPermission(widgetData) ? (
-                  <Widget
-                    key={index}
-                    title={intl.formatMessage({ id: widgetData.title })}
-                  >
-                    {widgetData.hasProps ? (
-                      <widgetData.Component
-                        {...widgetData.widgetProps}
-                      ></widgetData.Component>
-                    ) : (
-                        <widgetData.Component />
-                      )}
-                  </Widget>
-                ) : null;
-              })}
-            </div>
+        <>
+          <div className="widget__container">
+            {operationStateModel.map((widgetData, index) => {
+              return userHasPermission(widgetData) ? (
+                <Widget
+                  key={index}
+                  title={intl.formatMessage({ id: widgetData.title })}
+                >
+                  {widgetData.hasProps ? (
+                    <widgetData.Component
+                      {...widgetData.widgetProps}
+                    ></widgetData.Component>
+                  ) : (
+                    <widgetData.Component />
+                  )}
+                </Widget>
+              ) : null;
+            })}
+          </div>
 
           <div className="map__container">
             <FilterPanel
               intl={intl}
+              filters={filters}
+              changeFilterState={changeFilterState}
               onCheckAsset={(variableName, value, isChecked) =>
                 checkAssets(
+                  filters,
                   mapAreas,
                   iconAssets,
                   variableName,
@@ -97,14 +104,16 @@ const mapStateToProps = state => ({
   selectedMapAreas: state.hierarchy.selectedMapAreas,
   selectedIconAssets: state.hierarchy.selectedIconAssets,
   iconAssets: state.hierarchy.iconAssets,
-  mapAreas: state.hierarchy.mapAreas
+  mapAreas: state.hierarchy.mapAreas,
+  filters: state.hierarchy.filters
 });
 const mapDispatchToProps = dispatch => {
   return {
-    checkAssets: (mapAreas, iconAssets, variableName, value, isChecked) =>
+    checkAssets: (filters, mapAreas, iconAssets, variableName, value, isChecked) =>
       dispatch(
-        checkAssets(mapAreas, iconAssets, variableName, value, isChecked)
+        checkAssets(filters, mapAreas, iconAssets, variableName, value, isChecked)
       ),
+    changeFilterState: () => dispatch(changeFilterState()),
     dispatch
   };
 };

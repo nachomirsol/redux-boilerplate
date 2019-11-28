@@ -8,7 +8,9 @@ const FilterPanelItem = ({
   variableName,
   name,
   onCheckAsset,
-  value
+  value,
+  checked,
+  onChecked
 }) => {
   return (
     <label className="checkbox__container">
@@ -17,8 +19,9 @@ const FilterPanelItem = ({
         type="checkbox"
         onClick={e => {
           onCheckAsset && onCheckAsset(variableName, value, e.target.checked);
+          onChecked && onChecked(e.target.checked);
         }}
-        defaultChecked={true}
+        checked={checked}
       />
       <span className="checkmark"></span>
     </label>

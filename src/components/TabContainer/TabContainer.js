@@ -25,7 +25,6 @@ const TabContainer = ({ routes, title, url }) => {
                     key={index}
                     to={route.path}
                   >
-                    {console.log(`${url}${route.path}`)}
                     {route.label}
                   </Link>
                 )

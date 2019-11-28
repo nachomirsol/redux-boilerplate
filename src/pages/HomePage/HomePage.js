@@ -13,19 +13,20 @@ import Tabs from "components/Tabs";
 import { createHierarchy, createAreas, createAssets, createFilters } from "./redux/actions";
 /* Config */
 import { nestedRoutes } from "routes/config";
-/* Mock data */
+/* Utils */
+import { filterModel } from "./utils/homePageFiltersModel";
 /* Styles */
 import "./homePage.scss";
 
 // This case we use the layout in the route instead of the component directly
-const HomePage = ({ intl, createHierarchy, createAreas, createAssets }) => {
+const HomePage = ({ intl, createHierarchy, createAreas, createAssets, createFilters }) => {
   let { path } = useRouteMatch();
   useEffect(() => {
     createHierarchy();
     createAreas();
     createAssets();
-    createFilters();
-  }, [createHierarchy, createAreas, createAssets])
+    createFilters(filterModel);
+  }, [createHierarchy, createAreas, createAssets, createFilters])
   return (
     <div className="homePage homePage__wrapper">
       {nestedRoutes &&
@@ -74,6 +75,7 @@ const mapDispatchToProps = (dispatch) => {
     createHierarchy: () => dispatch(createHierarchy()),
     createAreas: () => dispatch(createAreas()),
     createAssets: () => dispatch(createAssets()),
+    createFilters: (model) => dispatch(createFilters(model)),
     dispatch
   };
 }

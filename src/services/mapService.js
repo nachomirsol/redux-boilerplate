@@ -35,3 +35,20 @@ export const setSelectedAreas = (data, hierarchy) => {
       return null;
     });
   };
+
+
+  export const setSelectedFilters = (data, solution, name, checked) => {
+    let filters = [...data];
+    filters = filters.map((filter) => {
+      if(filter.name === solution) {
+        filter.items.map((item) => {
+          if (item.name === name) {
+            item.checked = checked;
+          }
+          return item;
+        })
+      }
+      return filter;
+    });
+    return filters;
+  };
