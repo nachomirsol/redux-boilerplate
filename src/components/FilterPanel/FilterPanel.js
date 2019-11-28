@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 /**Styles */
 import "./filterPanel.scss";
 
-const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
+const FilterPanel = ({ intl, onCheckAsset }) => {
   const [expanded, setExpanded] = useState(true);
 
   const toggleFilter = () => {
@@ -40,14 +40,18 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
               <ul>
                 <li>
                   <FilterPanelItem
+                    variableName={"assetName"}
                     name={"deposito"}
+                    value={"deposito"}
                     onCheckAsset={onCheckAsset}
                     id={1}
                   />
                 </li>
                 <li>
                   <FilterPanelItem
+                    variableName={"assetName"}
                     name={"bomba"}
+                    value={"deposito"}
                     onCheckAsset={onCheckAsset}
                     id={2}
                   />
@@ -59,23 +63,26 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
               <ul>
                 <li>
                   <FilterPanelItem
-                    status={"critical"}
+                    variableName={"state"}
+                    value={"critical"}
                     name={"Critical"}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
                 <li>
                   <FilterPanelItem
-                    status={"warning"}
+                    variableName={"state"}
+                    value={"warning"}
                     name={"Warning"}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
                 <li>
                   <FilterPanelItem
-                    status={"ok"}
+                    variableName={"state"}
+                    value={"ok"}
                     name={"Normal"}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
               </ul>
@@ -86,5 +93,10 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
     </div>
   );
 };
+
+FilterPanel.propTypes = {
+  intl: PropTypes.object.isRequired,
+  onCheckAsset: PropTypes.func.isRequired,
+}
 
 export default FilterPanel;

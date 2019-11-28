@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
-import { createStructuredSelector } from "reselect";
+// import { createStructuredSelector } from "reselect";
 import { Route, useRouteMatch, Redirect } from "react-router-dom";
 /* Components */
 import Layout from "../Layout";
@@ -24,7 +24,7 @@ const HomePage = ({ intl, createHierarchy, createAreas, createAssets }) => {
     createHierarchy();
     createAreas();
     createAssets();
-  }, [])
+  }, [createHierarchy, createAreas, createAssets])
   return (
     <div className="homePage homePage__wrapper">
       {nestedRoutes &&
@@ -56,7 +56,10 @@ const HomePage = ({ intl, createHierarchy, createAreas, createAssets }) => {
 };
 
 HomePage.propTypes = {
-  intl: PropTypes.object.isRequired
+  intl: PropTypes.object.isRequired,
+  createHierarchy: PropTypes.func.isRequired,
+  createAreas: PropTypes.func.isRequired,
+  createAssets: PropTypes.func.isRequired,
 };
 
 // This works

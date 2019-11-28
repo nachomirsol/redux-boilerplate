@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React  from "react";
 import PropTypes from "prop-types";
 import "./subHeader.scss";
 import SubHeaderChip from "./components/SubHeaderChip";
 
-const SubHeader = ({ intl, onViewChange }) => {
-  const [viewMode, setViewMode] = useState("population");
+const SubHeader = ({ intl }) => {
+  // const [viewMode, setViewMode] = useState("population");
   return (
     <>
       <div className="subHeader__wrapper">
