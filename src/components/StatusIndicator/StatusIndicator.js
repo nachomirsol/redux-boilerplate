@@ -28,6 +28,7 @@ const StatusIndicator = ({ iconAssets, hierarchy }) => {
     }
 
     const defineAlertLevel = () => {
+
         const numberOfAssetsWithAlerts = calculateNumberOfAssetsWithAlerts('critical');
 
         if (numberOfAssetsWithAlerts === 0) {
