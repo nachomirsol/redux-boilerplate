@@ -9,3 +9,4 @@ export const CREATE_MAP_AREAS = 'CREATE_MAP_AREAS';
 
 /** Assets */
 export const CREATE_ASSETS = 'CREATE_ASSETS';
+export const CHECK_ASSETS = 'CHECK_ASSETS';

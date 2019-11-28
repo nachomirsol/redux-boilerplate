@@ -1,4 +1,4 @@
-import { CREATE_HIERARCHY, CHECK_HIERARCHY_ITEM, DISPLAY_HIERARCHY_CHILDREN, CREATE_MAP_AREAS, CREATE_ASSETS } from './constants'
+import { CREATE_HIERARCHY, CHECK_HIERARCHY_ITEM, DISPLAY_HIERARCHY_CHILDREN, CREATE_MAP_AREAS, CREATE_ASSETS, CHECK_ASSETS } from './constants'
 
 const initialState = {
     hierarchy: [],
@@ -17,6 +17,8 @@ const homePageReducer = (state = initialState, action) => {
         case CREATE_MAP_AREAS:
             return { ...state, mapAreas: action.payload }
         case CREATE_ASSETS:
+            return { ...state, iconAssets: action.payload }
+        case CHECK_ASSETS:
             return { ...state, iconAssets: action.payload }
         default:
             return state

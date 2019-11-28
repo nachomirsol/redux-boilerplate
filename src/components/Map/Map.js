@@ -26,11 +26,11 @@ const Map = ({ dataArea, dataIcon }) => {
     };
     const colorRender = numberOfAlarms => {
         if (numberOfAlarms < 3) {
-            return [137, 191, 132, 50];
+            return [137, 191, 132, 70];
         } else if (numberOfAlarms < 10) {
-            return [233, 196, 39, 50];
+            return [233, 196, 39, 70];
         } else {
-            return [220, 60, 80, 50];
+            return [220, 60, 80, 70];
         }
     };
     const layers = [
