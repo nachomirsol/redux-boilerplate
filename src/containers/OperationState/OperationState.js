@@ -92,7 +92,6 @@ const OperationState = ({ intl, mapAreas, iconAssets, hierarchy, checkAssets }) 
   }
 
 
-
   return (
     <div className="operationState operationState__wrapper">
       {showSpinner ? (

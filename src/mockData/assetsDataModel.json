@@ -102,13 +102,27 @@
         "code": "XV",
         "address": "Depósito alboraia",
         "id": 9,
-        "dmaId": 3,
+        "dmaId": 10,
         "assetName": "deposito",
         "coordinates": [
             -0.3489875793457031,
             39.4993385559825
         ],
         "state": "critical",
+        "selected": true
+    },
+    {
+        "name": "Burjassot",
+        "code": "XV",
+        "address": "Bomba Burjassot",
+        "id": 10,
+        "dmaId": 8,
+        "assetName": "bomba",
+        "coordinates": [
+            -0.41275978088378906,
+            39.51006693919181
+        ],
+        "state": "normal",
         "selected": true
     }
 ]
