@@ -22,7 +22,7 @@
     "app.components.SubHeader.Connections": "Connections",
     "app.components.SubHeader.Population": "Population",
     "app.components.SubHeader.Alarms": "Alarms",
-    "app.components.Tabs.Operation_State": "Operaction State",
+    "app.components.Tabs.Operation_State": "Operation State",
     "app.components.Tabs.Detailed_Overview": "Detailed Overview",
     "app.components.Breadcrumb.Home": "Home",
     "app.components.Breadcrumb.Operation_State": "Operaction State",

@@ -9,7 +9,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 12,
-                "selected": true
+                "selected": true,
+                "state": "critical"
             },
             "geometry": {
                 "type": "Polygon",
@@ -103,7 +104,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 7,
-                "selected": true
+                "selected": true,
+                "state": "warning"
             },
             "geometry": {
                 "type": "Polygon",
@@ -193,7 +195,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 16,
-                "selected": true
+                "selected": true,
+                "state": "critical"
             },
             "geometry": {
                 "type": "Polygon",
@@ -235,7 +238,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
-                "selected": true
+                "selected": true,
+                "state": "ok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -289,7 +293,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
-                "selected": true
+                "selected": true,
+                "state": "ok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -367,7 +372,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
-                "selected": true
+                "selected": true,
+                "state": "ok"
             },
             "geometry": {
                 "type": "Polygon",
@@ -429,7 +435,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
-                "selected": true
+                "selected": true,
+                "state": "normal"
             },
             "geometry": {
                 "type": "Polygon",
@@ -507,7 +514,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 3,
-                "selected": true
+                "selected": true,
+                "state": "warning"
             },
             "geometry": {
                 "type": "Polygon",
@@ -621,7 +629,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 10,
-                "selected": true
+                "selected": true,
+                "state": "critical"
             },
             "geometry": {
                 "type": "Polygon",
@@ -731,7 +740,8 @@
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
                 "valueAlarms": 1,
-                "selected": true
+                "selected": true,
+                "state": "normal"
             },
             "geometry": {
                 "type": "Polygon",

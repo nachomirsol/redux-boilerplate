@@ -10,7 +10,7 @@ import Layout from "../Layout";
 import SubHeader from "components/SubHeader";
 import Tabs from "components/Tabs";
 /**Redux */
-import { createHierarchy, createAreas, createAssets } from "./redux/actions";
+import { createHierarchy, createAreas, createAssets, createFilters } from "./redux/actions";
 /* Config */
 import { nestedRoutes } from "routes/config";
 /* Mock data */
@@ -24,6 +24,7 @@ const HomePage = ({ intl, createHierarchy, createAreas, createAssets }) => {
     createHierarchy();
     createAreas();
     createAssets();
+    createFilters();
   }, [createHierarchy, createAreas, createAssets])
   return (
     <div className="homePage homePage__wrapper">
@@ -60,6 +61,7 @@ HomePage.propTypes = {
   createHierarchy: PropTypes.func.isRequired,
   createAreas: PropTypes.func.isRequired,
   createAssets: PropTypes.func.isRequired,
+  createFilters: PropTypes.func.isRequired,
 };
 
 // This works

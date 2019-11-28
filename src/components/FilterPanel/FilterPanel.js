@@ -51,7 +51,7 @@ const FilterPanel = ({ intl, onCheckAsset }) => {
                   <FilterPanelItem
                     variableName={"assetName"}
                     name={"bomba"}
-                    value={"deposito"}
+                    value={"bomba"}
                     onCheckAsset={onCheckAsset}
                     id={2}
                   />

@@ -1,6 +1,6 @@
 import { CREATE_HIERARCHY, DISPLAY_HIERARCHY_CHILDREN, CHECK_HIERARCHY_ITEM, CREATE_MAP_AREAS, CREATE_ASSETS, CHECK_ASSETS } from './constants'
 import { createCheckboxTree, displayHierarchyChildren, checkHierarchyItem } from 'services/hierachyService';
-import { createMapAreas, setSelectedAreas } from 'services/mapService';
+import { createMapAreas } from 'services/mapService';
 import { createAssetIcons, checkAssetIcon } from 'services/assetsService';
 
 import hierarchyData from "../../../mockData/hierarchyData/hierarchyData.json";
@@ -16,18 +16,18 @@ export const createHierarchy = () => {
     };
 }
 
-export const checkHierarchy = (id) => {
+export const checkHierarchy = (id, hierarchy) => {
 
     return {
         type: CHECK_HIERARCHY_ITEM,
-        payload: checkHierarchyItem(hierarchyData.children, id)
+        payload: checkHierarchyItem(hierarchy, id)
     }
 }
 
-export const displayHierarchy = (id) => {
+export const displayHierarchy = (id, hierarchy) => {
     return {
         type: DISPLAY_HIERARCHY_CHILDREN,
-        payload: displayHierarchyChildren(hierarchyData.children, id)
+        payload: displayHierarchyChildren(hierarchy, id)
     }
 }
 
@@ -45,10 +45,24 @@ export const createAssets = () => {
     }
 }
 
-export const checkAssets = (variableName, value, isChecked) => {
+export const checkAssets = (mapAreas, iconAssets, variableName, value, isChecked) => {
     return {
         type: CHECK_ASSETS,
-        payload: checkAssetIcon(assetsData, variableName, value, isChecked)
+        payload: checkAssetIcon(mapAreas, iconAssets, variableName, value, isChecked)
+    }
+}
+
+export const createFilters = (filters) => {
+    return {
+        type: CHECK_ASSETS,
+        payload: filters
+    }
+}
+
+export const changeFilterState = (filters) => {
+    return {
+        type: CHECK_ASSETS,
+        payload: filters
     }
 }
 

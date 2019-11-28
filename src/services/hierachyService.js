@@ -1,7 +1,7 @@
 
 export const createCheckboxTree = hierarchyData => {
     return hierarchyData.map(item => {
-        item = { ...item, checked: false, displayed: false };
+        item = { ...item, checked: true, displayed: false };
         if (item.children && item.children.length) {
             item.children = createCheckboxTree(item.children);
         }
@@ -27,7 +27,6 @@ export const searchHierarchyItem = (data, id) => {
 
 /** This function is to change the checked status from the searched element, if it has children, all the children will be changed the checked status */
 export const checkHierarchyItem = (data, id) => {
-
     const cloneData = [...data];
     const itemFounded = searchHierarchyItem(cloneData, id);
     itemFounded.checked = !itemFounded.checked;
@@ -41,6 +40,7 @@ export const checkHierarchyItem = (data, id) => {
             return child;
         });
     }
+    console.log(cloneData);
     return cloneData;
 };
 
