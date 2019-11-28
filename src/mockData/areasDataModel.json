@@ -194,9 +194,9 @@
                 "dmaName": "Mislata",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 16,
-                "selected": true,
-                "state": "critical"
+                "state": "normal",
+                "valueAlarms": 2,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -292,9 +292,9 @@
                 "dmaName": "Xirivella",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2,
-                "selected": true,
-                "state": "ok"
+                "state": "critical",
+                "valueAlarms": 12,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",
@@ -434,9 +434,9 @@
                 "dmaName": "Picassent",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2,
-                "selected": true,
-                "state": "normal"
+                "state": "warning",
+                "valueAlarms": 6,
+                "selected": true
             },
             "geometry": {
                 "type": "Polygon",

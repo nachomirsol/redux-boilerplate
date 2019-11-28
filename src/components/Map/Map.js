@@ -14,6 +14,14 @@ const Map = ({ dataArea, dataIcon }) => {
         deposito: { x: 0, y: 150, width: 150, height: 150, mask: true }
     };
 
+    const mapTheme = () => {
+        if (document.body.className === 'theme-dark') {
+            return "dark"
+        } else {
+            return "light"
+        }
+    }
+
     const iconColorRender = iconState => {
         switch (iconState) {
             case "critical":
@@ -78,6 +86,7 @@ const Map = ({ dataArea, dataIcon }) => {
     ];
 
     return (
+
         <div className="map map__map-wrapper">
             <DeckGL
                 initialViewState={{
@@ -90,7 +99,7 @@ const Map = ({ dataArea, dataIcon }) => {
                 layers={[layers]} // layer here
             >
                 <StaticMap
-                    mapStyle="mapbox://styles/mapbox/dark-v10"
+                    mapStyle={`mapbox://styles/mapbox/${mapTheme()}-v10`}
                     mapboxApiAccessToken="pk.eyJ1IjoiY2FyY2FyYmUiLCJhIjoiY2psbnB6NGRyMWdxOTNrbmpkeGhyZXlwbiJ9.dNyXXZ3bvAkE9S9Zm5Z8wA"
                 />
             </DeckGL>

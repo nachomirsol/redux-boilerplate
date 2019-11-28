@@ -48,25 +48,25 @@ const OperationState = ({
       {showSpinner ? (
         <Spinner message="Loading"></Spinner>
       ) : (
-        <>
-          <div className="widget__container">
-            {operationStateModel.map((widgetData, index) => {
-              return userHasPermission(widgetData) ? (
-                <Widget
-                  key={index}
-                  title={intl.formatMessage({ id: widgetData.title })}
-                >
-                  {widgetData.hasProps ? (
-                    <widgetData.Component
-                      {...widgetData.widgetProps}
-                    ></widgetData.Component>
-                  ) : (
-                    <widgetData.Component />
-                  )}
-                </Widget>
-              ) : null;
-            })}
-          </div>
+          <>
+            <div className="widget__container">
+              {operationStateModel.map((widgetData, index) => {
+                return userHasPermission(widgetData) ? (
+                  <Widget
+                    key={index}
+                    title={intl.formatMessage({ id: widgetData.title })}
+                  >
+                    {widgetData.hasProps ? (
+                      <widgetData.Component
+                        {...widgetData.widgetProps}
+                      ></widgetData.Component>
+                    ) : (
+                        <widgetData.Component />
+                      )}
+                  </Widget>
+                ) : null;
+              })}
+            </div>
 
           <div className="map__container">
             <FilterPanel
