@@ -1,7 +1,7 @@
 @import "../../styles/styles-utils.scss";
 $generic-width: 120px;
 $generic-height: 60px;
-$generic-border: 32px;
+$generic-border: 24px;
 
 .status__wrapper {
   width: 100%;
@@ -85,8 +85,23 @@ $generic-border: 32px;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-bottom: 25px solid white;
-        transform: rotate(-60deg);
-        transform-origin: bottom center;
+        -webkit-transition: -webkit-transform 1.8s ease-in-out;
+        -ms-transition: -ms-transform 1.8s ease-in-out;
+        transition: transform 1.8s ease-in-out;
+        
+        &.normal{
+          transform: rotate(-60deg);
+          transform-origin: bottom center;
+    
+        }
+        &.warning{
+          transform: rotate(0deg);
+          transform-origin: bottom center;
+        }
+        &.critical{
+          transform: rotate(60deg);
+          transform-origin: bottom center;
+        }
       }
     }
     .status__info {
@@ -98,7 +113,7 @@ $generic-border: 32px;
         border-radius: 5px;
         color: white;
         font-size: 12px;
-        padding: 1px 8px 1px 8px;
+        padding: 1px 4px 1px 4px;
         svg {
           path {
             fill: transparent;

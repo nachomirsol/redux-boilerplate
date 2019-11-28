@@ -192,7 +192,7 @@
                 "dmaName": "Mislata",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 16,
+                "valueAlarms": 2,
                 "selected": true
             },
             "geometry": {
@@ -288,7 +288,7 @@
                 "dmaName": "Xirivella",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2,
+                "valueAlarms": 12,
                 "selected": true
             },
             "geometry": {
@@ -428,7 +428,7 @@
                 "dmaName": "Picassent",
                 "valuePerformance": 1.0,
                 "valueDeployment": 1.0,
-                "valueAlarms": 2,
+                "valueAlarms": 6,
                 "selected": true
             },
             "geometry": {
