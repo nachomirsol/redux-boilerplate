@@ -84,7 +84,7 @@ const OperationState = ({ intl, mapAreas, iconAssets, hierarchy, checkAssets }) 
   const iconsSelected = () => {
     return iconAssets.filter(item => {
       const element = searchHierarchyItem(hierarchy, item.dmaId);
-      if (element && element.checked) {
+      if (element && element.checked && item.selected) {
         return element;
       }
       return null;

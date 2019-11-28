@@ -31,20 +31,6 @@
         "name": "Manises",
         "code": "MN",
         "address": "Manises Ficticio",
-        "id": 3,
-        "dmaId": 2,
-        "assetName": "bomba",
-        "coordinates": [
-            -0.46151161193847656,
-            39.491986670574235
-        ],
-        "state": "critical",
-        "selected": true
-    },
-    {
-        "name": "Manises",
-        "code": "MN",
-        "address": "Manises Ficticio",
         "id": 4,
         "dmaId": 2,
         "assetName": "bomba",
@@ -53,20 +39,6 @@
             39.489867063731005
         ],
         "state": "warning",
-        "selected": true
-    },
-    {
-        "name": "Manises",
-        "code": "MN",
-        "address": "Manises Ficticio",
-        "id": 5,
-        "dmaId": 2,
-        "assetName": "deposito",
-        "coordinates": [
-            -0.47799110412597656,
-            39.49152301209883
-        ],
-        "state": "critical",
         "selected": true
     },
     {
@@ -123,6 +95,20 @@
             39.475458648837424
         ],
         "state": "ok",
+        "selected": true
+    },
+    {
+        "name": "Alboraia",
+        "code": "XV",
+        "address": "Depósito alboraia",
+        "id": 9,
+        "dmaId": 3,
+        "assetName": "deposito",
+        "coordinates": [
+            -0.3489875793457031,
+            39.4993385559825
+        ],
+        "state": "critical",
         "selected": true
     }
 ]
