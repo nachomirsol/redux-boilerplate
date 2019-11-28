@@ -1,7 +1,7 @@
 import { searchHierarchyItem } from './hierachyService';
 
 export const createMapAreas = (data) => {
-    return data;
+    return data.features;
 }
 
 export const selectMapArea = (data, id) => {
@@ -14,14 +14,15 @@ export const selectMapArea = (data, id) => {
 };
 
 export const setSelectedAreas = (data, hierarchy) => {
-    const mapAreas = [...data.features];
-    return mapAreas.filter(item => {
+    let mapAreas =  [...data];
+    mapAreas = mapAreas.filter(item => {
       const element = searchHierarchyItem(hierarchy, item.properties.dmaId);
       if (element && element.checked) {
         return element;
       }
       return null;
     });
+    return mapAreas;
   };
 
  export const setSelectedIcons = (data, hierarchy) => {

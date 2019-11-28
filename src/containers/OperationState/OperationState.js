@@ -9,9 +9,7 @@ import StatusLegend from "components/StatusLegend";
 import Widget from "components/Widget";
 /**Redux */
 import { connect } from "react-redux";
-import {
-  checkAssets,
-} from "../../pages/HomePage/redux/actions";
+import { checkAssets } from "../../pages/HomePage/redux/actions";
 /**Mock Data */
 import userPermissions from "mockData/userPermissions.json";
 /**Utils */
@@ -21,11 +19,12 @@ import "./operationState.scss";
 
 const OperationState = ({
   intl,
+  mapAreas,
+  iconAssets,
   selectedMapAreas,
   selectedIconAssets,
   checkAssets
 }) => {
-  console.log(selectedMapAreas)
   const [showSpinner, setShowSpinner] = useState(true);
 
   useEffect(() => {
@@ -69,27 +68,43 @@ const OperationState = ({
               })}
             </div>
 
-            <div className="map__container">
-              <FilterPanel
-                intl={intl}
-                onCheckAsset={checkAssets}
-              />
-              <StatusLegend />
-              <Map dataArea={selectedMapAreas} dataIcon={selectedIconAssets}></Map>
-            </div>
-          </>
-        )}
+          <div className="map__container">
+            <FilterPanel
+              intl={intl}
+              onCheckAsset={(variableName, value, isChecked) =>
+                checkAssets(
+                  mapAreas,
+                  iconAssets,
+                  variableName,
+                  value,
+                  isChecked
+                )
+              }
+            />
+            <StatusLegend />
+            <Map
+              dataArea={selectedMapAreas}
+              dataIcon={selectedIconAssets}
+            ></Map>
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
 const mapStateToProps = state => ({
   selectedMapAreas: state.hierarchy.selectedMapAreas,
-  selectedIconAssets: state.hierarchy.selectedIconAssets
+  selectedIconAssets: state.hierarchy.selectedIconAssets,
+  iconAssets: state.hierarchy.iconAssets,
+  mapAreas: state.hierarchy.mapAreas
 });
 const mapDispatchToProps = dispatch => {
   return {
-    checkAssets: (variableName, value, isChecked) => dispatch(checkAssets(variableName, value, isChecked)),
+    checkAssets: (mapAreas, iconAssets, variableName, value, isChecked) =>
+      dispatch(
+        checkAssets(mapAreas, iconAssets, variableName, value, isChecked)
+      ),
     dispatch
   };
 };

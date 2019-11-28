@@ -52,7 +52,7 @@ const FilterPanel = ({ intl, onCheckAsset }) => {
                   <FilterPanelItem
                     name={intl.formatMessage({ id: "app.components.Widget.Header.Title.Leaks" })}
                     variableName={"assetName"}
-                    value={"deposito"}
+                    value={"bomba"}
                     onCheckAsset={onCheckAsset}
                     id={2}
                   />

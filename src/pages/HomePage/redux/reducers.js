@@ -4,7 +4,8 @@ import {
   DISPLAY_HIERARCHY_CHILDREN,
   CREATE_MAP_AREAS,
   CREATE_ASSETS,
-  CHECK_ASSETS
+  CHECK_ASSETS,
+  CREATE_FILTERS
 } from "./constants";
 import { setSelectedAreas, setSelectedIcons } from "services/mapService";
 
@@ -13,9 +14,11 @@ const initialState = {
   mapAreas: [],
   iconAssets: [],
   selectedMapAreas: [],
-  selectedIconAssets: []
+  selectedIconAssets: [],
+  filters: []
 };
-
+let newIcons;
+let newArea;
 const homePageReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_HIERARCHY:
@@ -30,7 +33,11 @@ const homePageReducer = (state = initialState, action) => {
     case DISPLAY_HIERARCHY_CHILDREN:
       return { ...state, hierarchy: action.payload };
     case CREATE_MAP_AREAS:
-      return { ...state, mapAreas: action.payload, selectedMapAreas: setSelectedAreas(action.payload, state.hierarchy) };
+      return {
+        ...state,
+        mapAreas: action.payload,
+        selectedMapAreas: setSelectedAreas(action.payload, state.hierarchy)
+      };
     case CREATE_ASSETS:
       return {
         ...state,
@@ -38,11 +45,23 @@ const homePageReducer = (state = initialState, action) => {
         selectedIconAssets: setSelectedIcons(action.payload, state.hierarchy)
       };
     case CHECK_ASSETS:
+      newIcons = setSelectedIcons(
+        action.payload.iconAssets,
+        state.hierarchy
+      ).filter(item => item.selected);
+      newArea = setSelectedAreas(
+        action.payload.mapAreas,
+        state.hierarchy
+      ).filter(item => item.properties.selected);
       return {
         ...state,
-        iconAssets: action.payload,
-        selectedIconAssets: action.payload.filter(item => item.selected)
+        iconAssets: action.payload.iconAssets,
+        mapAreas: action.payload.mapAreas,
+        selectedIconAssets: newIcons,
+        selectedMapAreas: newArea
       };
+    case CREATE_FILTERS:
+      return { ...state, filters: action.payload };
     default:
       return state;
   }

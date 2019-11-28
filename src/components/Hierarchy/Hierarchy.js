@@ -21,15 +21,15 @@ const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
         return (
           <li
             key={item.id}
-            className={item.displayed === true ? `expanded` : ``}
+            className={item.displayed ? `expanded` : ``}
           >
             <HierarchyItem
               dataInfo={item}
-              onCheckItem={checkHierarchy}
               id={item.id}
               checked={item.checked}
-              onDisplayChildren={displayHierarchy}
               displayed={item.displayed}
+              onDisplayChildren={(id) => displayHierarchy(id, hierarchy)}
+              onCheckItem={(id) => checkHierarchy(id, hierarchy)}
             />
           </li>
         );
@@ -40,15 +40,15 @@ const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
           <HierarchyItem
             dataInfo={item}
             icon={
-              item.displayed === true
-                ? `fa fa-chevron-right`
-                : `fa fa-chevron-down`
+              item.displayed
+                ? 'chevron-right'
+                : 'chevron-down'
             }
-            onCheckItem={checkHierarchy}
             id={item.id}
             checked={item.checked}
-            onDisplayChildren={displayHierarchy}
             displayed={item.displayed}
+            onDisplayChildren={(id) => displayHierarchy(id, hierarchy)}
+            onCheckItem={(id) => checkHierarchy(id, hierarchy)}
           />
           <ul>{showHierarchyTree(item.children)}</ul>
         </li>
@@ -69,11 +69,10 @@ const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
   );
 };
 
-function mapDispatchToProps(dispatch) {
-
+const mapDispatchToProps = (dispatch) => {
   return {
-    checkHierarchy: (id) => dispatch(checkHierarchy(id)),
-    displayHierarchy: (id) => dispatch(displayHierarchy(id)),
+    checkHierarchy: (id, hierarchy) => dispatch(checkHierarchy(id, hierarchy)),
+    displayHierarchy: (id, hierarchy) => dispatch(displayHierarchy(id, hierarchy)),
     dispatch
   };
 }
@@ -84,7 +83,9 @@ const mapStateToProps = (state) => ({
 
 Hierarchy.propTypes = {
   intl: PropTypes.object.isRequired,
-  hierarchy: PropTypes.array.isRequired
+  hierarchy: PropTypes.array.isRequired,
+  checkHierarchy: PropTypes.func.isRequired,
+  displayHierarchy: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(Hierarchy));
