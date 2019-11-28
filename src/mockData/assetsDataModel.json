@@ -147,8 +147,8 @@
         "dmaId": 9,
         "assetName": "bomba",
         "coordinates": [
-            -0.4613828659057617,
-            39.46556976827547
+            -0.4650306701660156,
+            39.436524447663054
         ],
         "state": "critical",
         "selected": true

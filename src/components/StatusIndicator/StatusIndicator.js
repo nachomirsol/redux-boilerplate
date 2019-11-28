@@ -8,7 +8,6 @@ import Icon from "components/Icon";
 import { searchHierarchyItem } from 'services/hierachyService';
 /**Styles */
 import "./statusIndicator.scss";
-import Hierarchy from 'components/Hierarchy';
 
 const StatusIndicator = ({ iconAssets, hierarchy }) => {
 

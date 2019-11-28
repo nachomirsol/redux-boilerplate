@@ -40,7 +40,7 @@ export const checkHierarchyItem = (data, id) => {
             return child;
         });
     }
-    console.log(cloneData);
+
     return cloneData;
 };
 

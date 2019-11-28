@@ -14,7 +14,7 @@
         padding:16px 8px 16px 16px;
         font-family:$font-secondary;
         @include themify($themes) {
-            background-color: themed("panelHeaderBackgroundColor");
+            background-color: themed("widgetHeaderColor");
         }
         .icon{
             @include themify($themes) {
