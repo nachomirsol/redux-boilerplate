@@ -45,13 +45,13 @@ const StatusIndicator = ({ iconAssets, hierarchy }) => {
             <div className="status__content">
                 <span className="status__text">{defineAlertLevel()}</span>
                 <ul className="status__indicator">
-                    <li className="ok highlighted">
+                    <li className={`normal ${defineAlertLevel() === 'normal' ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
-                    <li className="warning">
+                    <li className={`warning ${defineAlertLevel() === 'warning' ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
-                    <li className="critical">
+                    <li className={`critical ${defineAlertLevel() === 'critical' ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
 
