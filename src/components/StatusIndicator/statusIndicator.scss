@@ -74,7 +74,10 @@ $generic-border: 24px;
         width: 10px;
         height: 10px;
         border-radius: 10px;
-        background-color: white;
+        @include themify($themes) {
+          background-color: themed("pointerAlertStatus");
+        }
+      
         color: transparent;
       }
       .pointer__bar {
@@ -84,7 +87,13 @@ $generic-border: 24px;
         width: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-bottom: 25px solid white;
+       
+        @include themify($themes) {
+          border-bottom: 25px solid themed("pointerAlertStatus");
+      }
+        @include themify($themes) {
+            stroke: themed("pointerAlertStatus");
+        }
         -webkit-transition: -webkit-transform 1.8s ease-in-out;
         -ms-transition: -ms-transform 1.8s ease-in-out;
         transition: transform 1.8s ease-in-out;

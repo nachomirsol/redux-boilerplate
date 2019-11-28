@@ -8,7 +8,7 @@ import Icon from "components/Icon";
 /**Styles */
 import "./filterPanel.scss";
 
-const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
+const FilterPanel = ({ intl, onCheckAsset }) => {
   const [expanded, setExpanded] = useState(true);
 
   const toggleFilter = () => {
@@ -42,6 +42,8 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
                 <li>
                   <FilterPanelItem
                     name={intl.formatMessage({ id: "app.components.Widget.Header.Title.Infraestructures" })}
+                    variableName={"assetName"}
+                    value={"deposito"}
                     onCheckAsset={onCheckAsset}
                     id={1}
                   />
@@ -49,6 +51,8 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
                 <li>
                   <FilterPanelItem
                     name={intl.formatMessage({ id: "app.components.Widget.Header.Title.Leaks" })}
+                    variableName={"assetName"}
+                    value={"deposito"}
                     onCheckAsset={onCheckAsset}
                     id={2}
                   />
@@ -56,6 +60,8 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
                 <li>
                   <FilterPanelItem
                     name={intl.formatMessage({ id: "app.components.Widget.Header.Title.SmartMetering" })}
+                    variableName={"assetName"}
+                    value={"deposito"}
                     onCheckAsset={onCheckAsset}
                     id={3}
                   />
@@ -69,21 +75,27 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
                   <FilterPanelItem
                     status={"critical"}
                     name={intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Critical" })}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    variableName={"state"}
+                    value={"critical"}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
                 <li>
                   <FilterPanelItem
                     status={"warning"}
                     name={intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Warning" })}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    variableName={"state"}
+                    value={"warning"}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
                 <li>
                   <FilterPanelItem
                     status={"ok"}
                     name={intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Normal" })}
-                    onCheckAlertStatus={onCheckAlertStatus}
+                    variableName={"state"}
+                    value={"ok"}
+                    onCheckAsset={onCheckAsset}
                   />
                 </li>
               </ul>
@@ -94,5 +106,10 @@ const FilterPanel = ({ intl, onCheckAsset, onCheckAlertStatus }) => {
     </div>
   );
 };
+
+FilterPanel.propTypes = {
+  intl: PropTypes.object.isRequired,
+  onCheckAsset: PropTypes.func.isRequired,
+}
 
 export default FilterPanel;

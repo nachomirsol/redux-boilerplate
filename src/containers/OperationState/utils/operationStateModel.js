@@ -39,6 +39,21 @@ const operationStateModel = [
   },
   {
     title: "app.components.Widget.Header.Title.Operation",
+    Component: StatusIndicator,
+    hasProps: false,
+    widgetProps: null,
+    name: "Operation"
+  },
+  {
+    title: "app.components.Widget.Header.Title.WaterQuality",
+    Component: StatusIndicator,
+    hasProps: false,
+    widgetProps: null,
+    name: "WaterQuality"
+  },
+  /*
+  {
+    title: "app.components.Widget.Header.Title.Operation",
     Component: OverallInfoWidgetContent,
     hasProps: true,
     widgetProps: {
@@ -65,6 +80,7 @@ const operationStateModel = [
     },
     name: "WaterQuality"
   }
+  */
 ];
 
 export default operationStateModel;
