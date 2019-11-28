@@ -239,7 +239,7 @@
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
                 "selected": true,
-                "state": "ok"
+                "state": "normal"
             },
             "geometry": {
                 "type": "Polygon",
@@ -373,7 +373,7 @@
                 "valueDeployment": 1.0,
                 "valueAlarms": 2,
                 "selected": true,
-                "state": "ok"
+                "state": "normal"
             },
             "geometry": {
                 "type": "Polygon",
