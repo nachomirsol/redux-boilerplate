@@ -38,18 +38,25 @@ const operationStateModel = [
     name: "Billing"
   },
   {
-    title: "app.components.Widget.Header.Title.Operation",
+    title: "app.components.Widget.Header.Title.DigitalTwin",
     Component: StatusIndicator,
     hasProps: false,
     widgetProps: null,
-    name: "Operation"
+    name: "DigitalTwin"
   },
   {
-    title: "app.components.Widget.Header.Title.WaterQuality",
+    title: "app.components.Widget.Header.Title.Customers",
     Component: StatusIndicator,
     hasProps: false,
     widgetProps: null,
-    name: "WaterQuality"
+    name: "Customers"
+  },
+  {
+    title: "app.components.Widget.Header.Title.MasterPlans",
+    Component: StatusIndicator,
+    hasProps: false,
+    widgetProps: null,
+    name: "MasterPlans"
   },
   /*
   {

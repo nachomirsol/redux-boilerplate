@@ -1,8 +1,7 @@
 import React from "react";
 /**Libraries */
-import { compose } from "redux";
 import { injectIntl } from "react-intl";
-import { withRouter } from "react-router-dom";
+import { useHistory  } from "react-router-dom";
 import PropTypes from "prop-types";
 /**Components */
 import { PopoverController, PopoverTrigger } from "components/Popover";
@@ -13,11 +12,12 @@ import avatarUnknown from "assets/images/avatar-unknow.jpg";
 import "./userAvatar.scss";
 
 export const UserAvatar = ({ loginData }) => {
+  const history = useHistory();
   const avatarName = localStorage.getItem("userName");
 
   const handleClickLogout = () => {
     localStorage.removeItem("userName");
-    window.location.href = `/login`;
+    history.push('/login');
   };
   return (
     <PopoverController>
@@ -48,4 +48,4 @@ UserAvatar.propTypes = {
 
 UserAvatar.defaultProps = {};
 
-export default compose(withRouter, injectIntl)(UserAvatar);
+export default injectIntl(UserAvatar);

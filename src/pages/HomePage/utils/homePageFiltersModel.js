@@ -18,7 +18,7 @@ export const filterModel = [
             {
                 name: "app.components.Widget.Header.Title.SmartMetering",
                 variableName: "assetName",
-                value: "deposito",
+                value: "-",
                 checked: true,
             },
         ]

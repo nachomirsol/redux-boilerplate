@@ -1,6 +1,6 @@
 {
     "mateo": {
-        "opertationStateWidgets": ["Infraestructures", "Leaks", "SmartMetering", "WorkOrders", "Billing", "Operation", "WaterQuality"]
+        "opertationStateWidgets": ["Infraestructures", "Leaks", "SmartMetering", "WorkOrders", "Billing", "DigitalTwin", "Customers", "MasterPlans"]
     },
     "nacho": {
         "opertationStateWidgets": ["Infraestructures", "Leaks", "SmartMetering"]
