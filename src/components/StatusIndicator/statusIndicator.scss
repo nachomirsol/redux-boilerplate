@@ -100,16 +100,16 @@ $generic-border: 24px;
         -ms-transition: -ms-transform 1.8s ease-in-out;
         transition: transform 1.8s ease-in-out;
         
-        &.normal{
+        &.Normal{
           transform: rotate(-60deg);
           transform-origin: bottom center;
     
         }
-        &.warning{
+        &.Warning,&.Peligro{
           transform: rotate(0deg);
           transform-origin: bottom center;
         }
-        &.critical{
+        &.Critical,&.Critico{
           transform: rotate(60deg);
           transform-origin: bottom center;
         }

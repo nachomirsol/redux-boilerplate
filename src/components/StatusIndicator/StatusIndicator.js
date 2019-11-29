@@ -2,6 +2,7 @@ import React from 'react';
 /**Libraries */
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
+import { injectIntl } from 'react-intl';
 /**Components */
 import Icon from "components/Icon";
 /**Services */
@@ -9,7 +10,7 @@ import { searchHierarchyItem } from 'services/hierachyService';
 /**Styles */
 import "./statusIndicator.scss";
 
-const StatusIndicator = ({ iconAssets, hierarchy }) => {
+const StatusIndicator = ({ iconAssets, hierarchy, intl }) => {
 
     const iconsSelected = () => {
         return iconAssets.filter(item => {
@@ -32,11 +33,11 @@ const StatusIndicator = ({ iconAssets, hierarchy }) => {
         const numberOfAssetsWithAlerts = calculateNumberOfAssetsWithAlerts('critical');
 
         if (numberOfAssetsWithAlerts === 0) {
-            return 'normal';
+            return intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Normal" });
         } else if (numberOfAssetsWithAlerts === 1) {
-            return 'warning';
+            return intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Warning" });
         } else {
-            return 'critical';
+            return intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Critical" });
         }
     }
 
@@ -45,13 +46,13 @@ const StatusIndicator = ({ iconAssets, hierarchy }) => {
             <div className="status__content">
                 <span className="status__text">{defineAlertLevel()}</span>
                 <ul className="status__indicator">
-                    <li className={`normal ${defineAlertLevel() === 'normal' ? 'highlighted' : ''}`}>
+                    <li className={`normal ${defineAlertLevel() === intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Normal" }) ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
-                    <li className={`warning ${defineAlertLevel() === 'warning' ? 'highlighted' : ''}`}>
+                    <li className={`warning ${defineAlertLevel() === intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Warning" }) ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
-                    <li className={`critical ${defineAlertLevel() === 'critical' ? 'highlighted' : ''}`}>
+                    <li className={`critical ${defineAlertLevel() === intl.formatMessage({ id: "app.components.Filterpanel.AlertLevel.Critical" }) ? 'highlighted' : ''}`}>
                         <span></span>
                     </li>
 
@@ -78,4 +79,4 @@ StatusIndicator.propTypes = {
     alarms: PropTypes.object
 }
 
-export default connect(mapStateToProps)(StatusIndicator);
+export default connect(mapStateToProps)(injectIntl(StatusIndicator));

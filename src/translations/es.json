@@ -33,7 +33,7 @@
     "app.components.Filterpanel.Title": "Filtrar por",
     "app.components.Filterpanel.Solution.Title": "Solución",
     "app.components.Filterpanel.AlertLevel.Title": "Niveles de alerta",
-    "app.components.Filterpanel.AlertLevel.Critical": "Crítico",
+    "app.components.Filterpanel.AlertLevel.Critical": "Critico",
     "app.components.Filterpanel.AlertLevel.Warning": "Peligro",
     "app.components.Filterpanel.AlertLevel.Normal": "Normal",
     "app.pages.LoginPage.Title": "Iniciar Sesión",
