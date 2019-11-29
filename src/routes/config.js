@@ -53,7 +53,7 @@ const routes = [
     ]
   },
   {
-    path: "/",
+    path: "*",
     redirect: true,
     redirectTo: '/select-company',
   }

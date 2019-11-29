@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 /**Libraries */
 import PropTypes from "prop-types";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter  } from "react-router-dom";
 import { IntlProvider } from "react-intl";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -51,7 +51,7 @@ const App = ({ settings, changeTheme }) => {
 
   return (
     <IntlProvider key={settings.locale} locale={settings.locale} messages={translations[settings.locale]}>
-      <BrowserRouter basename={"/"}>{routes}</BrowserRouter>
+      <HashRouter  basename={"/"}>{routes}</HashRouter>
     </IntlProvider>
   );
 };
