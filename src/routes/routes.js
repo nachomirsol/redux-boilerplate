@@ -44,10 +44,6 @@ export const Routes = () => (
       exact={false}
       component={LoginPage}
     />
-<<<<<<< HEAD
-
-=======
->>>>>>> f2c8871bdbac99fd80cdea43d9f0786e28cf3e1e
     {routes &&
       Array.isArray(routes) &&
       routes.map((route, index) => {
