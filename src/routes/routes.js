@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { routes } from "./config";
 import { fakeAuth } from "utils/fakeAuth";
 import { LoginPage } from "pages";
-import { SelectCompanyPage } from "pages";
+
 
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
@@ -44,12 +44,7 @@ export const Routes = () => (
       exact={false}
       component={LoginPage}
     />
-    <Route
-      key="select-company-route"
-      path="/select-company"
-      exact={false}
-      component={SelectCompanyPage}
-    />
+
     {routes &&
       Array.isArray(routes) &&
       routes.map((route, index) => {
