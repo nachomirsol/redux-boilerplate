@@ -3,7 +3,8 @@ import {
   HomePage,
   InfrastructuresPage,
   LeakSearchPage,
-  EnergeticEfficiencyPage
+  EnergeticEfficiencyPage,
+  SelectCompanyPage
 } from "pages";
 /**Containers */
 import OperationState from "containers/OperationState/OperationState";
@@ -11,6 +12,12 @@ import DetailedOverview from "containers/DetailedOverview/DetailedOverview";
 import WildcardContainer from "containers/WildcardContainer/WildcardContainer";
 
 const routes = [
+  {
+    path: "/select-company",
+    component: SelectCompanyPage,
+    breadcrumbs: [{ url: "", label: "Select Company" }],
+    exact: false
+  },
   {
     path: "/home",
     component: HomePage,
@@ -48,7 +55,7 @@ const routes = [
   {
     path: "/",
     redirect: true,
-    redirectTo: '/home/operation-state',
+    redirectTo: '/select-company',
   }
 ];
 

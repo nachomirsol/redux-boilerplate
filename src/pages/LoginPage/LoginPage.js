@@ -50,14 +50,14 @@ const LoginPage = ({ intl, loginPage, login, onRefreshLogin, changeLocale, setti
 
     const validateForm = () => {
         return email.length > 0 && password.length > 0;
-      }
+    }
 
     // const changeLocale = (event) => {
     //     onChangeLocale(event.target.value);
     // }
 
 
-    return(
+    return (
         <>
             {/* <TokenInjector userData={{}} removeData /> */}
             <div className="login__wrapper">
@@ -65,11 +65,11 @@ const LoginPage = ({ intl, loginPage, login, onRefreshLogin, changeLocale, setti
                     <LogoGoAigua />
                     <div className="login__form-container">
                         <div className="login__form-title">
-                            Sign In
+                            {intl.formatMessage({ id: "app.pages.LoginPage.Title" })}
                         </div>
                         <div className="login__form-field">
                             <label>{intl.formatMessage({ id: 'app.pages.LoginPage.user' })}</label>
-                            <input name="email" autoComplete="username" className="login__form-input" onChange={e => setEmail(e.target.value )} value={email} />
+                            <input name="email" autoComplete="username" className="login__form-input" onChange={e => setEmail(e.target.value)} value={email} />
                         </div>
 
                         <div className="login__form-field">
@@ -90,13 +90,13 @@ const LoginPage = ({ intl, loginPage, login, onRefreshLogin, changeLocale, setti
                     <Selector selectName="login-language-selector" options={languages} onChange={(locale) => changeLocale(locale)} defaultValue={settings.locale} value={settings.locale} />
                 </form>
             </div>
-            </>
+        </>
     )
 }
 
 LoginPage.propTypes = {
     onRefreshLogin: PropTypes.func.isRequired,
-    login :PropTypes.func.isRequired,
+    login: PropTypes.func.isRequired,
     loginPage: PropTypes.object.isRequired,
     settings: PropTypes.object.isRequired,
     changeLocale: PropTypes.func.isRequired,

@@ -36,6 +36,7 @@
     "app.components.Filterpanel.AlertLevel.Critical": "Crítico",
     "app.components.Filterpanel.AlertLevel.Warning": "Peligro",
     "app.components.Filterpanel.AlertLevel.Normal": "Normal",
+    "app.pages.LoginPage.Title": "Iniciar Sesión",
     "app.pages.LoginPage.Enter": "ENTRAR",
     "app.pages.LoginPage.Forgot": "Has olvidado la contraseña? Click aquí",
     "app.pages.LoginPage.header": "This is LoginPage container !",
@@ -43,5 +44,7 @@
     "app.pages.LoginPage.pleaseWait": "Por favor espere...",
     "app.pages.LoginPage.success": "Exito",
     "app.pages.LoginPage.user": "Usuario",
-    "app.pages.LoginPage.wrongPassword": "Usuario y contraseña incorrectos."
+    "app.pages.LoginPage.wrongPassword": "Usuario y contraseña incorrectos.",
+    "app.pages.SelectCompanyPage.Title": "Seleccione empresa",
+    "app.components.Company.Selector.Title": "Seleccione empresa"
 }

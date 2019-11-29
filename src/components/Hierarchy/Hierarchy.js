@@ -10,7 +10,7 @@ import { checkHierarchy, displayHierarchy } from "../../pages/HomePage/redux/act
 /**Styles */
 import "./hierarchy.scss";
 
-const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
+const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl, companyName }) => {
 
 
   /** This function prints the hierarchy tree in render */
@@ -58,7 +58,7 @@ const Hierarchy = ({ hierarchy, checkHierarchy, displayHierarchy, intl }) => {
 
   return (
     <div className="hierarchy">
-      <div> SEARCH </div>
+      <div> {companyName} </div>
       <div className="hierarchy__wrapper">
         <div className="hierarchy__list">
           <ul>{showHierarchyTree(hierarchy ? hierarchy : [])}</ul>
@@ -78,7 +78,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => ({
-  hierarchy: state.hierarchy.hierarchy
+  hierarchy: state.hierarchy.hierarchy,
+  companyName: state.companyName.companyName
 })
 
 Hierarchy.propTypes = {

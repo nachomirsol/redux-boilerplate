@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import toggleStatus from './components/hocs/WithToggle/reducers';
 import settings from './components/hocs/WithSettings/redux/reducers';
 import hierarchy from './pages/HomePage/redux/reducers';
+import companyName from './pages/SelectCompanyPage/redux/reducers';
 
 
 // export default combineReducers({
@@ -17,6 +18,7 @@ const createReducer = (injectedReducers) => {
         toggleStatus,
         settings,
         hierarchy,
+        companyName,
         ...injectedReducers,
     });
 }

@@ -160,7 +160,7 @@ export function login(email, password, history, params, onRefreshLogin) {
     setTimeout(() => {
       dispatch(setLoginPending(false));
       localStorage.setItem("userName", email);
-      dispatch(setLoginSuccess({ data: { testToken: 'successfull'}, userName: email }));
+      dispatch(setLoginSuccess({ data: { testToken: 'successfull' }, userName: email }));
       const { redirectUrl } = params;
       if (redirectUrl !== undefined) {
         history.push(`/redirect/${redirectUrl}`);
