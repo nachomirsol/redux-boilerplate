@@ -17,7 +17,7 @@ const FilterPanelItem = ({
       {name}
       <input
         type="checkbox"
-        onClick={e => {
+        onChange={e => {
           onCheckAsset && onCheckAsset(variableName, value, e.target.checked);
           onChecked && onChecked(e.target.checked);
         }}
