@@ -44,12 +44,6 @@ export const Routes = () => (
       exact={false}
       component={LoginPage}
     />
-    <Route
-      key="select-company-route"
-      path="/select-company"
-      exact={false}
-      component={SelectCompanyPage}
-    />
     {routes &&
       Array.isArray(routes) &&
       routes.map((route, index) => {
